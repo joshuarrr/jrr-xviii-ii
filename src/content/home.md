@@ -1,8 +1,6 @@
 ---
-layout: home
 title: home page
-thumbnail: /uploads/donkeys.jpg
-hero:
+hero: /uploads/image2.jpg
 ---
 this is the home page.
 
