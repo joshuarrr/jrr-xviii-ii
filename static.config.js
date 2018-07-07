@@ -5,13 +5,13 @@ const klaw = require('klaw')
 const path = require('path')
 const matter = require('gray-matter')
 
-function getPosts () {
+function getProjects () {
   const items = []
-  // Walk ("klaw") through posts directory and push file paths into items array //
+  // Walk ("klaw") through projects directory and push file paths into items array //
   const getFiles = () => new Promise(resolve => {
-    // Check if posts directory exists //
-    if (fs.existsSync('./src/posts')) {
-      klaw('./src/posts')
+    // Check if projects directory exists //
+    if (fs.existsSync('./src/projects')) {
+      klaw('./src/projects')
         .on('data', item => {
           // Filter function to retrieve .md files //
           if (path.extname(item.path) === '.md') {
@@ -32,11 +32,11 @@ function getPosts () {
         })
         .on('end', () => {
           // Resolve promise for async getRoutes request //
-          // posts = items for below routes //
+          // projects = items for below routes //
           resolve(items)
         })
     } else {
-      // If src/posts directory doesn't exist, return items as empty array //
+      // If src/projects directory doesn't exist, return items as empty array //
       resolve(items)
     }
   })
@@ -49,7 +49,7 @@ export default {
     title: 'React Static with Netlify CMS',
   }),
   getRoutes: async () => {
-    const posts = await getPosts()
+    const projects = await getProjects()
     return [
       {
         path: '/',
@@ -60,16 +60,16 @@ export default {
         component: 'src/containers/Contact',
       },
       {
-        path: '/blog',
-        component: 'src/containers/Blog',
+        path: '/work',
+        component: 'src/containers/Projects',
         getData: () => ({
-          posts,
+          projects,
         }),
-        children: posts.map(post => ({
-          path: `/post/${post.data.slug}`,
-          component: 'src/containers/Post',
+        children: projects.map(project => ({
+          path: `/project/${project.data.slug}`,
+          component: 'src/containers/Project',
           getData: () => ({
-            post,
+            project,
           }),
         })),
       },

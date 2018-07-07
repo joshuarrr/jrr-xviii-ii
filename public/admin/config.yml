@@ -6,8 +6,8 @@ media_folder: "public/uploads" # Media files will be stored in the repo under pu
 public_folder: "/uploads" # Folder path where uploaded files will be accessed, relative to the base of the built site
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Post" # Used in the UI
+  - name: "projects" # Used in routes, e.g., /admin/collections/blog
+    label: "Project" # Used in the UI
     folder: "src/content/projects" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -17,12 +17,4 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - name: "home"
-    label: "Home Page"
-    folder: "src/content"
-    create: false
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Hero Image", name: "hero", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
