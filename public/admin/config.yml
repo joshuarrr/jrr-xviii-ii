@@ -18,3 +18,11 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "home"
+    label: "Home Page"
+    folder: "src/pages"
+    create: false
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Hero Image", name: "hero", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
