@@ -10,9 +10,9 @@ const App = () => (
   <Router>
     <div>
       <nav>
-        <Link exact to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
+        <Link exact to="/">home</Link>
+        <Link to="/Work">work</Link>
+        <Link to="/Contact">contact</Link>
       </nav>
       <div className="content">
         <Routes />

@@ -1,3 +1,5 @@
+import React, { Component } from 'react'
+
 const fs = require('fs')
 const klaw = require('klaw')
 const path = require('path')
@@ -54,8 +56,8 @@ export default {
         component: 'src/containers/Home',
       },
       {
-        path: '/about',
-        component: 'src/containers/About',
+        path: '/contact',
+        component: 'src/containers/Contact',
       },
       {
         path: '/blog',
@@ -76,5 +78,23 @@ export default {
         component: 'src/containers/404',
       },
     ]
+  },
+  Document: class CustomDocument extends Component {
+    render () {
+      const {
+        Html, Head, Body, children, renderMeta,
+      } = this.props
+
+      return (
+        <Html>
+          <Head>
+            <meta charSet="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+          </Head>
+          <Body>{children}</Body>
+        </Html>
+      )
+    }
   },
 }
