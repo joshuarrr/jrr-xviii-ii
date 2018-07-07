@@ -7,7 +7,7 @@ export default withSiteData(() => (
   <div>
     <h1 style={{ textAlign: 'center' }}>Hello World</h1>
     <img src={logoImg} alt="" />
-    <form name="contact" method="POST" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" method="POST" netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="contact" />
       <p>
         <label htmlFor="name">Your Name: <input id="text" type="name" name="name" /></label>
