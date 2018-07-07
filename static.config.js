@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import autoprefixer from 'autoprefixer'
+import nested from 'postcss-nested'
+import calc from 'postcss-calc'
+import simpleVars from 'postcss-simple-vars'
 
 const fs = require('fs')
 const klaw = require('klaw')
@@ -48,6 +52,7 @@ export default {
   getSiteData: () => ({
     title: 'React Static with Netlify CMS',
   }),
+
   getRoutes: async () => {
     const projects = await getProjects()
     return [
@@ -58,6 +63,10 @@ export default {
       {
         path: '/contact',
         component: 'src/containers/Contact',
+      },
+      {
+        path: '/dev',
+        component: 'src/containers/Dev',
       },
       {
         path: '/work',
@@ -79,6 +88,61 @@ export default {
       },
     ]
   },
+
+
+  webpack: (config, { stage, defaultLoaders }) => {
+    let loaders = [
+      {
+        loader: 'css-loader',
+        options: {
+          minimize: stage !== 'dev',
+          importLoaders: 1,
+        },
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          // Necessary for external CSS imports to work
+          // https://github.com/facebookincubator/create-react-app/issues/2677
+          ident: 'postcss',
+          plugins: () => [
+            autoprefixer({
+              browsers: [
+                '>1%',
+                'last 4 versions',
+                'Firefox ESR',
+                'not ie < 9', // React doesn't support IE8 anyway
+              ],
+            }),
+            nested,
+            calc,
+            simpleVars
+          ],
+        },
+      },
+    ]
+
+    if (stage === 'dev') {
+      loaders = ['style-loader'].concat(loaders)
+    } else if (stage === 'prod') {
+      loaders = ['style-loader'].concat(loaders)
+    }
+
+    config.module.rules = [
+      {
+        oneOf: [
+          defaultLoaders.jsLoader,
+          {
+            test: /\.css$/,
+            use: loaders,
+          },
+          defaultLoaders.fileLoader,
+        ],
+      },
+    ]
+    return config
+  },
+
   Document: class CustomDocument extends Component {
     render () {
       const {

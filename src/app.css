@@ -1,10 +1,37 @@
+/* @import "css/wrapper.css"; */
+
+@font-face {
+  font-family: 'AVG';
+  src: local('AVG'),
+    url(../public/fonts/avg-book.woff2)
+    format('woff2');
+}
+
+@font-face {
+  font-family: 'AVG-Demi';
+  src: local('AVG-Demi'),
+    url(../public/fonts/avg-demi.woff2)
+    format('woff2');
+}
+
+/* Cover Image */
+/* html {
+  background: url(./img/mthood.jpg) no-repeat center center fixed;
+  background-size: cover;
+} */
+
 body {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
-    'Lucida Grande', sans-serif;
-  font-weight: 300;
+  font-family: 'AVG', sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
+  color: #777;
+  /* background: #f7f7f7; */
+}
+
+h1 {
+  font-family: 'AVG-Demi', sans-serif;
+  font-weight: normal;
 }
 
 a {
@@ -19,7 +46,6 @@ img {
 
 nav {
   width: 100%;
-  background: #108db8;
 }
 
 nav a {
@@ -31,13 +57,11 @@ nav a {
 .content {
   padding: 1rem;
 }
-.image {
-  width: 25%;
-  min-width: 250px;
-  height: auto;
-}
 
-.blog-post {
- display: flex;
- flex-direction: column;
+/* Home Page */
+.logo {
+  width: 5em;
+  margin: 0 auto;
+  position: relative;
+  display: block;
 }
