@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/postcss-examples.css'
+import '../styles/postcss-examples.css'
 
 export default () => (
   <div>

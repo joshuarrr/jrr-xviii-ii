@@ -1,0 +1,8 @@
+/* Trailer */
+@define-mixin trailer {
+	margin-bottom: 10vh;
+
+  @media h(481) {
+    margin-bottom: 10vh;
+  }
+}

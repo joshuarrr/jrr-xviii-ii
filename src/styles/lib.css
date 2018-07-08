@@ -1,0 +1,47 @@
+/* Borders -------------------------------------------------------------------*/
+$default-border: 1px solid black(.1);
+$border: $default-border;
+
+
+/* Color Variables -----------------------------------------------------------*/
+/* Blacks */
+/* npm postcss-color-alpha */
+$black01: black(.01);
+
+/* Grays */
+/* npm postcss-color-gray */
+$background-color: gray(245);
+$body-color: gray(50);
+
+/* Reds */
+/* npm postcss-color-function */
+$light-red: color(#cc0033 lightness(50%));
+$red: #cc0033;
+$dark-red: color(#cc0033 lightness(30%));
+
+
+/* Vertical Rhythm -----------------------------------------------------------*/
+$trailer: 5vh;
+
+/* Transitions ---------------------------------------------------------------*/
+$default-duration: .3s;
+$default-ease: ease-out;
+$duration: $default-duration;
+
+@define-mixin default-transition {
+    transition-duration: $default-duration;
+    transition-timing-function: $default-ease;
+}
+
+$bounce-in: cubic-bezier(.16, .035, .24, 1.295);
+
+$slide-in: cubic-bezier(.87, -.41, .19, 1.44);
+
+$slide-duration: .3s;
+
+
+/* Type ----------------------------------------------------------------------*/
+$base-font-size: 10px;
+$base-font-size: 1rem;
+$base-line-height: 1;
+

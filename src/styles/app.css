@@ -1,16 +1,17 @@
+@import "./reset.css";
 /* @import "css/wrapper.css"; */
 
 @font-face {
   font-family: 'AVG';
   src: local('AVG'),
-    url(../public/fonts/avg-book.woff2)
+    url(../../public/fonts/avg-book.woff2)
     format('woff2');
 }
 
 @font-face {
   font-family: 'AVG-Demi';
   src: local('AVG-Demi'),
-    url(../public/fonts/avg-demi.woff2)
+    url(../../public/fonts/avg-demi.woff2)
     format('woff2');
 }
 
@@ -26,7 +27,6 @@ body {
   margin: 0;
   padding: 0;
   color: #777;
-  /* background: #f7f7f7; */
 }
 
 h1 {

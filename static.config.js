@@ -3,6 +3,7 @@ import autoprefixer from 'autoprefixer'
 import nested from 'postcss-nested'
 import calc from 'postcss-calc'
 import simpleVars from 'postcss-simple-vars'
+import colorAlpha from 'postcss-color-alpha'
 
 const fs = require('fs')
 const klaw = require('klaw')
@@ -116,7 +117,8 @@ export default {
             }),
             nested,
             calc,
-            simpleVars
+            simpleVars,
+            colorAlpha,
           ],
         },
       },

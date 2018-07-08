@@ -1,0 +1,64 @@
+/*! Reset --------------------------------------------------------------------*/
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* Typography ---------------------------------------------------------------*/
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Images --------------------------------------------------------------------*/
+img {
+  /* In case images don't load */
+  font-style: italic;
+}
+
+/* Remove image link borders */
+a img,
+:link img,
+:visited img {
+  border: 0;
+}
+
+/* Etc -----------------------------------------------------------------------*/
+
+/* Make the selection color pretty */
+::-moz-selection {
+  color: Gainsboro;
+  background: SlateGray;
+}
+::selection {
+  color: Gainsboro;
+  background: SlateGray;
+}
+
+/* Mobile --------------------------------------------------------------------*/
+a:link {
+  /* -webkit-tap-highlight-color: rgba(0, 20, 100, .3); */
+  -webkit-tap-highlight-color: transparent;
+}
