@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import autoprefixer from 'autoprefixer'
 import nested from 'postcss-nested'
 import calc from 'postcss-calc'
-import simpleVars from 'postcss-simple-vars'
 import colorAlpha from 'postcss-color-alpha'
+import advancedVars from 'postcss-advanced-variables'
 
 const fs = require('fs')
 const klaw = require('klaw')
@@ -115,10 +115,10 @@ export default {
                 'not ie < 9', // React doesn't support IE8 anyway
               ],
             }),
-            nested,
             calc,
-            simpleVars,
             colorAlpha,
+            nested,
+            advancedVars,
           ],
         },
       },

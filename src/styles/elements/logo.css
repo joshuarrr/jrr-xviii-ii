@@ -1,10 +1,14 @@
 @import '../lib.css';
-$logo-color: red;
-
+@import '../mixins/help.css';
 
 /*! Logo --------------------------------------------------------------------*/
 .site-logo {
-  /* background-color: black(.7); */
+  position: fixed;
+  left: 50%;
+  top: 20vh;
+  z-index: 11;
+  /* iOS disable selection on tap */
+  -webkit-tap-highlight-color: transparent;
   background-color: black(.7);
   border-radius: 50%;
   box-shadow:
@@ -12,7 +16,6 @@ $logo-color: red;
     0 0 0 3px black(.2),
     -0px -0px 15px 1px black(.5) inset;
   text-align: center;
-  margin: 0;
   z-index: 2;
   /* transition: background-color 1s $default-ease; */
   transform: scale(.9) translate(-50%, -50%);
@@ -24,22 +27,20 @@ $logo-color: red;
 }
 
 .site-logo-link {
-  color: white !important;
+  fill: white;
   display: block;
-  font-weight: 400;
-  line-height: 0;
   position: relative;
-  width: 6rem;
-  height: 6rem;
 }
 
 .site-logo-j {
   top: 45%;
   display: block;
   position: relative;
-  transform: translateX(2%);
+  transform: translateX(5% 5%);
+  width: 6rem;
+  height: 6rem;
 }
 
 .site-logo-link-text {
-  @mixin hidden-text;
+  @include hidden-text;
 }
