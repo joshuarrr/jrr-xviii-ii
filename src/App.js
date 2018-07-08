@@ -5,7 +5,7 @@ import Routes from 'react-static-routes'
 import { NodeGroup } from 'react-move'
 import { withContext, getContext } from 'recompose'
 import PropTypes from 'prop-types'
-import { Logo } from './components/logo'
+import { PageWrapper } from './components/page-wrapper'
 
 import './styles/app.css'
 
@@ -111,19 +111,9 @@ const AnimatedRoutes = getContext({
 
 const App = () => (
   <Router>
-    <div className="page-wrap">
-      <header>
-        <Logo />
-        <nav>
-          <Link exact to="/">home</Link>
-          <Link to="/Work">work</Link>
-          <Link to="/Contact">contact</Link>
-        </nav>
-      </header>
-      <main className="content">
-        <Routes component={AnimatedRoutes} />
-      </main>
-    </div>
+    <PageWrapper>
+      <Routes component={AnimatedRoutes} />
+    </PageWrapper>
   </Router>
 )
 

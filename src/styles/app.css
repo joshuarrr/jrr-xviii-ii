@@ -1,5 +1,5 @@
 @import "./reset.css";
-/* @import "css/wrapper.css"; */
+@import "./components/page-wrapper.css";
 
 @font-face {
   font-family: 'AVG';
