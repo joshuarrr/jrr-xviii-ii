@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"cla",
+				"className"
+			],
+			[
 				"font",
 				"font-weight\tproperty"
 			],
@@ -32,36 +36,103 @@
 	"buffers":
 	[
 		{
+			"file": "static.config.js",
+			"settings":
+			{
+				"buffer_size": 4650,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import React from 'react'\nimport { Router, Link } from 'react-static'\nimport { hot } from 'react-hot-loader'\nimport Routes from 'react-static-routes'\nimport { Logo } from 'components/logo'\n\nimport './styles/app.css'\n\nconst App = () => (\n  <Router>\n    <div className=\"page-wrap\">\n      <header>\n        <Logo />\n        <nav>\n          <Link exact to=\"/\">home</Link>\n          <Link to=\"/Work\">work</Link>\n          <Link to=\"/Contact\">contact</Link>\n        </nav>\n      </header>\n      <main className=\"content\">\n        <Routes /> \n      </main>\n    </div>\n  </Router>\n)\n\nexport default hot(module)(App)\n",
+			"file": "src/App.js",
+			"file_size": 606,
+			"file_write_time": 131755612291209482,
+			"settings":
+			{
+				"buffer_size": 607,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/containers/Home.js",
+			"settings":
+			{
+				"buffer_size": 203,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".babelrc",
+			"settings":
+			{
+				"buffer_size": 82,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/containers/Dev.js",
 			"settings":
 			{
-				"buffer_size": 1335,
+				"buffer_size": 1367,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/app.css",
+			"file": "src/components/logo.jsx",
 			"settings":
 			{
-				"buffer_size": 872,
+				"buffer_size": 942,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/App.js",
+			"file": "src/styles/functions/h.js",
 			"settings":
 			{
-				"buffer_size": 481,
+				"buffer_size": 371,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "README.md",
+			"file": "src/styles/elements/logo.css",
 			"settings":
 			{
-				"buffer_size": 67,
+				"buffer_size": 986,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/app.css",
+			"settings":
+			{
+				"buffer_size": 937,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/mixins/helpers.css",
+			"settings":
+			{
+				"buffer_size": 419,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/postcss-examples.css",
+			"settings":
+			{
+				"buffer_size": 182,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -79,12 +150,16 @@
 		"selected_items":
 		[
 			[
-				"lore",
-				"LoremIpsum: (200) stick shake"
+				"pac",
+				"Package Control: Install Package"
 			],
 			[
 				"pack",
 				"Package Control: Install Package"
+			],
+			[
+				"lore",
+				"LoremIpsum: (200) stick shake"
 			],
 			[
 				"hipster ip",
@@ -118,18 +193,34 @@
 		"show_minimap": false,
 		"show_open_files": false,
 		"show_tabs": false,
-		"side_bar_visible": false,
+		"side_bar_visible": true,
 		"status_bar_visible": false
 	},
 	"expanded_folders":
 	[
 		"/Users/joshuar/Projects/jr-xviii-ii",
+		"/Users/joshuar/Projects/jr-xviii-ii/public",
 		"/Users/joshuar/Projects/jr-xviii-ii/src",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/components",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/containers",
-		"/Users/joshuar/Projects/jr-xviii-ii/src/css"
+		"/Users/joshuar/Projects/jr-xviii-ii/src/img",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/elements",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/functions",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/mixins"
 	],
 	"file_history":
 	[
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/functions/w.js",
+		"/Users/joshuar/Projects/jr-xviii-ii/package.json",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/css/reset.css",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/css/lib.css",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/functions/h.js",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/functions/darken.js",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/css/postcss-examples.css",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/containers/About.js",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/css/elements/logo.css",
+		"/Users/joshuar/Projects/jr-xviii-ii/README.md",
 		"/Users/joshuar/Projects/jr-xviii-ii/static.config.js",
 		"/Users/joshuar/Projects/jr-xviii/node_modules/@babel/helper-module-imports/node_modules/@babel/types/scripts/generateTypeHelpers.js",
 		"/Users/joshuar/Projects/jr-xviii/static.config.js",
@@ -145,13 +236,14 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
 		"height": 116.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -159,6 +251,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"width",
+			"return (",
+			"200",
+			"gray-matter",
+			"axios",
+			"\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -176,24 +274,152 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/containers/Dev.js",
+					"file": "static.config.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1335,
+						"buffer_size": 4650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1335,
-								1335
+								3691,
+								3691
+							]
+						],
+						"settings":
+						{
+							"SL.326.region_keys":
+							[
+								"SL.eslint.Highlights.|8006a50d7356a3ea10e50968f2f520c0fd179ee352f604532cfbb69b67a38304|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"sublime_linter.protected_regions"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1134.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/App.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								534,
+								534
+							]
+						],
+						"settings":
+						{
+							"SL.358.region_keys":
+							[
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"sublime_linter.protected_regions",
+								"SL.eslint.Highlights.|4fd5138e05880b2bdc32c2773ee1a546c1ecbf19c1f1d513e09a3e05ae698c14|region.redish markup.error.sublime_linter|32"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/containers/Home.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								134,
+								134
+							]
+						],
+						"settings":
+						{
+							"SL.228.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".babelrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 82,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/containers/Dev.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1367,
+								1367
 							]
 						],
 						"settings":
@@ -209,6 +435,13 @@
 								"sublime_linter.protected_regions",
 								"SL.eslint.Highlights.|e22c78e14ebdb1bf57b1ca2ccca130959bb0c32d3ad59fe4780b8cdb7b3be103|region.redish markup.error.sublime_linter|32"
 							],
+							"SL.224.region_keys":
+							[
+								"SL.eslint.Highlights.|20f9ba562f520ef1d0b127696ac363e2096d03484e5b052aa433c6025d539393|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"sublime_linter.protected_regions",
+								"SL.eslint.Highlights.|e22c78e14ebdb1bf57b1ca2ccca130959bb0c32d3ad59fe4780b8cdb7b3be103|region.redish markup.error.sublime_linter|32"
+							],
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"word_wrap": true
 						},
@@ -216,24 +449,191 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "src/app.css",
+					"buffer": 5,
+					"file": "src/components/logo.jsx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 872,
+						"buffer_size": 942,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								207,
-								207
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"SL.289.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/styles/functions/h.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 371,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								371,
+								371
+							]
+						],
+						"settings":
+						{
+							"SL.408.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "src/styles/elements/logo.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 986,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								745,
+								745
+							]
+						],
+						"settings":
+						{
+							"SL.375.region_keys":
+							[
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/styles/app.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 937,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								362,
+								362
+							]
+						],
+						"settings":
+						{
+							"SL.225.region_keys":
+							[
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 308.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/styles/mixins/helpers.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								314,
+								314
+							]
+						],
+						"settings":
+						{
+							"SL.376.region_keys":
+							[
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/styles/postcss-examples.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 182,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								19
 							]
 						],
 						"settings":
@@ -245,66 +645,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/App.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 481,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								214,
-								214
-							]
-						],
-						"settings":
-						{
-							"SL.216.region_keys":
-							[
-							],
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 67,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								67,
-								67
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -327,11 +668,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.417765536838,
 			1.0
 		],
 		"rows":
@@ -345,6 +693,10 @@
 	{
 		"height": 0.0
 	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 168.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -353,7 +705,7 @@
 	"project": "jr-xviii-ii.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 80.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -404,7 +756,7 @@
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 298.0,
-	"status_bar_visible": true,
+	"status_bar_visible": false,
 	"template_settings":
 	{
 	}

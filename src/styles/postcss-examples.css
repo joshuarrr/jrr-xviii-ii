@@ -1,26 +1,16 @@
-/* Autoprefixer */
-::placeholder {
-  color: gray;
-}
+.postcss-examples {
+  /* Autoprefixer */
+  ::placeholder {
+    color: gray;
+  }
 
-/* Nested */
-body {
-  background: red;
-
+  /* Nested */
   h1 {
     color: green;
   }
-}
 
-/* Calc */
-h1 {
-  font-size: calc(12px * 2);
-}
-
-
-/* Darken function */
-h1 {
-  @media h(628) {
-    top: 10vh;
+  /* Calc */
+  h1 {
+    font-size: calc(12px * 2);
   }
 }

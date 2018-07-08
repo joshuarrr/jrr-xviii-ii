@@ -16,10 +16,10 @@
 }
 
 /* Cover Image */
-/* html {
-  background: url(./img/mthood.jpg) no-repeat center center fixed;
+html {
+  /* background: url(../img/mthood.jpg) no-repeat center center fixed; */
   background-size: cover;
-} */
+}
 
 body {
   font-family: 'AVG', sans-serif;
