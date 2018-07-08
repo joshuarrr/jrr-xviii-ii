@@ -4,10 +4,13 @@ import nested from 'postcss-nested'
 import calc from 'postcss-calc'
 import colorAlpha from 'postcss-color-alpha'
 import advancedVars from 'postcss-advanced-variables'
+import customMedia from 'postcss-custom-media'
+import mediaMinMax from 'postcss-media-minmax'
+import functions from 'postcss-functions'
 
+const path = require('path')
 const fs = require('fs')
 const klaw = require('klaw')
-const path = require('path')
 const matter = require('gray-matter')
 
 function getProjects () {
@@ -90,7 +93,6 @@ export default {
     ]
   },
 
-
   webpack: (config, { stage, defaultLoaders }) => {
     let loaders = [
       {
@@ -117,8 +119,13 @@ export default {
             }),
             calc,
             colorAlpha,
-            nested,
+            functions({
+              glob: path.join(__dirname, 'src/styles/functions', '*.js'),
+            }),
             advancedVars,
+            customMedia,
+            mediaMinMax,
+            nested,
           ],
         },
       },

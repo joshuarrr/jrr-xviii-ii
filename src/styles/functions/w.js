@@ -1,9 +1,13 @@
-module.exports = function(width) {
+module.exports = width => {
+  const min = 'screen and (min-width: '
+  const max = 'screen and (max-width: '
+  const units = 'px)'
+
   if (width.charAt(0) === '<') {
-  	return ('screen and (min-width: ' + width.substr(1) + 'px)');
-	} else if (width.charAt(0) === '>') {
-	  return ('screen and (max-width: ' + width.substr(1) + 'px)');
-	} else if (width.charAt(0) <= '9') {
-	  return ('screen and (min-width: ' + width + 'px)');
-	}
-};
+    return min + width.substr(1) + units
+  } else if (width.charAt(0) === '>') {
+    return max + width.substr(1) + units
+  } else if (width.charAt(0) <= '9') {
+    return min + width + units
+  }
+}

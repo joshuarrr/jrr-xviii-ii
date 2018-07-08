@@ -1,5 +1,5 @@
 @import '../lib.css';
-@import '../mixins/help.css';
+@import '../mixins/helpers.css';
 
 /*! Logo --------------------------------------------------------------------*/
 .site-logo {
@@ -21,10 +21,19 @@
   transform: scale(.9) translate(-50%, -50%);
   transform-origin: left center;
 
+  @include size(6rem);
+
   &:hover {
     background-color: black(.9);
   }
+
+  @media h(628) {
+    top: 10vh;
+    @include size(6.5rem);
+  }
+
 }
+
 
 .site-logo-link {
   fill: white;
@@ -37,8 +46,6 @@
   display: block;
   position: relative;
   transform: translateX(5% 5%);
-  width: 6rem;
-  height: 6rem;
 }
 
 .site-logo-link-text {
