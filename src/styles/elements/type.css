@@ -15,7 +15,7 @@
 body {
   font-family: 'AVG', sans-serif;
   margin: 0;
-  color: darkgray;
+  color: #8a8a8a;
   font-size: calc(12px + .4vw);
 
   @media h(481) {
@@ -33,11 +33,18 @@ body {
 h1 {
   font-family: 'AVG-Demi', sans-serif;
   font-weight: normal;
+  margin-bottom: 1rem;
 }
 
 h2 {
   font-family: 'AVG-Demi', sans-serif;
   font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  letter-spacing: .01rem;
 }
 
 a {

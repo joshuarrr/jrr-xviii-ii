@@ -8,6 +8,7 @@ import customMedia from 'postcss-custom-media'
 import mediaMinMax from 'postcss-media-minmax'
 import functions from 'postcss-functions'
 import postcssImport from 'postcss-import'
+import colorFunc from 'postcss-color-function'
 
 const path = require('path')
 const fs = require('fs')
@@ -124,6 +125,7 @@ export default {
             mediaMinMax,
             nested,
             calc,
+            colorFunc,
           ],
         },
       },

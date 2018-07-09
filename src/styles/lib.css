@@ -4,21 +4,9 @@ $border: $default-border;
 
 
 /* Color Variables -----------------------------------------------------------*/
-/* Blacks */
-/* npm postcss-color-alpha */
-$black01: black(.01);
-
-/* Grays */
-/* npm postcss-color-gray */
-$background-color: gray(245);
-$body-color: gray(50);
-
-/* Reds */
-/* npm postcss-color-function */
-$light-red: color(#cc0033 lightness(50%));
-$red: #cc0033;
-$dark-red: color(#cc0033 lightness(30%));
-
+$blue: #87cdea;
+$lightblue: color($blue tint(50%));
+$darkblue: color($blue shade(20%));
 
 /* Vertical Rhythm -----------------------------------------------------------*/
 $trailer: 5vh;
