@@ -1,0 +1,36 @@
+@import '../lib.css';
+
+.tooltip {
+  color: $blue;
+}
+
+/* Tippy overrides */
+.tippy-popper {
+  max-width: 260px;
+}
+
+.tippy-popper .tippy-tooltip.light-theme {
+  box-shadow: none;
+  background: transparent;
+  color: $darkblue;
+  border: 1px solid $lightblue;
+}
+
+.tippy-tooltip--big {
+  font-size: 1.3rem;
+  hyphens: none;
+  padding: 1rem 1.7rem;
+}
+
+/* arrow color */
+.tippy-popper[x-placement^="top"] .tippy-tooltip.light-theme [x-arrow] {
+  border-top-color: $lightblue;
+}
+
+.tippy-tooltip-content {
+  white-space: nowrap;
+}
+
+.tippy-tooltip {
+  border-radius: 2rem;
+}
