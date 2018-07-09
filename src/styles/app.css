@@ -1,67 +1,24 @@
 @import "./reset.css";
 @import "./components/page-wrapper.css";
+@import "./elements/type.css";
 
-@font-face {
-  font-family: 'AVG';
-  src: local('AVG'),
-    url(../../public/fonts/avg-book.woff2)
-    format('woff2');
-}
-
-@font-face {
-  font-family: 'AVG-Demi';
-  src: local('AVG-Demi'),
-    url(../../public/fonts/avg-demi.woff2)
-    format('woff2');
-}
-
-/* Cover Image */
 html {
+  /* Cover Image */
   /* background: url(../img/mthood.jpg) no-repeat center center fixed; */
-  background-size: cover;
+  /* background-size: cover; */
 }
 
 body {
   font-family: 'AVG', sans-serif;
-  font-size: 16px;
   margin: 0;
   padding: 0;
-  color: #777;
-}
-
-h1 {
-  font-family: 'AVG-Demi', sans-serif;
-  font-weight: normal;
-}
-
-a {
-  text-decoration: none;
-  color: #108db8;
-  font-weight: bold;
+  background: #efefef;
 }
 
 img {
   max-width: 100%;
 }
 
-nav {
-  width: 100%;
-}
 
-nav a {
-  color: white;
-  padding: 1rem;
-  display: inline-block;
-}
 
-.content {
-  padding: 1rem;
-}
 
-/* Home Page */
-.logo {
-  width: 5em;
-  margin: 0 auto;
-  position: relative;
-  display: block;
-}

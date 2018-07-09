@@ -69,10 +69,6 @@ export default {
         component: 'src/containers/Contact',
       },
       {
-        path: '/dev',
-        component: 'src/containers/Dev',
-      },
-      {
         path: '/work',
         component: 'src/containers/Projects',
         getData: () => ({
