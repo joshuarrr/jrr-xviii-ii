@@ -19,7 +19,7 @@
   /* transition: background-color 1s $default-ease; */
   transform: scale(.9) translate(-50%, -50%);
   transform-origin: left center;
-  top: 10vh;
+  top: 15vh;
   @include size(6rem);
 
   &:hover {

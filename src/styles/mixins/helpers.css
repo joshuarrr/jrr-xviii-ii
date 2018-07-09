@@ -23,8 +23,3 @@
   width: $size;
   height: $size;
 }
-
-@mixin heading-text {
-  color: #242424;
-  font-size: 4em;
-}

@@ -12,7 +12,30 @@
     format('woff2');
 }
 
+body {
+  font-family: 'AVG', sans-serif;
+  margin: 0;
+  color: darkgray;
+  font-size: calc(12px + .4vw);
+
+  @media h(481) {
+    top: 10vh;
+  }
+}
+
+  @media w(1680) {
+    body {
+      font-size: 1.8rem;
+    }
+  }
+
+
 h1 {
+  font-family: 'AVG-Demi', sans-serif;
+  font-weight: normal;
+}
+
+h2 {
   font-family: 'AVG-Demi', sans-serif;
   font-weight: normal;
 }

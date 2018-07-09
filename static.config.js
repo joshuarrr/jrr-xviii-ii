@@ -7,6 +7,7 @@ import advancedVars from 'postcss-advanced-variables'
 import customMedia from 'postcss-custom-media'
 import mediaMinMax from 'postcss-media-minmax'
 import functions from 'postcss-functions'
+import postcssImport from 'postcss-import'
 
 const path = require('path')
 const fs = require('fs')
@@ -105,6 +106,7 @@ export default {
           // https://github.com/facebookincubator/create-react-app/issues/2677
           ident: 'postcss',
           plugins: () => [
+            postcssImport,
             autoprefixer({
               browsers: [
                 '>1%',
@@ -113,7 +115,6 @@ export default {
                 'not ie < 9', // React doesn't support IE8 anyway
               ],
             }),
-            calc,
             colorAlpha,
             functions({
               glob: path.join(__dirname, 'src/styles/functions', '*.js'),
@@ -122,6 +123,7 @@ export default {
             customMedia,
             mediaMinMax,
             nested,
+            calc,
           ],
         },
       },

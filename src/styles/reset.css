@@ -1,5 +1,5 @@
-/*! Reset --------------------------------------------------------------------*/
-html {
+/*! Reset */
+:root {
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -16,7 +16,7 @@ body {
   box-sizing: inherit;
 }
 
-/* Typography ---------------------------------------------------------------*/
+/* Typography */
 a {
   text-decoration: none;
 }
@@ -32,12 +32,6 @@ ol {
   padding: 0;
 }
 
-/* Images --------------------------------------------------------------------*/
-img {
-  /* In case images don't load */
-  font-style: italic;
-}
-
 /* Remove image link borders */
 a img,
 :link img,
@@ -45,9 +39,7 @@ a img,
   border: 0;
 }
 
-/* Etc -----------------------------------------------------------------------*/
-
-/* Make the selection color pretty */
+/* Selection color  */
 ::-moz-selection {
   color: Gainsboro;
   background: SlateGray;
@@ -57,8 +49,7 @@ a img,
   background: SlateGray;
 }
 
-/* Mobile --------------------------------------------------------------------*/
+/* Mobile */
 a:link {
-  /* -webkit-tap-highlight-color: rgba(0, 20, 100, .3); */
   -webkit-tap-highlight-color: transparent;
 }
