@@ -10,6 +10,11 @@ nav a {
   color: $blue;
   padding: 1rem;
   display: inline-block;
+
+  &.active {
+    color: darkgray;
+    cursor: default;
+  }
 }
 
 header {
@@ -18,5 +23,20 @@ header {
 
 
 .content {
-  padding: 1rem;
+  width: 80vw;
+  margin: auto;
+  background: #000;
+
+  @media w(321) {
+  }
+
+  @media w(769) {
+  }
+
+  @media w(1024) {
+  }
+
+  @media w(1280) {
+    width: calc(960px + 5vw);
+  }
 }

@@ -4,20 +4,48 @@
 		"selected_items":
 		[
 			[
+				"cur",
+				"cursor\tproperty"
+			],
+			[
+				"bor",
+				"border-radius\tproperty"
+			],
+			[
+				"mar",
+				"margin-right\tproperty"
+			],
+			[
+				"border-top",
+				"border-top-color\tproperty"
+			],
+			[
+				"let",
+				"letter-spacing\tproperty"
+			],
+			[
+				"margin-",
+				"margin-bottom\tproperty"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"P",
+				"PageWrapper"
+			],
+			[
+				"Page",
+				"PageWrapper\t(App.js)"
+			],
+			[
 				"cla",
 				"className"
 			],
 			[
-				"font",
-				"font-weight\tproperty"
-			],
-			[
 				"a",
 				"auto\tmargin"
-			],
-			[
-				"mar",
-				"margin\tproperty"
 			],
 			[
 				"con",
@@ -39,27 +67,116 @@
 			"file": "static.config.js",
 			"settings":
 			{
-				"buffer_size": 4650,
+				"buffer_size": 4710,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/App.js",
+			"file": "src/styles/lib.css",
 			"settings":
 			{
-				"buffer_size": 3869,
+				"buffer_size": 976,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "import React from 'react'\nimport { Router, Route, Link, cleanPath } from 'react-static'\nimport { easeQuadOut } from 'd3-ease'\nimport { NodeGroup } from 'react-move'\nimport { withContext, getContext } from 'recompose'\nimport PropTypes from 'prop-types'\n\n//\nimport Routes from 'react-static-routes'\n\nimport './app.css'\n\n// The magic :)\nconst AnimatedRoutes = getContext({\n  // We have to preserve the router context for each route\n  // otherwise, a component may rerender with the wrong data\n  // during animation\n  router: PropTypes.object,\n  // We'll also look for the staticURL, so we can disable the animation during static render\n  staticURL: PropTypes.string,\n})(({ getComponentForPath, router, staticURL }) => (\n  <Route\n    path=\"*\"\n    render={props => {\n      // Get the component for this path\n      let Comp = getComponentForPath(cleanPath(props.location.pathname))\n      if (!Comp) {\n        Comp = getComponentForPath('404')\n      }\n\n      // When we're rendering for static HTML, be sure to NOT animate in.\n      if (staticURL) {\n        return (\n          // This relative wrapper is necessary for accurate rehydration :)\n          <div style={{ position: 'relative' }}>\n            <Comp {...props} />\n          </div>\n        )\n      }\n\n      // Use React-Move to animate the different components coming in and out\n      return (\n        <NodeGroup\n          // React-move will handle the entry and exit of any items we pass in `data`\n          data={[\n            {\n              // pass the current Comp, props, ID and router\n              id: props.location.pathname,\n              Comp,\n              props,\n              router,\n            },\n          ]}\n          keyAccessor={d => d.id}\n          start={() => ({\n            opacity: [0],\n            scale: 1,\n            translateY: [10],\n          })}\n          enter={() => ({\n            opacity: [1],\n            translateY: [0],\n            timing: { duration: 200, delay: 200, ease: easeQuadOut },\n          })}\n          update={() => ({\n            opacity: [1],\n          })}\n          leave={() => ({\n            opacity: [0],\n            translateY: [-10],\n            timing: { duration: 200, ease: easeQuadOut },\n          })}\n        >\n          {nodes => (\n            <div style={{ position: 'relative' }}>\n              {nodes.map(({ key, data, state: { opacity, translateY } }) => {\n                // Here, we override the router context with the one that was\n                // passed with each route\n                const PreservedRouterContext = withContext(\n                  {\n                    router: PropTypes.object,\n                  },\n                  () => ({\n                    router: data.router,\n                  }),\n                )(props => <div {...props} />)\n\n                return (\n                  <PreservedRouterContext\n                    key={key}\n                    style={{\n                      position: 'absolute',\n                      top: 0,\n                      right: 0,\n                      bottom: 0,\n                      left: 0,\n                      transform: `translateY(${translateY}px)`,\n                      opacity,\n                    }}\n                  >\n                    <data.Comp {...data.props} />\n                  </PreservedRouterContext>\n                )\n              })}\n            </div>\n          )}\n        </NodeGroup>\n      )\n    }}\n  />\n))\n\nconst App = () => (\n  <Router>\n    <div>\n      <nav>\n        <Link exact to=\"/\">Home</Link>\n        <Link to=\"/about\">About</Link>\n        <Link to=\"/blog\">Blog</Link>\n      </nav>\n      <div className=\"content\">\n        <Routes component={AnimatedRoutes} />\n      </div>\n    </div>\n  </Router>\n)\n\nexport default App",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 3740,
-				"line_ending": "Unix",
-				"name": "import React from 'react'"
+				"buffer_size": 1178,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/containers/Home.js",
+			"settings":
+			{
+				"buffer_size": 1115,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/page-wrapper.jsx",
+			"settings":
+			{
+				"buffer_size": 753,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/logo.jsx",
+			"settings":
+			{
+				"buffer_size": 864,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/reset.css",
+			"settings":
+			{
+				"buffer_size": 609,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/app.css",
+			"settings":
+			{
+				"buffer_size": 270,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/elements/logo.css",
+			"settings":
+			{
+				"buffer_size": 953,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/components/page-wrapper.css",
+			"settings":
+			{
+				"buffer_size": 441,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/elements/type.css",
+			"settings":
+			{
+				"buffer_size": 779,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/home.css",
+			"settings":
+			{
+				"buffer_size": 232,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/elements/tooltip.css",
+			"settings":
+			{
+				"buffer_size": 564,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -74,6 +191,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"co",
+				"Color Picker"
+			],
 			[
 				"pac",
 				"Package Control: Install Package"
@@ -127,25 +252,28 @@
 		"/Users/joshuar/Projects/jr-xviii-ii/public",
 		"/Users/joshuar/Projects/jr-xviii-ii/src",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/components",
-		"/Users/joshuar/Projects/jr-xviii-ii/src/containers",
-		"/Users/joshuar/Projects/jr-xviii-ii/src/img",
-		"/Users/joshuar/Projects/jr-xviii-ii/src/styles"
+		"/Users/joshuar/Projects/jr-xviii-ii/src/img"
 	],
 	"file_history":
 	[
-		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/postcss-examples.css",
-		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/mixins/helpers.css",
-		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/app.css",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/img/drop.jpg",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/elements/logo.css",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/mixins/helpers.css",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/functions/w.js",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/functions/h.js",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/reset.css",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/containers/Home.js",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/components/page-wrapper.jsx",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/App.js",
+		"/Users/joshuar/Projects/jr-xviii-ii/static.config.js",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/app.css",
+		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/postcss-examples.css",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/components/logo.jsx",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/containers/Dev.js",
 		"/Users/joshuar/Projects/jr-xviii-ii/.babelrc",
-		"/Users/joshuar/Projects/jr-xviii-ii/src/containers/Home.js",
 		"/Users/joshuar/Projects/jr-xviii-ii/package.json",
 		"/Users/joshuar/Projects/jr-xviii-ii/.gitignore",
 		"/Users/joshuar/.bash_profile",
-		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/functions/w.js",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/css/reset.css",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/css/lib.css",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/styles/functions/darken.js",
@@ -153,7 +281,6 @@
 		"/Users/joshuar/Projects/jr-xviii-ii/src/containers/About.js",
 		"/Users/joshuar/Projects/jr-xviii-ii/src/css/elements/logo.css",
 		"/Users/joshuar/Projects/jr-xviii-ii/README.md",
-		"/Users/joshuar/Projects/jr-xviii-ii/static.config.js",
 		"/Users/joshuar/Projects/jr-xviii/node_modules/@babel/helper-module-imports/node_modules/@babel/types/scripts/generateTypeHelpers.js",
 		"/Users/joshuar/Projects/jr-xviii/static.config.js",
 		"/Users/joshuar/Projects/jr-xviii/node_modules/react-static/.history/package_20180530120312.json",
@@ -167,7 +294,7 @@
 	],
 	"find":
 	{
-		"height": 44.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -182,6 +309,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"padding",
+			"---------------------------------------------------------------*/",
+			" ---------------------------------------------------------------*/",
+			"1",
 			"quad",
 			"axios",
 			"width",
@@ -207,7 +338,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -216,121 +347,441 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4650,
+						"buffer_size": 4710,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3691,
-								3691
+								3751,
+								3751
 							]
 						],
 						"settings":
 						{
-							"SL.326.region_keys":
+							"SL.542.region_keys":
 							[
 								"SL.eslint.Highlights.|8006a50d7356a3ea10e50968f2f520c0fd179ee352f604532cfbb69b67a38304|region.redish markup.error.sublime_linter|32",
 								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
 								"sublime_linter.protected_regions"
 							],
-							"SL.463.region_keys":
-							[
-								"SL.eslint.Highlights.|8006a50d7356a3ea10e50968f2f520c0fd179ee352f604532cfbb69b67a38304|region.redish markup.error.sublime_linter|32",
-								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
-								"sublime_linter.protected_regions"
-							],
+							"colorcode": true,
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1134.0,
+						"translation.y": 2489.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/styles/lib.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 976,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"SL.554.region_keys":
+							[
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"colorcode": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"syntax": "Packages/Babel/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/containers/Home.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1115,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								183
+							]
+						],
+						"settings":
+						{
+							"SL.38.region_keys":
+							[
+							],
+							"SL.540.region_keys":
+							[
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"SL.eslint.Highlights.|0cd13337a7ae89fcd7658bb57bd9e0b327706beff736d8f17e02fe430660729f|region.redish markup.error.sublime_linter|32",
+								"sublime_linter.protected_regions"
+							],
+							"colorcode": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/components/page-wrapper.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 753,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								247,
+								247
+							]
+						],
+						"settings":
+						{
+							"SL.562.region_keys":
+							[
+								"SL.eslint.Highlights.|2adadc4e071cd351b085696473b2ed6ad18cd0d0ffbe6173179aaf69ab5dd45b|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|7048fcfb762a951cfaf0f7e7f23aa57226ed94c7c6fb4fb6db0e06c2243f8480|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"sublime_linter.protected_regions",
+								"SL.eslint.Highlights.|f4d35b79bfde8c9c8f35e20a4ac88a9c5c7aef9da1dd3b9fdfcc7837818010e6|region.redish markup.error.sublime_linter|32"
+							],
+							"colorcode": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/components/logo.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 864,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								236,
+								236
+							]
+						],
+						"settings":
+						{
+							"SL.569.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"colorcode": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/styles/reset.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								308,
+								308
+							]
+						],
+						"settings":
+						{
+							"SL.547.region_keys":
+							[
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"colorcode": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "src/styles/app.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								270,
+								270
+							]
+						],
+						"settings":
+						{
+							"SL.523.region_keys":
+							[
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"colorcode": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/styles/elements/logo.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 953,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								754,
+								739
+							]
+						],
+						"settings":
+						{
+							"SL.557.region_keys":
+							[
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"colorcode": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 439.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/styles/components/page-wrapper.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 441,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								279,
+								279
+							]
+						],
+						"settings":
+						{
+							"SL.524.region_keys":
+							[
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"colorcode": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/styles/elements/type.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 779,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								359,
+								341
+							]
+						],
+						"settings":
+						{
+							"SL.529.region_keys":
+							[
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"colorcode": true,
+							"open_with_edit": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "src/App.js",
+					"buffer": 11,
+					"file": "src/styles/home.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3869,
+						"buffer_size": 232,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2006,
-								2006
+								232,
+								232
 							]
 						],
 						"settings":
 						{
-							"SL.358.region_keys":
-							[
-								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
-								"sublime_linter.protected_regions",
-								"SL.eslint.Highlights.|4fd5138e05880b2bdc32c2773ee1a546c1ecbf19c1f1d513e09a3e05ae698c14|region.redish markup.error.sublime_linter|32"
-							],
-							"SL.464.region_keys":
-							[
-								"SL.eslint.Highlights.|998064eb96e5471b9bb19a2e2662e980e0095e43577dbfe563a304379d942961|region.redish markup.error.sublime_linter|32",
-								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
-								"SL.eslint.Highlights.|f0c81d2ce8d11df1b357eebb989fad2843d21e8cbc2ab922d02beb8eba62667e|region.redish markup.error.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.eslint.Highlights.|c8eba799267ede52eadba34263d4d49705bd7e190aa02907dc8aeb4bf726936a|region.redish markup.error.sublime_linter|32"
-							],
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"colorcode": true,
+							"open_with_edit": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1223.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 2,
+					"buffer": 12,
+					"file": "src/styles/elements/tooltip.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3740,
+						"buffer_size": 564,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3718,
-								3718
+								21,
+								0
 							]
 						],
 						"settings":
 						{
-							"SL.475.region_keys":
+							"SL.552.region_keys":
 							[
-								"SL.eslint.Highlights.|87df4310296127a3b491051127e0e823bab4c5f7047d4df20c83afcd9042529b|region.redish markup.error.sublime_linter|32",
-								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
-								"sublime_linter.protected_regions"
 							],
-							"auto_name": "import React from 'react'",
-							"default_dir": "/Users/joshuar/Projects/jr-xviii-ii/src/styles/elements",
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"colorcode": true,
+							"open_with_edit": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 199.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -364,7 +815,7 @@
 		"cols":
 		[
 			0.0,
-			0.565100038996,
+			0.452550909834,
 			1.0
 		],
 		"rows":
@@ -390,7 +841,7 @@
 	"project": "jr-xviii-ii.sublime-project",
 	"replace":
 	{
-		"height": 80.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -400,12 +851,28 @@
 		"selected_items":
 		[
 			[
-				"hipster",
-				"jr-xviii/node_modules/@babel/helper-module-imports/node_modules/@babel/types/scripts/generateTypeHelpers.js"
+				"ppage",
+				"src/components/page-wrapper.jsx"
+			],
+			[
+				"logo",
+				"src/styles/elements/logo.css"
+			],
+			[
+				"h.",
+				"src/styles/functions/h.js"
+			],
+			[
+				"home",
+				"src/containers/Home.js"
 			],
 			[
 				"app",
-				"src/App.js"
+				"src/styles/app.css"
+			],
+			[
+				"hipster",
+				"jr-xviii/node_modules/@babel/helper-module-imports/node_modules/@babel/types/scripts/generateTypeHelpers.js"
 			]
 		],
 		"width": 0.0

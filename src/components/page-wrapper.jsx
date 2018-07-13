@@ -15,9 +15,9 @@ export class PageWrapper extends Component {
         <header>
           <Logo />
           <nav>
-            <Link exact to="/">home</Link>
-            <Link to="/Work">work</Link>
-            <Link to="/Contact">contact</Link>
+            <Link activeClassName=" active" exact to="/">home</Link>
+            <Link activeClassName=" active" to="/Work">work</Link>
+            <Link activeClassName=" active" to="/Contact">contact</Link>
           </nav>
         </header>
         <main className="content">

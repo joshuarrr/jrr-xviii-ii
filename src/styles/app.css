@@ -2,6 +2,12 @@
 @import "./components/page-wrapper.css";
 @import "./elements/type.css";
 
+
+html {
+/*   background: url(../img/colors-03.jpg) no-repeat center center fixed;
+  background-size: cover; */
+}
+
 body {
   background: #f9f9f9;
 }

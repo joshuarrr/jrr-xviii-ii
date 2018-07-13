@@ -3,6 +3,7 @@
 
 /*! Logo --------------------------------------------------------------------*/
 .site-logo {
+  display: block;
   position: fixed;
   left: 50%;
   z-index: 11;
@@ -20,9 +21,10 @@
   transform: scale(.9) translate(-50%, -50%);
   transform-origin: left center;
   top: 15vh;
+  fill: white;
   @include size(6rem);
 
-  &:hover {
+  &:hover:not(.active) {
     background-color: black(.9);
   }
 
@@ -32,15 +34,8 @@
   }
 }
 
-
-.site-logo-link {
-  fill: white;
-  display: block;
-  position: relative;
-}
-
 .site-logo-j {
-  top: 45%;
+  top: 0;
   display: block;
   position: relative;
   transform: translateX(5% 5%);
