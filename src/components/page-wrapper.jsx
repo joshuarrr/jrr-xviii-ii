@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-static'
 import PropTypes from 'prop-types'
 import { Logo } from './logo'
+
 import '../styles/elements/logo.css'
 
 export class PageWrapper extends Component {
@@ -10,6 +11,8 @@ export class PageWrapper extends Component {
   }
 
   render = () => {
+    console.log(this.props.location);
+
     return (
       <div className="page-wrap">
         <header>

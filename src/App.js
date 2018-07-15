@@ -55,13 +55,11 @@ const AnimatedRoutes = getContext({
             opacity: [0],
             scale: 1,
             translateY: [10],
-            rotate: [-360],
           })}
           enter={() => ({
             opacity: [1],
             translateY: [0],
             timing: { duration: 500, delay: 300 },
-            rotate: [0],
           })}
           update={() => ({
             opacity: [1],
@@ -74,7 +72,7 @@ const AnimatedRoutes = getContext({
         >
           {nodes => (
             <div style={{ position: 'relative' }}>
-              {nodes.map(({ key, data, state: { opacity, translateY, rotate } }) => {
+              {nodes.map(({ key, data, state: { opacity, translateY } }) => {
                 // Here, we override the router context with the one that was
                 // passed with each route
                 const PreservedRouterContext = withContext(
@@ -95,9 +93,8 @@ const AnimatedRoutes = getContext({
                       right: 0,
                       bottom: 0,
                       left: 0,
-                      transform: `translateY(${translateY}px) rotate(${rotate}deg)`,
+                      transform: `translateY(${translateY}px)`,
                       opacity,
-                      rotate,
                     }}
                   >
                     <PageWrapper>

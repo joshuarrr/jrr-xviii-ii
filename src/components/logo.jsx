@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-static'
+import Routes from 'react-static-routes'
 
 import '../styles/elements/logo.css'
+
 
 export class Logo extends Component {
   render () {
     return (
       <Link
         to="/"
-        className="site-logo"
+        className={"site-logo "}
         tabIndex="-1"
       >
         <span className="site-logo-link-text">

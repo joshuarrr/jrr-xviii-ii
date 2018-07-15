@@ -23,7 +23,7 @@ export default withSiteData(() => (
       }}
 
       enter={{ // how to transform state on enter (optional)
-        width: 300,
+        width: [300],
         timing: { delay: 1000, duration: 1000 },
       }}
     >
