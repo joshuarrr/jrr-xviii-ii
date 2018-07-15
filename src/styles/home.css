@@ -10,3 +10,8 @@
     0 0 0 3px black(.1),
     -0px -0px 15px 1px black(.5) inset;
 }
+
+.testbox {
+  position: relative;
+  background: purple;
+}

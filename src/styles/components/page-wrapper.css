@@ -25,7 +25,7 @@ header {
 .content {
   width: 80vw;
   margin: auto;
-  background: #000;
+  /* background: #000; */
 
   @media w(321) {
   }
