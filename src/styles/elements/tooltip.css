@@ -11,13 +11,13 @@
 
 .tippy-popper .tippy-tooltip.light-theme {
   box-shadow: none;
-  background: transparent;
   color: $darkblue;
   border: 1px solid $lightblue;
 }
 
 .tippy-tooltip--big {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  letter-spacing: .05rem;
   hyphens: none;
   padding: 1rem 1.7rem;
 }

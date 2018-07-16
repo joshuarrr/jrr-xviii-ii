@@ -65,16 +65,23 @@ export default {
       {
         path: '/',
         component: 'src/containers/Home',
+        getData: () => ({
+          pageNumber: 1,
+        }),
       },
       {
         path: '/contact',
         component: 'src/containers/Contact',
+        getData: () => ({
+          pageNumber: 2,
+        }),
       },
       {
         path: '/work',
         component: 'src/containers/Projects',
         getData: () => ({
           projects,
+          pageNumber: 3,
         }),
         children: projects.map(project => ({
           path: `/project/${project.data.slug}`,

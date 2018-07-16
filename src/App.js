@@ -1,16 +1,17 @@
 import React from 'react'
-import { Router, Route, Link, cleanPath } from 'react-static'
-import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
+import PropTypes from 'prop-types'
+import { Router, Route, Link, cleanPath, withRouteData } from 'react-static'
+import { hot } from 'react-hot-loader'
 import { NodeGroup } from 'react-move'
 import { withContext, getContext } from 'recompose'
-import PropTypes from 'prop-types'
 import { PageWrapper } from './components/page-wrapper'
 
 import './styles/app.css'
 
 // The magic :)
 const AnimatedRoutes = getContext({
+
   // We have to preserve the router context for each route
   // otherwise, a component may rerender with the wrong data
   // during animation
@@ -54,25 +55,25 @@ const AnimatedRoutes = getContext({
           start={() => ({
             opacity: [0],
             scale: 1,
-            translateY: [10],
+            translateX: [0],
           })}
           enter={() => ({
             opacity: [1],
-            translateY: [0],
-            timing: { duration: 500, delay: 300 },
+            translateX: [0],
+            timing: { duration: 700, delay: 100 },
           })}
           update={() => ({
             opacity: [1],
           })}
           leave={() => ({
             opacity: [0],
-            translateY: [-10],
-            timing: { duration: 200 },
+            translateX: [-100],
+            timing: { duration: 700 },
           })}
         >
           {nodes => (
             <div style={{ position: 'relative' }}>
-              {nodes.map(({ key, data, state: { opacity, translateY } }) => {
+              {nodes.map(({ key, data, state: { opacity, translateX } }) => {
                 // Here, we override the router context with the one that was
                 // passed with each route
                 const PreservedRouterContext = withContext(
@@ -93,7 +94,7 @@ const AnimatedRoutes = getContext({
                       right: 0,
                       bottom: 0,
                       left: 0,
-                      transform: `translateY(${translateY}px)`,
+                      transform: `translateX(${translateX}vw)`,
                       opacity,
                     }}
                   >

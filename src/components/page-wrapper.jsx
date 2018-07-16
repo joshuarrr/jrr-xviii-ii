@@ -11,7 +11,6 @@ export class PageWrapper extends Component {
   }
 
   render = () => {
-    console.log(this.props.location);
 
     return (
       <div className="page-wrap">
