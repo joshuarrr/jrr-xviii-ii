@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-static'
 import PropTypes from 'prop-types'
+import { Image } from 'cloudinary-react'
 import { Logo } from './logo'
 
 import '../styles/elements/logo.css'

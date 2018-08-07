@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background: #f9f9f9;
+  background: white; /* fallback color */
 }
 
 img {
