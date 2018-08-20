@@ -66,3 +66,26 @@ header {
     /* width: calc(960px + 5vw); */
   }
 }
+
+.page-content {
+  @media w(1400) {
+    max-width: 70vw;
+    margin: 0 auto;
+  }
+
+  @media w(1900) {
+    max-width: 60vw;
+  }
+
+  @media w(1980) {
+    max-width: 55vw;
+  }
+
+/*   @media w(2160) {
+    max-width: 53vw;
+  }
+
+  @media w(2304) {
+    max-width: 50vw;
+  } */
+}

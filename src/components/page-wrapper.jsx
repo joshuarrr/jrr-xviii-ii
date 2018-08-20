@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-static'
 import PropTypes from 'prop-types'
-import { Image } from 'cloudinary-react'
 import { Logo } from './logo'
 
 import '../styles/elements/logo.css'
 
 export class PageWrapper extends Component {
   static propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
   }
-
   render = () => {
-
     return (
       <div className="page-wrap">
         <header>
@@ -26,7 +23,7 @@ export class PageWrapper extends Component {
         <main className="content">
           { this.props.children }
         </main>
-     </div>
+      </div>
     )
   }
 }
