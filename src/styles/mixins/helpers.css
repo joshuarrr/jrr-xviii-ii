@@ -1,3 +1,5 @@
+/* 💪 Helpers */
+
 /* Clearfix */
 @mixin clearfix {
   &:after {
@@ -23,5 +25,3 @@
   width: $size;
   height: $size;
 }
-
-/* Center */

@@ -1,15 +1,26 @@
+/* 👩‍💻 App */
+@import './lib.css';
 @import "./reset.css";
-@import "./components/page-wrapper.css";
 @import "./elements/type.css";
-
-
-html {
-/*   background: url(../img/colors-03.jpg) no-repeat center center fixed;
-  background-size: cover; */
-}
+@import "./components/page-wrapper.css";
 
 body {
+  height: 100vh;
+  min-height: 100vh;
   background: white; /* fallback color */
+
+  @if $guides == true {
+    &:before {
+      content: '';
+      position: fixed;
+      width: 1px;
+      height: inherit;
+      border-left: .5px dashed $guide-color;
+      left: 50%;
+      z-index: 3000;
+      transform: translateX(-.5px);
+    }
+  }
 }
 
 img {

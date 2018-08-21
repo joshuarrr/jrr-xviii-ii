@@ -9,6 +9,7 @@ import mediaMinMax from 'postcss-media-minmax'
 import functions from 'postcss-functions'
 import postcssImport from 'postcss-import'
 import colorFunc from 'postcss-color-function'
+import conditionals from 'postcss-conditionals'
 
 const path = require('path')
 const fs = require('fs')
@@ -77,11 +78,18 @@ export default {
         }),
       },
       {
-        path: '/work',
+        path: '/profile',
+        component: 'src/containers/Profile',
+        getData: () => ({
+          pageNumber: 3,
+        }),
+      },
+      {
+        path: '/projects',
         component: 'src/containers/Projects',
         getData: () => ({
           projects,
-          pageNumber: 3,
+          pageNumber: 4,
         }),
         children: projects.map(project => ({
           path: `/project/${project.data.slug}`,
@@ -90,6 +98,13 @@ export default {
             project,
           }),
         })),
+      },
+      {
+        path: '/process',
+        component: 'src/containers/Process',
+        getData: () => ({
+          pageNumber: 5,
+        }),
       },
       {
         is404: true,
@@ -133,6 +148,7 @@ export default {
             nested,
             calc,
             colorFunc,
+            conditionals,
           ],
         },
       },

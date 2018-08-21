@@ -12,17 +12,20 @@ export class PageWrapper extends Component {
   render = () => {
     return (
       <div className="page-wrap">
-        <header>
+        <header className="header">
           <Logo />
           <nav>
-            <Link activeClassName=" active" exact to="/">home</Link>
-            <Link activeClassName=" active" to="/Work">work</Link>
-            <Link activeClassName=" active" to="/Contact">contact</Link>
+            <Link activeClassName=" active" exact to="/profile">profile</Link>
+            <Link activeClassName=" active" to="/projects">projects</Link>
+            <Link activeClassName=" active" to="/process">process</Link>
           </nav>
         </header>
         <main className="content">
           { this.props.children }
         </main>
+        <footer className="footer">
+          social links
+        </footer>
       </div>
     )
   }

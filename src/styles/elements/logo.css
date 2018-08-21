@@ -4,33 +4,24 @@
 /*! Logo --------------------------------------------------------------------*/
 .site-logo {
   display: block;
-  position: fixed;
+  position: relative;
   left: 50%;
   z-index: 11;
   /* iOS disable selection on tap */
   -webkit-tap-highlight-color: transparent;
-  background-color: black(.7);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 2px white(.7),
-    0 0 0 3px black(.2),
-    -0px -0px 15px 1px black(.5) inset;
-  text-align: center;
   z-index: 2;
-  transition: background-color 1s $default-ease;
-  transform: scale(.9) translate(-50%, -50%);
-  transform-origin: left center;
-  top: 15vh;
-  fill: white;
+  transform: translateX(-50%);
+  fill: black;
   @include size(6rem);
+  grid-area: logo;
 
-  &:hover {
-    background-color: black(1);
+  @if $guides == true {
+    border: $guide-border;
+    background: $guide-color;
   }
 
   @media h(481) {
-    top: 10vh;
-    @include size(6.5rem);
+    @include size(10rem);
   }
 }
 

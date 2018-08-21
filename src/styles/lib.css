@@ -1,9 +1,23 @@
+/* 📚 Lib */
+
+/* Config --------------------------------------------------------------------*/
+$guides: false;
+
+/* Guides --------------------------------------------------------------------*/
+$guide-color: color(red a(30%));
+$guide-color-a: color(green a(30%));
+$guide-color-b: color(blue a(30%));
+$guide-color-c: color(orange a(30%));
+$guide-border: 1px solid $guide-color;
+
 /* Borders -------------------------------------------------------------------*/
 $default-border: 1px solid black(.1);
 $border: $default-border;
 
-
 /* Color Variables -----------------------------------------------------------*/
+$body-black: #4d4d4d;
+$body-gray: #999999;
+
 $blue: #87cdea;
 $lightblue: color($blue tint(50%));
 $darkblue: color($blue shade(20%));
@@ -16,20 +30,11 @@ $default-duration: .3s;
 $default-ease: ease-out;
 $duration: $default-duration;
 
-@define-mixin default-transition {
-    transition-duration: $default-duration;
-    transition-timing-function: $default-ease;
-}
-
 $bounce-in: cubic-bezier(.16, .035, .24, 1.295);
-
 $slide-in: cubic-bezier(.87, -.41, .19, 1.44);
-
 $slide-duration: .3s;
-
 
 /* Type ----------------------------------------------------------------------*/
 $base-font-size: 10px;
 $base-font-size: 1rem;
 $base-line-height: 1;
-
