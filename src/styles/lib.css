@@ -22,6 +22,8 @@ $blue: #87cdea;
 $lightblue: color($blue tint(50%));
 $darkblue: color($blue shade(20%));
 
+$dark-red: color(#cc0033 lightness(30%));
+
 /* Vertical Rhythm -----------------------------------------------------------*/
 $trailer: 5vh;
 

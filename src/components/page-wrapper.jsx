@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-static'
 import PropTypes from 'prop-types'
 import { Logo } from './logo'
+import { SocialLinks } from './social-links'
 
 import '../styles/elements/logo.css'
 
@@ -24,7 +25,7 @@ export class PageWrapper extends Component {
           { this.props.children }
         </main>
         <footer className="footer">
-          social links
+          <SocialLinks />
         </footer>
       </div>
     )

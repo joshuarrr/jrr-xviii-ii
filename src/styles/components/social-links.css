@@ -1,0 +1,39 @@
+/*! Social Links ------------------------------------------------------------ */
+@import "../lib.css";
+@import "../elements/icons.css";
+@import '../mixins/helpers.css';
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link-item {
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  margin-right: 1vw;
+  text-align: center;
+  transition: margin .5s ease;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @media h(768) {
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  @media w(768) {
+    margin-right: 2vw;
+  }
+}
+
+.social-link:hover {
+  color: $dark-red;
+}
+
+.social-link-text {
+  @include hidden-text;
+}
