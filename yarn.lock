@@ -6042,6 +6042,10 @@ react-dev-utils@^4.0.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
+react-div-100vh@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/react-div-100vh/-/react-div-100vh-0.1.8.tgz#9be83167ed41ac8bc5055d43079cff12894b2a56"
+
 react-dom@^16, react-dom@^16.0.0:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"

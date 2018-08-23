@@ -3,11 +3,11 @@ import { Link } from 'react-static'
 import PropTypes from 'prop-types'
 import { Logo } from './logo'
 import { SocialLinks } from './social-links'
+import Div100vh from 'react-div-100vh'
 import '../styles/elements/logo.css'
 
-
-const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-// console.log('* height = ' + height + '\n');
+// const innerHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+// console.log('* height = ' + innerheight + '\n');
 
 export class PageWrapper extends Component {
   static propTypes = {
@@ -15,8 +15,7 @@ export class PageWrapper extends Component {
   }
   render = () => {
     return (
-      <div className="page-wrap">
-      <div className="tester">test</div>
+      <Div100vh className="page-wrap">
         <header className="header">
           <Logo />
           <nav>
@@ -31,7 +30,7 @@ export class PageWrapper extends Component {
         <footer className="footer">
           <SocialLinks />
         </footer>
-      </div>
+      </Div100vh>
     )
   }
 }

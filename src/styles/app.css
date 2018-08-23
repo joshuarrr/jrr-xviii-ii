@@ -4,12 +4,17 @@
 @import "./elements/type.css";
 @import "./components/page-wrapper.css";
 
+html, body, #root, #root>div {
+  min-height: 100%
+}
+
 body {
-  height: 100vh;
-  min-height: 100vh;
   background: white; /* fallback color */
+  /* overflow: hidden; */
 
   @if $guides == true {
+    box-shadow: inset 0 0 0 5px black(.2);
+
     &:before {
       content: '';
       position: fixed;
