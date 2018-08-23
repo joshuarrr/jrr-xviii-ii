@@ -4,14 +4,15 @@
 .page-wrap {
   max-width: 100vw;
   overflow-x: hidden;
-  min-height: 100vh;
+  height: 100vh;
   /* Grid */
   display: grid;
-  grid-template-rows: 0fr 2fr 0.3fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "header"
     "content"
     "footer";
+    position: relative;
 
   @if $guides == true {
     box-shadow: inset 0 0 0 5px $guide-color;

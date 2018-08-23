@@ -1,7 +1,7 @@
 /* 📚 Lib */
 
 /* Config --------------------------------------------------------------------*/
-$guides: false;
+$guides: true;
 
 /* Guides --------------------------------------------------------------------*/
 $guide-color: color(red a(30%));
@@ -12,6 +12,7 @@ $guide-border: 1px solid $guide-color;
 
 /* Borders -------------------------------------------------------------------*/
 $default-border: 1px solid black(.1);
+$light-border: 1px solid black(.05);
 $border: $default-border;
 
 /* Color Variables -----------------------------------------------------------*/

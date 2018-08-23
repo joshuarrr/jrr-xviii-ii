@@ -7,12 +7,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 1vh;
+  background: black(.02);
+  border-top: $light-border;
 }
 
 .social-link-item {
-  margin-bottom: 2vh;
-  margin-top: 2vh;
-  margin-right: 1vw;
+  margin-right: 8vw;
   text-align: center;
   transition: margin .5s ease;
 
@@ -20,18 +21,9 @@
     margin-right: 0;
   }
 
-  @media h(768) {
-    margin-bottom: 1vh;
-    margin-top: 1vh;
-  }
-
   @media w(768) {
     margin-right: 2vw;
   }
-}
-
-.social-link:hover {
-  color: $dark-red;
 }
 
 .social-link-text {

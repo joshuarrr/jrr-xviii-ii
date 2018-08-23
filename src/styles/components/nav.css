@@ -1,9 +1,15 @@
 /* Nav */
 nav {
-  margin: 5vh 0;
   width: 100%;
   text-align: center;
   grid-area: nav;
+  background: black(.02);
+  border-bottom: $light-border;
+  margin: 0 0 1vh 0;
+
+  @media h(481) {
+    /* margin: 5vh 0; */
+  }
 
   @if $guides == true {
     background: $guide-color-a;
@@ -18,6 +24,10 @@ nav a {
   letter-spacing: .1rem;
   position: relative;
   margin-left: 1rem;
+
+  @media h(461) {
+    /* margin: 5vh 0; */
+  }
 
   @if $guides == true {
     background: color(red a(10%));

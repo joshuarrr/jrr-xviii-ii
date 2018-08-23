@@ -6,7 +6,6 @@ import { hot } from 'react-hot-loader'
 import { NodeGroup } from 'react-move'
 import { withContext, getContext } from 'recompose'
 import { PageWrapper } from './components/page-wrapper'
-
 import './styles/app.css'
 
 // The magic :)
