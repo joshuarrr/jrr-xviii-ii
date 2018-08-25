@@ -2,19 +2,24 @@
 @import './nav.css';
 
 .page-wrap {
+  background: white;
   max-width: 100vw;
   overflow-x: hidden;
   /* Height set by javascript (react-div-100vh) to negate mobile safari vh bs. */
   /* height: 100vh; */
 
-  /* Grid */
-  display: grid;
+  /* Flexbox for mobile (one dimension) */
+  display: flex;
+  flex-direction: column;
+
+  /* Grid for desktop (two dimensions) */
+/*   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header"
     "content"
-    "footer";
-    position: relative;
+    "footer"; */
+    /* position: relative; */
 
   @if $guides == true {
     box-shadow: inset 0 0 0 5px $guide-color;
@@ -36,22 +41,28 @@
     "nav"
     "logo";
 
+  flex: initial;
+
   @if $guides == true {
     box-shadow: inset 0 0 0 5px $guide-color-a;
   }
 }
 
 .content { /*-----------------------------------------------------------------*/
-  grid-area: content;
-  padding: 5vh;
+  flex: auto;
+  /* grid-area: content; */
 
   @if $guides == true {
     box-shadow: inset 0 0 0 5px $guide-color-b;
   }
 }
 
+.page-content {
+  padding: 5vh;
+}
+
 .footer {/*-------------------------------------------------------------------*/
-  grid-area: footer;
+  /* grid-area: footer; */
 
   @if $guides == true {
     box-shadow: inset 0 0 0 5px $guide-color-c;

@@ -32,26 +32,28 @@ class ContactForm extends React.Component {
   render() {
     const { name, email, message } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <p>
-          <label htmlFor="name">
-            Your Name: <input id="name" type="text" name="name" value={name} onChange={this.handleChange} />
-          </label>
-        </p>
-        <p>
-          <label htmlFor="email">
-            Your Email: <input id="email" type="email" name="email" value={email} onChange={this.handleChange} />
-          </label>
-        </p>
-        <p>
-          <label htmlFor="message">
-            Message: <textarea id="message" name="message" value={message} onChange={this.handleChange} />
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
+      <div className="page-content contact-page">
+        <form onSubmit={this.handleSubmit}>
+          <p>
+            <label htmlFor="name">
+              Your Name: <input id="name" type="text" name="name" value={name} onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label htmlFor="email">
+              Your Email: <input id="email" type="email" name="email" value={email} onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label htmlFor="message">
+              Message: <textarea id="message" name="message" value={message} onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
+      </div>
     )
   }
 }

@@ -7,48 +7,39 @@ nav {
   border-bottom: $light-border;
   margin: 0 0 1vh 0;
 
-  @media h(481) {
-    /* margin: 5vh 0; */
-  }
-
   @if $guides == true {
     background: $guide-color-a;
   }
-}
 
-nav a {
-  color: $body-gray;
-  padding: 1rem;
-  display: inline-block;
-  font-weight: 100;
-  letter-spacing: .1rem;
-  position: relative;
-  margin-left: 1rem;
+  a {
+    color: $body-gray;
+    padding: 2.5vh 4vw;
+    display: inline-block;
+    font-weight: 100;
+    letter-spacing: .1rem;
+    position: relative;
 
-  @media h(461) {
-    /* margin: 5vh 0; */
-  }
+    @if $guides == true {
+      background: color(red a(10%));
+    }
 
-  @if $guides == true {
-    background: color(red a(10%));
-  }
+    &.active {
+      color: $body-black;
+      cursor: default;
 
-  &.active {
-    color: $body-black;
-    cursor: default;
-
-    /* Indicator Arrow */
-    &:before {
-      content: '';
-      position: absolute;
-      top: -2vh;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 15px solid red;
+      /* Indicator Arrow */
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 1vw solid transparent;
+        border-right: 1vw solid transparent;
+        border-top: 1.5vw solid red;
+      }
     }
   }
 }

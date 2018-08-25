@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   padding: 1vh 0;
-  background: black(.02);
+  background: $background-color;
   border-top: $light-border;
 }
 

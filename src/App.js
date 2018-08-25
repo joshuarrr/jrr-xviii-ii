@@ -39,73 +39,75 @@ const AnimatedRoutes = getContext({
 
       // Use React-Move to animate the different components coming in and out
       return (
-        <NodeGroup
-          // React-move will handle the entry and exit of any items we pass in `data`
-          data={[
-            {
-              // pass the current Comp, props, ID and router
-              id: props.location.pathname,
-              Comp,
-              props,
-              router,
-            },
-          ]}
-          keyAccessor={d => d.id}
-          start={() => ({
-            opacity: [0],
-            scale: 1,
-            translateX: [0],
-          })}
-          enter={() => ({
-            opacity: [1],
-            translateX: [0],
-            timing: { duration: 700, delay: 100 },
-          })}
-          update={() => ({
-            opacity: [1],
-          })}
-          leave={() => ({
-            opacity: [0],
-            translateX: [-100],
-            timing: { duration: 700 },
-          })}
-        >
-          {nodes => (
-            <div style={{ position: 'relative' }}>
-              {nodes.map(({ key, data, state: { opacity, translateX } }) => {
-                // Here, we override the router context with the one that was
-                // passed with each route
-                const PreservedRouterContext = withContext(
-                  {
-                    router: PropTypes.object,
-                  },
-                  () => ({
-                    router: data.router,
-                  }),
-                )(props => <div {...props} />)
+        <PageWrapper>
+          <NodeGroup
+            // React-move will handle the entry and exit of any items we pass in `data`
+            data={[
+              {
+                // pass the current Comp, props, ID and router
+                id: props.location.pathname,
+                Comp,
+                props,
+                router,
+              },
+            ]}
+            keyAccessor={d => d.id}
+            start={() => ({
+              opacity: [0],
+              scale: 1,
+              translateX: [0],
+            })}
+            enter={() => ({
+              opacity: [1],
+              translateX: [0],
+              timing: { duration: 1000, delay: 500 },
+            })}
+            update={() => ({
+              opacity: [1],
+            })}
+            leave={() => ({
+              opacity: [0],
+              translateX: [-100],
+              timing: { duration: 500 },
+            })}
+          >
+            {nodes => (
+              <div style={{ position: 'relative' }}>
+                {nodes.map(({ key, data, state: { opacity, translateX } }) => {
+                  // Here, we override the router context with the one that was
+                  // passed with each route
+                  const PreservedRouterContext = withContext(
+                    {
+                      router: PropTypes.object,
+                    },
+                    () => ({
+                      router: data.router,
+                    }),
+                  )(props => <div {...props} />)
 
-                return (
-                  <PreservedRouterContext
-                    key={key}
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      right: 0,
-                      bottom: 0,
-                      left: 0,
-                      transform: `translateX(${translateX}vw)`,
-                      opacity,
-                    }}
-                  >
-                    <PageWrapper>
-                      <data.Comp {...data.props} />
-                    </PageWrapper>
-                  </PreservedRouterContext>
-                )
-              })}
-            </div>
-          )}
-        </NodeGroup>
+                  return (
+                    <PreservedRouterContext
+                      key={key}
+                      style={{
+                        // force pos relative if transitioned
+                        position: (opacity > 0.99) ? 'relative': 'absolute',
+                        // position: 'absolute',
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0,
+                        transform: `translateX(${translateX}vw)`,
+                        opacity,
+                      }}
+                    >
+                    <data.Comp {...data.props} />
+                    </PreservedRouterContext>
+                  )
+                })}
+              </div>
+            )}
+          </NodeGroup>
+        </PageWrapper>
       )
     }}
   />

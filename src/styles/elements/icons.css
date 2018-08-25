@@ -3,15 +3,14 @@
   background: rgba(0, 0, 0, 0) url("../../img/ico/social-icons.svg") no-repeat;
   background-size: 37px 293px;
   display: inline-block;
-  height: 40px;
+  height: 6vh;
   position: relative;
-  vertical-align: middle;
-  width: 36px;
+  width: 6vh;
 }
 
 .icon {
   filter: saturate(05%);
-  opacity: .9;
+  opacity: .7;
   transition: filter, .5s, opacity .5s, transform .5s $bounce-in;
   transform: scale(.65, .65);
 

@@ -12,8 +12,9 @@
   z-index: 2;
   transform: translateX(-50%);
   fill: black;
-  @include size(6rem);
   grid-area: logo;
+  @include size(9vh);
+  margin-bottom: 5vh;
 
   @if $guides == true {
     border: $guide-border;
@@ -21,7 +22,7 @@
   }
 
   @media h(481) {
-    @include size(10rem);
+    @include size(11vh);
   }
 }
 

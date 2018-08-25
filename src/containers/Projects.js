@@ -3,7 +3,7 @@ import { withRouteData, Link } from 'react-static'
 //
 
 export default withRouteData(({ projects }) => (
-  <div>
+  <div className="page-content projects-page">
     <h1>It's blog time.</h1>
     <br />
     All Posts:
