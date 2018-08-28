@@ -18,6 +18,7 @@ nav {
     font-weight: 100;
     letter-spacing: .1rem;
     position: relative;
+    vertical-align: middle; /* Prevents line-height shifting */
 
     @if $guides == true {
       background: color(red a(10%));
@@ -31,7 +32,7 @@ nav {
       &:before {
         content: '';
         position: absolute;
-        top: 0vh;
+        top: 7.8vh;
         left: 50%;
         transform: translateX(-50%);
         width: 0;

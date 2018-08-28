@@ -4,7 +4,8 @@
 /*! Logo --------------------------------------------------------------------*/
 .site-logo {
   display: block;
-  position: relative;
+  position: absolute;
+  top: 10vh;
   left: 50%;
   z-index: 11;
   /* iOS disable selection on tap */
@@ -15,6 +16,7 @@
   grid-area: logo;
   @include size(9vh);
   margin-bottom: 5vh;
+  transition: all 700ms $default-ease;
 
   @if $guides == true {
     border: $guide-border;
@@ -23,6 +25,13 @@
 
   @media h(481) {
     @include size(11vh);
+  }
+
+  &.minimized {
+    position: absolute;
+    top: -.9vh;
+    left: 1vw;
+    transform: scale(.6);
   }
 }
 

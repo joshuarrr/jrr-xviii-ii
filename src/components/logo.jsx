@@ -10,8 +10,8 @@ export class Logo extends Component {
     return (
       <Link
         to="/"
-        className={"site-logo "}
         tabIndex="-1"
+        className={` site-logo ${this.props.logoPos}`}
       >
         <span className="site-logo-link-text">
           Joshuar
