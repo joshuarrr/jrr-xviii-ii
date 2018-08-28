@@ -1,5 +1,5 @@
 {
-  "name": "Joshuar's website",
+  "name": "joshuar-xviii-ii",
   "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
@@ -41,6 +41,6 @@
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
-    "serve": "^6.1.0"
+    "serve": "^9.6.0"
   }
 }
