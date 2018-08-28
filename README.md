@@ -1,2 +1,2 @@
 # JR 2018
-Personal Site based on React-Static - Netlify CMS Example
+Personal site built with React-Static using Netlify and PostCSS.
