@@ -89,9 +89,6 @@ const AnimatedRoutes = getContext({
                     <PreservedRouterContext
                       key={key}
                       style={{
-                        // force pos relative if transitioned
-                        position: (opacity > 0.99) ? 'relative': 'absolute',
-                        // position: 'absolute',
                         top: 0,
                         right: 0,
                         bottom: 0,

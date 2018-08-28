@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-static'
 import Routes from 'react-static-routes'
-
 import '../styles/elements/logo.css'
-
 
 export class Logo extends Component {
   render () {
+    // console.log(this.props.pageNum);
+    const logoClass = this.props.pageNum == 1 ? "default" : "minified";
     return (
       <Link
         to="/"
         tabIndex="-1"
-        className={` site-logo ${this.props.logoPos}`}
+        className={` site-logo ${logoClass}`}
       >
         <span className="site-logo-link-text">
           Joshuar

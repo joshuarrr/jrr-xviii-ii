@@ -11,12 +11,14 @@
   /* iOS disable selection on tap */
   -webkit-tap-highlight-color: transparent;
   z-index: 2;
-  transform: translateX(-50%);
   fill: black;
   grid-area: logo;
   @include size(9vh);
   margin-bottom: 5vh;
+  transform: translateX(-50%) scale(1) rotate3d(0, 1, 0, 0deg);
+  transform-style: preserve-3d;
   transition: all 700ms $default-ease;
+
 
   @if $guides == true {
     border: $guide-border;
@@ -27,11 +29,14 @@
     @include size(11vh);
   }
 
-  &.minimized {
+  &.minified {
     position: absolute;
     top: -.9vh;
     left: 1vw;
-    transform: scale(.6);
+    transform:
+      translateX(0%)
+      scale(.6)
+      rotate3d(0, 1, 0, 360deg);
   }
 }
 
