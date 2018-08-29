@@ -16,7 +16,7 @@ export class PageWrapper extends Component {
 
   render = () =>
     (<RouteData render={({ pageNumber }) => (
-      <Div100vh className="page-wrap">
+      <Div100vh className="page-wrap" minHeight="100rvh">
         <Animate
           show
           start={{ // the starting state (required)
