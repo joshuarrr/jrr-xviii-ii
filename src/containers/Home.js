@@ -14,6 +14,7 @@ export default withSiteData(() => (
       w_auto="true"
       cld-responsive="true"
       crop="scale"
+      secure="true"
     />
   </div>
 ))
