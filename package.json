@@ -28,7 +28,7 @@
     "postcss-nested": "^3.0.0",
     "react": "^16.0.0",
     "react-body": "^0.2.0",
-    "react-div-100vh": "^0.1.8",
+    "react-div-100vh": "^0.2.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^4.0.0-beta.21",
     "react-markdown": "^3.1.0",
