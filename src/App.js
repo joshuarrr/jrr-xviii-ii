@@ -1,15 +1,20 @@
 import React from 'react'
 import Routes from 'react-static-routes'
 import PropTypes from 'prop-types'
-import { Router, Route, Link, cleanPath, withRouteData } from 'react-static'
+import { Router, Route, cleanPath } from 'react-static'
 import { hot } from 'react-hot-loader'
 import { NodeGroup } from 'react-move'
 import { withContext, getContext } from 'recompose'
-import Log from 'react-log'
 import { PageWrapper } from './components/page-wrapper'
 import './styles/app.css'
 
-setTimeout(console.log.bind(console, '%cHelvetica Sucks', 'color: purple; font-size: 30px; font-family: "Comic Sans MS"'), 0);
+// Console message
+setTimeout(window.console.log.bind(console, '%cHelvetica Sucks',
+  `color: purple;
+   font-size: 30px;
+   font-weight: bold;
+   font-family: "Comic Sans MS";
+  `), 0)
 
 // The magic :)
 const AnimatedRoutes = getContext({
