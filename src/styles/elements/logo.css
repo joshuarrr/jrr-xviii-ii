@@ -18,7 +18,7 @@
   transform: translateX(-50%) scale(1) rotate3d(0, 1, 0, 0deg);
   transform-style: preserve-3d;
   transition: all 700ms $default-ease;
-
+  perspective: 1000px;
 
   @if $guides == true {
     border: $guide-border;
@@ -36,7 +36,7 @@
     transform:
       translateX(0%)
       scale(.6)
-      rotate3d(0, 1, 0, 360deg);
+      rotate3d(0, 1, 0, -359.9deg);
   }
 }
 
@@ -44,7 +44,7 @@
   top: 0;
   display: block;
   position: relative;
-  transform: translateX(5% 5%);
+  /* transform: translateX(5% 5%); */
 }
 
 .site-logo-link-text {

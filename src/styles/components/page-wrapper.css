@@ -77,4 +77,8 @@
   font-size: 70%;
   padding: 3vh;
   box-shadow: 1px 1px 1px black(.3);
+
+  @if $cssConsole == false {
+    display: none;
+  }
 }
