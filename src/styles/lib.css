@@ -35,6 +35,7 @@ $trailer: 5vh;
 $default-duration: .3s;
 $default-ease: ease-out;
 $duration: $default-duration;
+$default-transition: all $default-duration $default-ease;
 
 $bounce-in: cubic-bezier(.16, .035, .24, 1.295);
 $slide-in: cubic-bezier(.87, -.41, .19, 1.44);

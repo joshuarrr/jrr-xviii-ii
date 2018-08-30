@@ -5,7 +5,7 @@
 .site-logo {
   display: block;
   position: absolute;
-  top: 10vh;
+  top: 12vh;
   left: 50%;
   z-index: 11;
   /* iOS disable selection on tap */
@@ -29,7 +29,7 @@
     @include size(11vh);
   }
 
-  &.minified {
+  &.minimized {
     position: absolute;
     top: -.9vh;
     left: 1vw;

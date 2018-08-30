@@ -9,7 +9,7 @@ import { PageWrapper } from './components/page-wrapper'
 import './styles/app.css'
 
 // Console message
-setTimeout(console.log.bind(console, '%cHelvetica Sucks',
+setTimeout(console.log.bind(console, '%cHelvetica Sucks!!',
   `color: purple;
    font-size: 30px;
    font-weight: bold;

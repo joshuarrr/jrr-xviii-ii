@@ -3,7 +3,9 @@
 
 .home-page {
   text-align: center;
-  padding: 5vh 0 !important;
+  padding: 17vh 0 5vh 0 !important;
+  /* Yeah, I know. I'm using !important here to override the value set in
+  page-wrapper, but I know what I'm doing (I think) so piss off about it. */
 }
 
 .home-image {
