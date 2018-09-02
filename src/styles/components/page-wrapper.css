@@ -24,23 +24,10 @@
   @if $guides == true {
     box-shadow: inset 0 0 0 5px $guide-color;
   }
-
-  /* hack to remove extra space from iphone x */
-  @media only screen
-  and (device-width : 375px)
-  and (device-height : 812px)
-  and (-webkit-device-pixel-ratio : 3) {
-    overflow: hidden;
-  }
 }
 
 .header { /*------------------------------------------------------------------*/
   grid-area: header;
-  display: grid;
-  grid-template-areas:
-    "nav"
-    "logo";
-
   flex: initial;
 
   @if $guides == true {

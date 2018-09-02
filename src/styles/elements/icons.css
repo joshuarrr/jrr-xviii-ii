@@ -1,18 +1,19 @@
+@import '../mixins/helpers.css';
+
 /*! Icons --------------------------------------------------------------------*/
 .icon {
   background: rgba(0, 0, 0, 0) url("../../img/ico/social-icons.svg") no-repeat;
   background-size: 37px 293px;
   display: inline-block;
-  height: 6vh;
   position: relative;
-  width: 6vh;
+  @include size(37px);
 }
 
 .icon {
   filter: saturate(05%);
   opacity: .7;
   transition: filter, .5s, opacity .5s, transform .5s $bounce-in;
-  transform: scale(.65, .65);
+  transform: scale(.6, .6);
 
   &:hover,
   &:focus {
@@ -22,7 +23,8 @@
     transform: scale(.9, .9);
   }
 
-  @media w(768) {
+
+  @media h(560) {
     transform: scale(.7, .7);
 
     &:hover,

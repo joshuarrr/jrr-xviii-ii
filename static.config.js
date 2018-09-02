@@ -186,6 +186,7 @@ export default {
           <Head>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
           </Head>
           <Body>{children}</Body>
         </Html>

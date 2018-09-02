@@ -11,10 +11,11 @@ export default withSiteData(() => (
       className="home-image"
       cloudName="joshuar"
       publicId="Hilights"
-      w_auto="true"
-      cld-responsive="true"
+      width="auto"
+      responsive
+      dpr="auto"
       crop="scale"
-      secure="true"
+      secure
     />
   </div>
 ))
