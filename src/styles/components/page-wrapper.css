@@ -12,15 +12,6 @@
   display: flex;
   flex-direction: column;
 
-  /* Grid for desktop (two dimensions) */
-/*   display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    "header"
-    "content"
-    "footer"; */
-    /* position: relative; */
-
   @if $guides == true {
     box-shadow: inset 0 0 0 5px $guide-color;
   }
@@ -37,7 +28,6 @@
 
 .content { /*-----------------------------------------------------------------*/
   flex: auto;
-  /* grid-area: content; */
 
   @if $guides == true {
     box-shadow: inset 0 0 0 5px $guide-color-b;
@@ -49,8 +39,6 @@
 }
 
 .footer {/*-------------------------------------------------------------------*/
-  /* grid-area: footer; */
-
   @if $guides == true {
     box-shadow: inset 0 0 0 5px $guide-color-c;
   }
