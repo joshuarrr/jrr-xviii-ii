@@ -22,3 +22,21 @@
   height: 3rem;
   background: red;
 }
+
+.image-holder {
+  position: relative;
+
+  & > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  & svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+}

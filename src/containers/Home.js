@@ -1,21 +1,12 @@
 import React from 'react'
 import { withSiteData } from 'react-static'
-import { Image } from 'cloudinary-react'
+import { Img } from '../components/img'
 import '../styles/home.css'
 
 export default withSiteData(() => (
   <div className="page-content home-page">
     <h1 className="site-title">Joshua Richey</h1>
     <h2 className="site-subtitle">Product Designer</h2>
-    <Image
-      className="home-image"
-      cloudName="joshuar"
-      publicId="Hilights"
-      width="auto"
-      responsive
-      dpr="auto"
-      crop="scale"
-      secure
-    />
+    <Img name="Hilights" />
   </div>
 ))
