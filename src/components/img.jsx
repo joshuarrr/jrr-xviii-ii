@@ -45,6 +45,7 @@ export class Img extends Component {
             dpr="auto"
             crop="scale"
             secure
+            responsive
           />
           : null
         }
