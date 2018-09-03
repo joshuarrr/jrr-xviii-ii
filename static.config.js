@@ -16,7 +16,7 @@ const fs = require('fs')
 const klaw = require('klaw')
 const matter = require('gray-matter')
 
-function getProjects () {
+function getContent () {
   const items = []
   // Walk ("klaw") through projects directory and push file paths into items array //
   const getFiles = () => new Promise(resolve => {
@@ -61,7 +61,7 @@ export default {
   }),
 
   getRoutes: async () => {
-    const projects = await getProjects()
+    const projects = await getContent()
     return [
       {
         path: '/',
@@ -187,7 +187,6 @@ export default {
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
-            <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
           </Head>
           <Body>{children}</Body>
         </Html>
