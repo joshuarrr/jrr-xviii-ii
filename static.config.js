@@ -187,6 +187,7 @@ export default {
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+            <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
           </Head>
           <Body>{children}</Body>
         </Html>
