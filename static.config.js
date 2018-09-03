@@ -16,13 +16,13 @@ const fs = require('fs')
 const klaw = require('klaw')
 const matter = require('gray-matter')
 
-function getContent () {
+function getProjects () {
   const items = []
   // Walk ("klaw") through projects directory and push file paths into items array //
   const getFiles = () => new Promise(resolve => {
     // Check if projects directory exists //
-    if (fs.existsSync('./src/content')) {
-      klaw('./src/content')
+    if (fs.existsSync('./src/content/projects')) {
+      klaw('./src/content/projects')
         .on('data', item => {
           // Filter function to retrieve .md files //
           if (path.extname(item.path) === '.md') {
@@ -55,12 +55,13 @@ function getContent () {
 }
 
 export default {
+
   getSiteData: () => ({
     title: 'React Static with Netlify CMS',
   }),
 
   getRoutes: async () => {
-    const content = await getContent()
+    const projects = await getProjects()
     return [
       {
         path: '/',
@@ -87,10 +88,10 @@ export default {
         path: '/projects',
         component: 'src/containers/Projects',
         getData: () => ({
-          content,
+          projects,
           pageNumber: 4,
         }),
-        children: content.map(project => ({
+        children: projects.map(project => ({
           path: `/project/${project.data.slug}`,
           component: 'src/containers/Project',
           getData: () => ({
