@@ -16,13 +16,15 @@ const fs = require('fs')
 const klaw = require('klaw')
 const matter = require('gray-matter')
 
-function getContent () {
+function getContent (type) {
+  console.log(type);
+  let contentType = type;
   const items = []
   // Walk ("klaw") through projects directory and push file paths into items array //
   const getFiles = () => new Promise(resolve => {
     // Check if projects directory exists //
-    if (fs.existsSync('./src/content/projects')) {
-      klaw('./src/content/projects')
+    if (fs.existsSync(`./src/content/${contentType}`)) {
+      klaw(`./src/content/${contentType}`)
         .on('data', item => {
           // Filter function to retrieve .md files //
           if (path.extname(item.path) === '.md') {
@@ -31,7 +33,10 @@ function getContent () {
             // Convert to frontmatter object and markdown content //
             const dataObj = matter(data)
             // Create slug for URL //
-            dataObj.data.slug = dataObj.data.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+            dataObj.data.slug = dataObj.data.title
+              .toLowerCase()
+              .replace(/ /g, '-')
+              .replace(/[^\w-]+/g, '')
             // Remove unused key //
             delete dataObj.orig
             // Push object into items array //
@@ -55,13 +60,14 @@ function getContent () {
 }
 
 export default {
-
   getSiteData: () => ({
-    title: 'React Static with Netlify CMS',
+    title: 'JOSHUAR 🦁',
   }),
 
   getRoutes: async () => {
-    const projects = await getContent()
+    const projects = await getContent('projects');
+    const profile = await getContent('profile');
+
     return [
       {
         path: '/',
@@ -81,6 +87,7 @@ export default {
         path: '/profile',
         component: 'src/containers/Profile',
         getData: () => ({
+          profile,
           pageNumber: 3,
         }),
       },
