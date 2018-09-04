@@ -67,7 +67,6 @@ export default {
   getRoutes: async () => {
     const projects = await getContent('projects');
     const profile = await getContent('profile');
-    console.log(profile);
     return [
       {
         path: '/',
@@ -99,7 +98,7 @@ export default {
           pageNumber: 4,
         }),
         children: projects.map(project => ({
-          path: `/project/${project.data.slug}`,
+          path: `/project/${project.data.title}`,
           component: 'src/containers/Project',
           getData: () => ({
             project,

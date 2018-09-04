@@ -7,7 +7,7 @@ import Markdown from 'react-markdown'
 export default withRouteData(({ project }) => (
   <div className="page-content project-page">
     <div className="project">
-      <Link to="/work/">{'<'} Back</Link>
+      <Link to="/projects/">{'<'} Back</Link>
       <br />
       <h3>{project.data.title}</h3>
       <Moment format="MMMM Do, YYYY">{project.data.date}</Moment>
