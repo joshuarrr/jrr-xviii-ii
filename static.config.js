@@ -104,10 +104,7 @@ export default {
   }),
 
   getRoutes: async () => {
-    const projects = await getContent('projects');
-    const profile = await getContent('profile');
     const projects = await getPosts()
-    console.log(profile);
     return [
       {
         path: '/',
@@ -121,14 +118,6 @@ export default {
         component: 'src/pages/Contact',
         getData: () => ({
           pageNumber: 2,
-        }),
-      },
-      {
-        path: '/profile',
-        component: 'src/pages/Profile',
-        getData: () => ({
-          profile,
-          pageNumber: 3,
         }),
       },
       {
