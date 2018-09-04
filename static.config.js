@@ -67,6 +67,7 @@ export default {
   getRoutes: async () => {
     const projects = await getContent('projects');
     const profile = await getContent('profile');
+    console.log(profile);
     return [
       {
         path: '/',

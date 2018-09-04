@@ -15,7 +15,7 @@ export class Img extends Component {
     return (
       <ImageLoader loaded={this.state.loaded}>
         <Image
-            className="home-image"
+            className={this.props.className}
             cloudName="joshuar"
             publicId={this.props.name}
             width="auto"

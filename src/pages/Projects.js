@@ -4,13 +4,13 @@ import { withRouteData, Link } from 'react-static'
 
 export default withRouteData(({ projects }) => (
   <div className="page-content projects-page">
-    <h1>It's blog time.</h1>
-    <br />
-    All Posts:
     <ul>
       {projects.map(project => (
         <li key={project.data.slug}>
-          <Link to={`/project/${project.data.slug}`}>{project.data.title}</Link>
+          <img className="image" src={project.data.thumbnail} alt="" />
+          <Link to={`projects/project/${project.data.slug}`}>
+            {project.data.title}
+          </Link>
         </li>
       ))}
     </ul>
