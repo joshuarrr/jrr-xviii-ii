@@ -17,7 +17,7 @@ const klaw = require('klaw')
 const matter = require('gray-matter')
 
 function getContent (type) {
-  console.log(type);
+  // console.log(type);
   let contentType = type;
   const items = []
   // Walk ("klaw") through projects directory and push file paths into items array //
@@ -67,25 +67,25 @@ export default {
   getRoutes: async () => {
     const projects = await getContent('projects');
     const profile = await getContent('profile');
-
+    console.log(profile);
     return [
       {
         path: '/',
-        component: 'src/containers/Home',
+        component: 'src/pages/Home',
         getData: () => ({
           pageNumber: 1,
         }),
       },
       {
         path: '/contact',
-        component: 'src/containers/Contact',
+        component: 'src/pages/Contact',
         getData: () => ({
           pageNumber: 2,
         }),
       },
       {
         path: '/profile',
-        component: 'src/containers/Profile',
+        component: 'src/pages/Profile',
         getData: () => ({
           profile,
           pageNumber: 3,
@@ -93,7 +93,7 @@ export default {
       },
       {
         path: '/projects',
-        component: 'src/containers/Projects',
+        component: 'src/pages/Projects',
         getData: () => ({
           projects,
           pageNumber: 4,
@@ -108,14 +108,14 @@ export default {
       },
       {
         path: '/process',
-        component: 'src/containers/Process',
+        component: 'src/pages/Process',
         getData: () => ({
           pageNumber: 5,
         }),
       },
       {
         is404: true,
-        component: 'src/containers/404',
+        component: 'src/pages/404',
       },
     ]
   },
