@@ -9,35 +9,35 @@ export class ImageLoader extends Component {
 
   constructor(){
     super();
-    this.state = {
-      loaded: false
-    };
+    // this.state = {
+    //   loaded: false
+    // };
   }
 
   componentDidMount() {
-    this.gimmeFrame = requestAnimationFrame(
-      () => {
-        this.setState({loaded: true})
-      }
-    )
+    // this.gimmeFrame = requestAnimationFrame(
+    //   () => {
+    //     this.setState({loaded: true})
+    //   }
+    // )
   }
 
   componentWillUnmount() {
-    if (this.gimmeFrame) {
-      cancelAnimationFrame(this.gimmeFrame);
-    }
+    // if (this.gimmeFrame) {
+    //   cancelAnimationFrame(this.gimmeFrame);
+    // }
   }
 
   render () {
     return (
       <div className="image-holder">
-        <Loader
+        {!this.props.loaded && <Loader
           type="TailSpin"
           color="#00BFFF"
           height="30"
           width="30"
           className="poop"
-        />
+        />}
         { this.props.children }
       </div>
     )

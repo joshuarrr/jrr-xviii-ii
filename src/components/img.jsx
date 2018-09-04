@@ -8,36 +8,13 @@ export class Img extends Component {
     super();
     this.state = {
       loaded: false
-    };
-  }
-
-  componentDidMount() {
-    this.waitAsec = setTimeout(
-      () => {
-        this.gimmeFrame = requestAnimationFrame(
-          () => {
-            this.setState({loaded: true})
-          }
-        )
-      }
-    );
-  }
-
-  componentWillUnmount() {
-    if (this.waitAsec) {
-      clearTimeout(this.waitAsec);
-    }
-    if (this.gimmeFrame) {
-      cancelAnimationFrame(this.gimmeFrame);
     }
   }
 
   render () {
     return (
-      <ImageLoader>
-        {
-          this.state.loaded
-          ? <Image
+      <ImageLoader loaded={this.state.loaded}>
+        <Image
             className="home-image"
             cloudName="joshuar"
             publicId={this.props.name}
@@ -46,9 +23,10 @@ export class Img extends Component {
             crop="scale"
             secure
             responsive
+            onLoad={() => {
+              this.setState({loaded: true});
+            }}
           />
-          : null
-        }
     </ImageLoader>
     )
   }
