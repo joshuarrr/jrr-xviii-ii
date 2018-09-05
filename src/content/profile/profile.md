@@ -11,4 +11,4 @@ I am a product designer with over a dozen years of experience making websites an
 
 I have worked at agencies, run my own consultancies, partnerships, and startups, and was the lead designer at Idealist, a large international non-profit for five years. I am currently co-designing an app that helps musicians collaborate.
 
-In addition to design, I play bass in a post-psychedelic rock band and my best friend is a retired racing greyhound. Most of my time behind a computer looks like this:
+In addition to design, I play bass in a post-psychedelic rock band and love to draw. My best friend is a retired racing greyhound and we spend most evenings walking the neighborhoods of Portland together. (She pees in public a lot more often than I do.) Most of my time behind a computer looks like this:
