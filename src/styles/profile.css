@@ -9,3 +9,12 @@
   transform: translateX(-50%);
   margin-bottom: 5vh;
 }
+
+dt {
+  font-family: $demi;
+  margin-top: 1rem;
+}
+
+dd {
+  padding-left: 2rem;
+}

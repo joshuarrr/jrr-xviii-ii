@@ -12,8 +12,7 @@ export default withRouteData(({ project }) => (
       <br />
       <h3>{project.data.title}</h3>
       <Moment format="MMMM Do, YYYY">{project.data.date}</Moment>
-      <img className="image" src={project.data.thumbnail} alt="" />
-      {console.log(project.data.thumbnail)}
+      <Img name={project.data.slug} />
       <Markdown source={project.content} escapeHtml={false} />
     </div>
   </div>
