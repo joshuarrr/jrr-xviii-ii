@@ -9,6 +9,6 @@ I see design as problem solving. How can we best communicate complex ideas using
 
 I am a product designer with over a dozen years of experience making websites and apps. I am passionate about design systems and organizational design thinking, wireframing, prototyping, and front-end development. I believe that constant collaboration with engineers and users makes for the best products. I love when an app surprises me by making something complicated feel simple, and I aim for that achievement in my work constantly.
 
-I have worked at agencies, run my own consultancies, partnerships, and startups, and was the lead designer at Idealist, a large international non-profit for five years. I am currently co-designing an app that helps musicians collaborate.
+I have worked at agencies, run my own consultancies, partnerships, and startups, and was the Lead Designer at Idealist, a large international non-profit for five years. I am currently co-designing an app that helps musicians collaborate and am driven to make the world a more enjoyable place through my work.
 
 In addition to design, I play bass in a post-psychedelic rock band and love to draw. My best friend is a retired racing greyhound and we spend most evenings walking the neighborhoods of Portland together. (She pees in public a lot more often than I do.) Most of my time behind a computer looks like this:
