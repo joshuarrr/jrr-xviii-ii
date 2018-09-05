@@ -3,8 +3,8 @@ layout: blog
 title: Profile
 tldr: >-
   I'm a human-centered UX Designer focused on taming complexity, smoothing
-  friction, making life just a little bit better for the poor people who have to
-  use the internet.
+  friction, and making life just a little bit better for the poor people who
+  have to use the internet.
 date: '2018-09-03T12:40:55-07:00'
 ---
 At the ripe old age of about nine, I bought my first copy of Dark Side of the Moon, on cassette. I'd never heard of Pink Floyd, I just liked the cover: a ray of light passing through a prism, splitting into a rainbow of frequencies. I liked the colors. I studied that cover for a hours and hours, and eventually went on to study light and optics because of it. I became a designer because images like that one captivate me. Soon afterwards, I went to London to work with the late Storm Thorgerson – the designer of that image – in London. I have a framed art print of the prism on my wall, and every day it reminds me of the power of design.
