@@ -18,3 +18,9 @@ dt {
 dd {
   padding-left: 2rem;
 }
+
+.text-container {
+  position: relative;
+  display: inline-block;
+  transition: height 1s ease;
+}

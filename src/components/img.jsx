@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import Loader from 'react-loader-spinner'
+import { Animate } from 'react-move'
 import { Image } from 'cloudinary-react'
-import { ImageLoader } from '../components/image-loader'
 
 
 export class Img extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       loaded: false
@@ -13,21 +14,42 @@ export class Img extends Component {
 
   render () {
     return (
-      <ImageLoader loaded={this.state.loaded}>
-        <Image
-            className={this.props.className}
-            cloudName="joshuar"
-            publicId={this.props.name}
-            width="auto"
-            dpr="auto"
-            crop="scale"
-            secure
-            responsive
-            onLoad={() => {
-              this.setState({loaded: true});
-            }}
-          />
-    </ImageLoader>
+      <div className="image-holder">
+        {!this.state.loaded && <Loader
+          type="TailSpin"
+          color="#00BFFF"
+          height="30"
+          width="30"
+          className="poop"
+        />}
+        <Animate
+          show
+          start={{
+            opacity: [0],
+          }}
+          enter={{
+            opacity: [1],
+            timing: { duration: 1000, delay: 0 },
+          }}
+        >
+          {({ opacity }) => (
+            <Image
+              className={this.props.className}
+              cloudName="joshuar"
+              publicId={this.props.name}
+              width="auto"
+              dpr="auto"
+              crop="scale"
+              secure
+              responsive
+              onLoad={() => {
+                this.setState({loaded: true});
+              }}
+              style={{ opacity }}
+            />
+          )}
+        </Animate>
+      </div>
     )
   }
 }

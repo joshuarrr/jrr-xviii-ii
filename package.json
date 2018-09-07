@@ -26,7 +26,7 @@
     "postcss-import": "^11.1.0",
     "postcss-media-minmax": "^3.0.0",
     "postcss-nested": "^3.0.0",
-    "react": "^16.0.0",
+    "react": "^16.5.0",
     "react-body": "^0.2.0",
     "react-div-100vh": "^0.2.0",
     "react-dom": "^16.0.0",
