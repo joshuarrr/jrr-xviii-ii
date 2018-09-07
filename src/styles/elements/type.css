@@ -17,12 +17,14 @@ h1 {
   font-family: 'AVG-Demi', sans-serif;
   font-weight: normal;
   margin-bottom: 1rem;
+  color: $body-black;
 }
 
 h2 {
-  font-family: 'AVG-Demi', sans-serif;
+  font-family: $book;
   font-weight: normal;
   margin-bottom: 1rem;
+  color: $body-black;
 }
 
 p {
@@ -34,6 +36,31 @@ a {
   text-decoration: none;
   color: #108db8;
   font-weight: bold;
+}
+
+/* Fluid Line-height (molten leading) */
+body {
+  line-height: calc(1.4em + 1vw);
+
+  @media w(768) {
+    line-height: calc(1.4em + 0.8vw);
+  }
+
+  @media w(1152) {
+    line-height: calc(1.4em + 0.5vw);
+  }
+
+  @media w(1680) {
+    line-height: calc(1.4em + 0.3vw);
+  }
+}
+
+h1 {
+  line-height: calc(1.4em - 1vh);
+}
+
+h2 {
+  line-height: calc(1.4em - .5vh);
 }
 
 /* Contextual Styles ---------------------------------------------------------*/

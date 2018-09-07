@@ -29,4 +29,5 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "tldr;", name: "tldr", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Preview", name: "preview", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}

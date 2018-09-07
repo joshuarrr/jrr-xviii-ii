@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouteData, Link } from 'react-static'
+import { Img } from '../components/img'
 //
 
 export default withRouteData(({ projects }) => (
@@ -11,6 +12,7 @@ export default withRouteData(({ projects }) => (
           <Link to={`projects/project/${project.data.slug}`}>
             {project.data.title}
           </Link>
+          <Img name={project.data.slug} />
         </li>
       ))}
     </ul>
