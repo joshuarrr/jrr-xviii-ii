@@ -14,7 +14,13 @@ export default withRouteData(({profile}) => {
       escapeHtml={true}
     />
   ));
-
+  const previewText = profile.map(profile => (
+    <Markdown
+      key="profile-preview"
+      source={profile.data.preview}
+      escapeHtml={true}
+    />
+  ));
   return(
     <div key="profile" className="page-content profile-page">
       <Img className="profile-pic" name="profile/me_again" />
@@ -22,7 +28,7 @@ export default withRouteData(({profile}) => {
       {profile.map(profile => (
         <h2 key="tldr">{profile.data.tldr}</h2>
       ))}
-    <LongText short="At the ripe old age of about nine, I bought my first copy of Dark Side of the Moon, on cassette. I'd never heard of Pink Floyd, I just liked the cover: a ray of light passing through a prism, splitting into a rainbow of frequencies. I liked the colors. I studied that cover for a hours and hours, and eventually went on to study light and optics because of it. I became a designer...">
+    <LongText short={previewText}>
       {fullText}
       <Img className="profile-pic-2" name="profile/working" />
     </LongText>
