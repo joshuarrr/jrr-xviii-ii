@@ -20,7 +20,6 @@ export class Img extends Component {
           color="#00BFFF"
           height="30"
           width="30"
-          className="poop"
         />}
         <Animate
           show
@@ -42,6 +41,7 @@ export class Img extends Component {
               crop="scale"
               secure
               responsive
+              progressive="false"
               onLoad={() => {
                 this.setState({loaded: true});
               }}

@@ -1,12 +1,13 @@
 import React from 'react'
 import { withRouteData, Link } from 'react-static'
-import { Img } from '../components/img'
-import LongText from '../components/react-trunc'
+import { Img } from '../components/image-loader'
+import LongText from '../components/truncater'
 import Markdown from 'react-markdown'
 import '../styles/profile.css'
 
 
 export default withRouteData(({profile}) => {
+
   const fullText = profile.map(profile => (
     <Markdown
       key="profile-content"
@@ -30,7 +31,11 @@ export default withRouteData(({profile}) => {
       ))}
     <LongText short={previewText}>
       {fullText}
-      <Img className="profile-pic-2" name="profile/working" />
+      <Img
+        className="profile-pic-2"
+        name="profile/working"
+        />
+      <p>Some more text</p>
     </LongText>
       <h2>Expertise</h2>
       <dl>

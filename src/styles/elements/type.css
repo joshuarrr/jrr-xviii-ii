@@ -3,7 +3,7 @@
 @import './fonts';
 
 body {
-  font-family: 'AVG', sans-serif;
+  font-family: $book;
   margin: 0;
   color: #8a8a8a;
   font-size: calc(13px + .4vw);
@@ -14,21 +14,21 @@ body {
 }
 
 h1 {
-  font-family: 'AVG-Demi', sans-serif;
+  font-family: $demi;
   font-weight: normal;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   color: $body-black;
 }
 
 h2 {
   font-family: $book;
   font-weight: normal;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   color: $body-black;
 }
 
 p {
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   letter-spacing: .01rem;
 }
 
@@ -71,7 +71,7 @@ h2 {
   color: $body-black;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .site-subtitle {

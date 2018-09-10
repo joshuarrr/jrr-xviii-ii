@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouteData, Link } from 'react-static'
-import { Img } from '../components/img'
+import { Img } from '../components/image-loader'
 //
 
 export default withRouteData(({ projects }) => (

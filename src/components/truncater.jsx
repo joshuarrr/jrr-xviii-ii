@@ -1,25 +1,39 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 class LongText extends Component {
     constructor(){
       super()
       this.state = {
-        expanded: false
+        expanded: false,
       }
       this.textContainer = React.createRef();
     }
 
     resizer() {
       const node = this.textContainer.current;
-      console.log("scroll height: " + node.scrollHeight)
-      console.log("client height: " + node.clientHeight)
-      let insideBigger = (node.scrollHeight > (node.clientHeight + 4));
-      console.log(insideBigger);
+      node.style.height = node.scrollHeight + 'px';
+      // node.style.overflow = 'auto';
+      // console.log(node.scrollHeight);
     }
 
     componentDidUpdate() {
       this.resizer();
     }
+
+    componentDidMount() {
+      window.addEventListener('load', this.handleLoad);
+    }
+
+    handleClick = () => {
+      // console.log('this is:', this);
+      const nodey = this.textContainer.current;
+      console.log("height = " + nodey.scrollHeight);
+    }
+
+  loadHandler() {
+    console.log("loaded");
+  }
 
     truncatedText() {
       if(this.props.short && !this.state.expanded){
@@ -27,16 +41,18 @@ class LongText extends Component {
           <span>
             {this.props.short}
             <a onClick={() =>
-              this.setState(
+              { this.setState(
                 {expanded: true},
-              )
-            }>
+              );
+            }}>
                &nbsp;‹ Read More ›
             </a>
           </span>
         )
       } else {
-        return this.props.children
+        return (
+          this.props.children
+        )
       }
     }
 
@@ -47,6 +63,9 @@ class LongText extends Component {
             {...this.props}
             ref={this.textContainer}
           >
+            <button onClick={this.handleClick}>
+              Get Height
+            </button>
             {this.truncatedText()}
           </div>
         )

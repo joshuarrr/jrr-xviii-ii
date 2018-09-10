@@ -1,6 +1,6 @@
 import React from 'react'
 import { withSiteData } from 'react-static'
-import { Img } from '../components/img'
+import { Img } from '../components/image-loader'
 import '../styles/home.css'
 
 export default withSiteData(() => (

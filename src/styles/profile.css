@@ -22,5 +22,6 @@ dd {
 .text-container {
   position: relative;
   display: inline-block;
-  transition: height 1s ease;
+    transition: height 1s ease;
+    overflow: hidden;
 }
