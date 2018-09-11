@@ -31,10 +31,6 @@ class LongText extends Component {
       console.log("height = " + nodey.scrollHeight);
     }
 
-  loadHandler() {
-    console.log("loaded");
-  }
-
     truncatedText() {
       if(this.props.short && !this.state.expanded){
         return (

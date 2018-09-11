@@ -4,6 +4,7 @@ import { Img } from '../components/image-loader'
 import LongText from '../components/truncater'
 import Markdown from 'react-markdown'
 import '../styles/profile.css'
+import donkeys from '../../public/uploads/donkeys.jpg'
 
 
 export default withRouteData(({profile}) => {
@@ -31,10 +32,11 @@ export default withRouteData(({profile}) => {
       ))}
     <LongText short={previewText}>
       {fullText}
-      <Img
+{/*      <Img
         className="profile-pic-2"
         name="profile/working"
-        />
+        />*/}
+         <img src={donkeys} alt="" />
       <p>Some more text</p>
     </LongText>
       <h2>Expertise</h2>
