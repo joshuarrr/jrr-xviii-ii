@@ -59,9 +59,9 @@ class LongText extends Component {
             {...this.props}
             ref={this.textContainer}
           >
-            <button onClick={this.handleClick}>
+{/*            <button onClick={this.handleClick}>
               Get Height
-            </button>
+            </button>*/}
             {this.truncatedText()}
           </div>
         )

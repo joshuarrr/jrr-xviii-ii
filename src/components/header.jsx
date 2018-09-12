@@ -14,46 +14,45 @@ export class Header extends Component {
     }
     this.profileLink = React.createRef();
     this.projectsLink = React.createRef();
-    this.profileLink = React.createRef();
+    this.processLink = React.createRef();
   }
 
-  arrowMover = (toPage) => {
+  arrowMover = (page) => {
     console.log("current page: " + this.props.pageNum);
 
-    if (toPage == 3) {
-      this.setState({ arrowPos: 25 + '%' });
-      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
-    } else if (toPage == 4) {
-      this.setState({ arrowPos: 50 + '%' });
-      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
-    } else if (toPage == 5) {
-      this.setState({ arrowPos: 75 + '%' });
-      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
+    if (page == 3) {
+      let link = this.profileLink.current;
+      let width = link.getBoundingClientRect().width;
+      let left = link.getBoundingClientRect().left;
+      // console.log("to page: " + page, "arrowPos: " + this.state.arrowPos);
+      // console.log(link, width, left);
+      this.setState({ arrowPos: (width / 2 ) + left + 'px' });
+    } else if (page == 4) {
+      let link = this.projectsLink.current;
+      let width = link.getBoundingClientRect().width;
+      let left = link.getBoundingClientRect().left;
+      this.setState({ arrowPos: (width / 2 ) + left + 'px' });
+    } else if (page == 5) {
+      let link = this.processLink.current;
+      let width = link.getBoundingClientRect().width;
+      let left = link.getBoundingClientRect().left;
+      this.setState({ arrowPos: (width / 2 ) + left + 'px' });
     } else {
        this.setState({ arrowPos: -10 + '%' });
-       console.log("hrm");
     }
   }
 
-  arrowFinder = () => {
-    console.log("current page: " + this.props.pageNum);
-
-    if (this.props.pageNum == 3) {
-      this.setState({ arrowPos: 25 + '%' });
-      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
-    } else if (this.props.pageNum == 4) {
-      this.setState({ arrowPos: 50 + '%' });
-      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
-    } else if (this.props.pageNum == 5) {
-      this.setState({ arrowPos: 75 + '%' });
-      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
-    } else {
-      this.setState({ arrowPos: -10 + '%' });
-    }
+  repositionArrow = () => {
+    this.arrowMover(this.props.pageNum);
   }
 
-  componentDidMount() {
-    this.arrowFinder();
+  componentDidMount = () => {
+    this.arrowMover(this.props.pageNum);
+    window.addEventListener("resize", this.repositionArrow);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.repositionArrow);
   }
 
   render = () => {
@@ -79,9 +78,31 @@ export class Header extends Component {
           </span>
         </Link>
         <nav>
-          <Link activeClassName="active" ref={this.profileLink} to="/profile" onClick={() => {this.arrowMover(3)}}>profile</Link>
-          <Link activeClassName="active" ref={this.projectsLink} to="/projects" onClick={() => {this.arrowMover(4)}}>projects</Link>
-          <Link activeClassName="active" ref={this.processLink} to="/process" onClick={() => {this.arrowMover(5)}}>process</Link>
+          <ul>
+            <li className="nav-link" ref={this.profileLink}>
+              <Link
+                to="/profile"
+                activeClassName="active"
+                onClick={() => {this.arrowMover(3)}}
+              >profile
+              </Link>
+            </li>
+            <li className="nav-link" ref={this.projectsLink}>
+              <Link
+                to="/projects"
+                activeClassName="active"
+                onClick={() => {this.arrowMover(4)}}
+              >projects</Link>
+            </li>
+            <li className="nav-link" ref={this.processLink}>
+              <Link
+                to="/process"
+                activeClassName="active"
+                onClick={() => {this.arrowMover(5)}}
+              >process
+              </Link>
+            </li>
+          </ul>
           <Animate
             show
             start={{
