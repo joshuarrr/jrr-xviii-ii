@@ -29,7 +29,7 @@ nav {
       cursor: default;
 
       /* Indicator Arrow */
-      &:before {
+ /*      &:before {
         content: '';
         position: absolute;
         top: 7.8vh;
@@ -40,7 +40,19 @@ nav {
         border-left: 1vw solid transparent;
         border-right: 1vw solid transparent;
         border-top: 1.5vw solid red;
-      }
+      } */
     }
   }
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 7.8vh;
+  /* left: 50%; */
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+  border-top: 1.5vw solid red;
 }

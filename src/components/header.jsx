@@ -1,17 +1,73 @@
 import React, { Component } from 'react'
 import { Link } from 'react-static'
+import { Animate } from 'react-move'
 import '../styles/elements/logo.css'
+import { easeQuadInOut } from 'd3-ease';
+
 
 export class Header extends Component {
-  render () {
-    // console.log(this.props.pageNum);
-    const toggleClass = this.props.pageNum == 1 ? '' : 'minimized'
+  constructor() {
+    super();
+    this.state = {
+      pageNum: '',
+      arrowPos: -10 + '%'
+    }
+    this.profileLink = React.createRef();
+    this.projectsLink = React.createRef();
+    this.profileLink = React.createRef();
+  }
+
+  arrowMover = (toPage) => {
+    console.log("current page: " + this.props.pageNum);
+
+    if (toPage == 3) {
+      this.setState({ arrowPos: 25 + '%' });
+      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
+    } else if (toPage == 4) {
+      this.setState({ arrowPos: 50 + '%' });
+      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
+    } else if (toPage == 5) {
+      this.setState({ arrowPos: 75 + '%' });
+      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
+    } else {
+       this.setState({ arrowPos: -10 + '%' });
+       console.log("hrm");
+    }
+  }
+
+  arrowFinder = () => {
+    console.log("current page: " + this.props.pageNum);
+
+    if (this.props.pageNum == 3) {
+      this.setState({ arrowPos: 25 + '%' });
+      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
+    } else if (this.props.pageNum == 4) {
+      this.setState({ arrowPos: 50 + '%' });
+      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
+    } else if (this.props.pageNum == 5) {
+      this.setState({ arrowPos: 75 + '%' });
+      // console.log("to page: " + toPage, "arrowPos: " + this.state.arrowPos);
+    } else {
+      this.setState({ arrowPos: -10 + '%' });
+    }
+  }
+
+  componentDidMount() {
+    this.arrowFinder();
+  }
+
+  render = () => {
+    // console.log( "pageNum = "+ this.props.pageNum);
+    const toggleClass = this.props.pageNum == 1 ? '' : 'minimized';
+    // console.log(this.arrowMover());
+    // console.log(this.state.arrowPos)
     return (
       <header className="header">
         <Link
           to="/"
           tabIndex="-1"
           className={` site-logo ${toggleClass}`}
+          onClick={() => {this.arrowMover()}}
         >
           <span className="site-logo-link-text">
             Joshuar
@@ -23,9 +79,27 @@ export class Header extends Component {
           </span>
         </Link>
         <nav>
-          <Link activeClassName=" active" exact to="/profile">profile</Link>
-          <Link activeClassName=" active" to="/projects">projects</Link>
-          <Link activeClassName=" active" to="/process">process</Link>
+          <Link activeClassName="active" ref={this.profileLink} to="/profile" onClick={() => {this.arrowMover(3)}}>profile</Link>
+          <Link activeClassName="active" ref={this.projectsLink} to="/projects" onClick={() => {this.arrowMover(4)}}>projects</Link>
+          <Link activeClassName="active" ref={this.processLink} to="/process" onClick={() => {this.arrowMover(5)}}>process</Link>
+          <Animate
+            show
+            start={{
+              left: [-10 + '%'],
+            }}
+            enter={{
+              left: [this.state.arrowPos],
+              timing: { duration: 500, delay: 0, ease: easeQuadInOut },
+            }}
+            update={{
+              left: [this.state.arrowPos],
+              timing: { duration: 500, delay: 0, ease: easeQuadInOut },
+            }}
+          >
+            {({ left }) => (
+              <div className="nav-arrow" style={{ left: left, }} />
+            )}
+          </Animate>
         </nav>
       </header>
     )
