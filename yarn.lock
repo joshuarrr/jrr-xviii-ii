@@ -6074,6 +6074,10 @@ react-body@^0.2.0:
     prop-types ">= 15 && < 16"
     react ">= 15 && < 16"
 
+react-css-collapse@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/react-css-collapse/-/react-css-collapse-3.5.0.tgz#a33cb081034a05588842dae736497ce5463248a3"
+
 react-dev-utils@^4.0.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.2.1.tgz#9f2763e7bafa1a1b9c52254d2a479deec280f111"

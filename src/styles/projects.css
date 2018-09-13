@@ -1,0 +1,33 @@
+/* 🎨 Projects */
+@import './lib.css';
+
+.project {
+  position: relative;
+  text-align: center;
+}
+
+.project-title {
+    background-color: $page-color;
+    display: inline-block;
+    padding: 0 1rem;
+    z-index: 1;
+
+  &:before {
+    background: black(.2);
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: calc(13px + .4vw);
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.project-content {
+  text-align: left;
+}
+
+.project-cover {
+  padding: 5vh 0;
+}
