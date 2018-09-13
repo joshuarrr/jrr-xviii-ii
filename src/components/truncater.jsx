@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 
 class LongText extends Component {
     constructor(){
@@ -13,22 +12,10 @@ class LongText extends Component {
     resizer() {
       const node = this.textContainer.current;
       node.style.height = node.scrollHeight + 'px';
-      // node.style.overflow = 'auto';
-      // console.log(node.scrollHeight);
     }
 
     componentDidUpdate() {
       this.resizer();
-    }
-
-    componentDidMount() {
-      window.addEventListener('load', this.handleLoad);
-    }
-
-    handleClick = () => {
-      // console.log('this is:', this);
-      const nodey = this.textContainer.current;
-      console.log("height = " + nodey.scrollHeight);
     }
 
     truncatedText() {
@@ -59,9 +46,6 @@ class LongText extends Component {
             {...this.props}
             ref={this.textContainer}
           >
-{/*            <button onClick={this.handleClick}>
-              Get Height
-            </button>*/}
             {this.truncatedText()}
           </div>
         )

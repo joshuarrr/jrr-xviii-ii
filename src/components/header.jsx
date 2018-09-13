@@ -10,7 +10,7 @@ export class Header extends Component {
     super();
     this.state = {
       pageNum: '',
-      arrowPos: -10 + '%'
+      arrowPos: -25 + 'px'
     }
     this.profileLink = React.createRef();
     this.projectsLink = React.createRef();
@@ -38,7 +38,7 @@ export class Header extends Component {
       let left = link.getBoundingClientRect().left;
       this.setState({ arrowPos: (width / 2 ) + left + 'px' });
     } else {
-       this.setState({ arrowPos: -10 + '%' });
+       this.setState({ arrowPos: -25 + 'px' });
     }
   }
 
