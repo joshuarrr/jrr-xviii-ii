@@ -18,7 +18,7 @@ export class Header extends Component {
   }
 
   arrowMover = (page) => {
-    console.log("current page: " + this.props.pageNum);
+    // console.log("current page: " + this.props.pageNum);
 
     if (page == 3) {
       let link = this.profileLink.current;
