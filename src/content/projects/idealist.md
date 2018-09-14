@@ -9,4 +9,4 @@ summary: >-
   create more good in the world by helping people turn their intentions into
   actions. I was their Lead Web Designer for about five years.
 ---
-Idealist.org is an international non-profit job board with a social mission to create more good in the world by helping people tunr their intentions into actions. I was their Lead Web Designer for about five years.
+Idealist.org is an international non-profit job board with a social mission to create more good in the world by helping people turn their intentions into actions. I was their Lead Web Designer for about five years.
