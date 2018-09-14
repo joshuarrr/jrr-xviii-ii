@@ -2,22 +2,21 @@
 layout: blog
 title: Profile
 tldr: >-
-  I'm a Product Designer in Portland, OR. I design fun and easy to use websites
+  I‘m a Product Designer in Portland, OR. I design fun and easy to use websites
   and apps. And I’m nice.
 date: '2018-09-03T12:40:55-07:00'
 preview: >-
-  **At the ripe old age of about nine**, I bought my first copy of[ Dark Side of
-  the Moon](http://darksideofthemoon.com), on cassette. I'd never heard of Pink
-  Floyd, I just liked the cover: a ray of light passing through a prism,
-  splitting into a rainbow of frequencies. I liked the colors. I studied that
-  cover for a hours and hours, and eventually went on to study light and optics
-  because of it. Soon afterwards, I went to London to work with the late Storm
-  Thorgerson – the designer of that image – in London. I became a graphic
-  designer because images like that one captivate me. I have a framed art print
-  of the prism on my wall, and every day it reminds me of the power design has
-  to change lives.
+  On my ninth birthday, I bought my first copy of _Dark Side of the Moon_, on
+  cassette. I'd never heard of Pink Floyd, I just liked the cover: a ray of
+  light passing through a prism, splitting into a rainbow of frequencies. I
+  liked the colors. I studied that cover for a hours and hours, and eventually
+  went on to study light and optics because of it. Soon afterwards, I went to
+  London to work with the late Storm Thorgerson – the designer of that image –
+  in London. I became a graphic designer because images like that one captivate
+  me. I have a framed art print of the prism on my wall, and every day it
+  reminds me of the power design has to change lives.
 ---
-**At the ripe old age of about nine**, I bought my first copy of[ Dark Side of the Moon](http://darksideofthemoon.com), on cassette. I'd never heard of Pink Floyd, I just liked the cover: a ray of light passing through a prism, splitting into a rainbow of frequencies. I liked the colors. I studied that cover for a hours and hours, and eventually went on to study light and optics because of it. Soon afterwards, I went to London to work with the late Storm Thorgerson – the designer of that image – in London. I became a graphic designer because images like that one captivate me. I have a framed art print of the prism on my wall, and every day it reminds me of the power design has to change lives.
+On my ninth birthday, I bought my first copy of _Dark Side of the Moon_, on cassette. I'd never heard of Pink Floyd, I just liked the cover: a ray of light passing through a prism, splitting into a rainbow of frequencies. I liked the colors. I studied that cover for a hours and hours, and eventually went on to study light and optics because of it. Soon afterwards, I went to London to work with the late Storm Thorgerson – the designer of that image – in London. I became a graphic designer because images like that one captivate me. I have a framed art print of the prism on my wall, and every day it reminds me of the power design has to change lives.
 
 I see design as problem solving. How can we best communicate complex ideas using simple tools such as color, shape, and text? How can we use imagination and creativity to make those ideas more compelling? How can we make complex interactions feel simple? These questions have heavily influenced who I am today. 
 
