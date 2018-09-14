@@ -6,6 +6,6 @@ role: 'Product Design, User Research, Prototyping, IA, UX, & UI Design'
 tech: 'Sketch, InVision Studio, ProtoPie'
 summary: >-
   Hilights is an app that facilitates conversations about specific sections of
-  recordings. The design and development are currently in active development.
+  recordings. The design and development are currently in progress.
 ---
-Hilights is an app that facilitates conversations about specific sections of recordings. The design and development are currently in active development.
+Hilights is an app that facilitates conversations about specific sections of recordings. The design and development are currently in progress.
