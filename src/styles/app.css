@@ -2,6 +2,7 @@
 @import './lib.css';
 @import "./reset.css";
 @import "./elements/type.css";
+@import "./elements/images.css";
 @import "./components/page-wrapper.css";
 
 html, body, #root, #root>div {
@@ -27,6 +28,3 @@ body {
   }
 }
 
-img {
-  max-width: 100%;
-}

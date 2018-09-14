@@ -28,7 +28,7 @@ export class Img extends Component {
           }}
           enter={{
             opacity: [1],
-            timing: { duration: 1000, delay: 0 },
+            timing: { duration: 800, delay: 0 },
           }}
         >
           {({ opacity }) => (

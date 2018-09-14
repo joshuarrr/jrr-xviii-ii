@@ -34,8 +34,24 @@ p {
 
 a {
   text-decoration: none;
-  color: #108db8;
+  color: $link-color;
   font-weight: bold;
+}
+
+dl {
+  font-size: 90%;
+  line-height: calc(1.2em + 1vw);
+}
+
+dt {
+  color: black(.7);
+  font-family: $demi;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+dd {
+  text-rendering: geometricPrecision;
 }
 
 /* Fluid Line-height (molten leading) */

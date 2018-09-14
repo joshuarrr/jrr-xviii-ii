@@ -10,15 +10,16 @@
   margin-bottom: $trailer;
 }
 
-dt {
-  font-family: $demi;
-  margin-top: 1rem;
-}
+.expertise {
+  dt {
+    font-family: $demi;
+    margin-top: 1rem;
+  }
 
-dd {
-  padding-left: 2rem;
+  dd {
+    padding-left: 2rem;
+  }
 }
-
 .text-container {
   position: relative;
   display: inline-block;

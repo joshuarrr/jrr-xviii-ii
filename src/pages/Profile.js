@@ -40,7 +40,7 @@ export default withRouteData(({profile}) => {
       <p>Some more text</p>
     </LongText>
       <h2>Expertise</h2>
-      <dl>
+      <dl className="expertise">
         <dt className="skill-category">UX Design</dt>
         <dd className="skill">Wireframing</dd>
         <dd className="skill">Prototyping</dd>

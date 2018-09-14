@@ -29,6 +29,8 @@ $dark-red: color(#cc0033 lightness(30%));
 $background-color: black(.02);
 $page-color: white;
 
+$link-color: #108db8;
+
 /* Vertical Rhythm -----------------------------------------------------------*/
 $trailer: 5vh;
 

@@ -1,10 +1,16 @@
 /* 🎨 Projects */
 @import './lib.css';
+@import './mixins/helpers.css';
+
+.projects-page {
+  .project {
+    padding-bottom: calc($trailer * 3);
+  }
+}
 
 .project {
   position: relative;
   text-align: center;
-  padding-bottom: calc($trailer * 3);
 }
 
 .project-title {
@@ -26,10 +32,75 @@
   }
 }
 
+.projects-page {
+  .image-holder {
+    padding: calc($trailer / 2) 0;
+    padding-bottom: calc(71% + ($trailer / 2));
+  }
+
+  .project-cover {
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+}
+
 .project-content {
   text-align: left;
 }
 
 .project-cover {
-  padding: $trailer 0;
+  transform: scale(1);
+  transition: transform 3s;
+}
+
+.projects-page .project-cover:hover {
+  transform: scale(1.1);
+}
+
+.project-more-link {
+  padding: 1rem;
+  border: 1px solid black(.1);
+  border-radius: 50%;
+  margin: calc($trailer /2) 0;
+  display: inline-block;
+  color: transparent;
+  font: 0/0 a;
+  @include size(3rem);
+  position: relative;
+  transition: transform 1s ease, color 1s ease;
+
+  &:before {
+    position: absolute;
+    content: "➤";
+    color: black(.5);
+    font-size: calc(13px + .4vw);
+    top: 50%;
+    transform: translate(-35%, -50%);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 2px 5px 0 black(.06);
+
+    &:before {
+      color: $link-color;
+    }
+  }
+}
+
+.project-tech,
+.project-role {
+  display: flex;
+  text-align: left;
+  align-items: baseline;
+
+  dt {
+    display: inline-block;
+  }
+
+  dd {
+    display: inline;
+    letter-spacing: .05rem;
+  }
 }

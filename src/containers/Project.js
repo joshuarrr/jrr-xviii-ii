@@ -13,6 +13,18 @@ export default withRouteData(({ project }) => (
       <h2 className="project-title">{project.data.title}</h2>
       <Img className="project-cover" name={"portfolio/" + project.data.slug} />
       <Markdown className="project-content" source={project.content} escapeHtml={false} />
+      { project.data.role &&
+        <dl className="project-role">
+          <dt>Role:</dt>
+          <dd>{project.data.role}</dd>
+        </dl>
+      }
+      { project.data.tech &&
+      <dl className="project-tech">
+        <dt>Tech:</dt>
+        <dd>{project.data.tech}</dd>
+      </dl>
+     }
     </div>
   </div>
 ))

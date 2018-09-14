@@ -1,0 +1,24 @@
+@import '../lib.css';
+
+img {
+  max-width: 100%;
+}
+
+.image-holder {
+  position: relative;
+
+  & > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  & svg {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+  }
+}

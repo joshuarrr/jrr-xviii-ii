@@ -23,6 +23,9 @@ export default withRouteData(({ projects }) => (
             source={project.data.summary}
             escapeHtml={false}
           />
+          <Link className="project-more-link" to={`projects/project/${project.data.slug}`}>
+            view project
+          </Link>
         </li>
       ))}
       <li className="project" key="past work">
