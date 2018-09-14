@@ -7,7 +7,7 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: 5vh;
+  margin-bottom: $trailer;
 }
 
 dt {
@@ -22,6 +22,6 @@ dd {
 .text-container {
   position: relative;
   display: inline-block;
-    transition: height 1s ease;
-    overflow: hidden;
+  transition: height 1s ease;
+  overflow: hidden;
 }

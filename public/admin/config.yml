@@ -16,7 +16,9 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Sumary", name: "summary", widget: "markdown"}
+      - {label: "Role", name: "role", widget: "markdown"}
+      - {label: "Tech", name: "tech", widget: "markdown"}
+      - {label: "Summary", name: "summary", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "profile" # Used in routes, e.g., /admin/collections/blog

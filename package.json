@@ -27,7 +27,7 @@
     "postcss-import": "^11.1.0",
     "postcss-media-minmax": "^3.0.0",
     "postcss-nested": "^3.0.0",
-    "react": "^16.5.0",
+    "react": "^16.5.1",
     "react-body": "^0.2.0",
     "react-css-collapse": "^3.5.0",
     "react-div-100vh": "^0.2.0",
@@ -38,10 +38,11 @@
     "react-moment": "^0.7.0",
     "react-move": "^2.7.0",
     "react-router": "^4.2.0",
-    "react-static": "^5.9.7",
+    "react-static": "^5.9.8",
     "react-tippy": "^1.2.2",
     "recompose": "^0.27.1",
-    "serve": "^10.0.0"
+    "serve": "^10.0.0",
+    "yarn": "^1.9.4"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x"

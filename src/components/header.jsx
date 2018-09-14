@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-static'
 import { Animate } from 'react-move'
 import '../styles/elements/logo.css'
-import { easeQuadInOut } from 'd3-ease';
+import { easeQuadInOut } from 'd3-ease'
 
 
 export class Header extends Component {

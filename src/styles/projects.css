@@ -4,6 +4,7 @@
 .project {
   position: relative;
   text-align: center;
+  padding-bottom: calc($trailer * 3);
 }
 
 .project-title {
@@ -11,9 +12,10 @@
     display: inline-block;
     padding: 0 1rem;
     z-index: 1;
+    text-transform: capitalize;
 
   &:before {
-    background: black(.2);
+    background: black(.1);
     content: "";
     height: 1px;
     left: 0;
@@ -29,5 +31,5 @@
 }
 
 .project-cover {
-  padding: 5vh 0;
+  padding: $trailer 0;
 }
