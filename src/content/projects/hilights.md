@@ -14,41 +14,19 @@ summary: >-
 
 My buddy and I are in a band together and we are frequently frustrated when we listen  to recordings of our practices and want to discuss a particular section of the music. Conversations usually go something like this:
 
-> **Him:**
+> **Him:** That first jam was cool. Your bassline sounds amazing.*
 >
->  That first jam was cool. Your bassline sounds amazing.* 
+> **Me:**  Oh, yeah? What one? I played like three amazing basslines during that jam if I remember correctly.
 >
-> \
+> **Him:** Well, yeah, that's true, because you are such an amazing musician. But specifically the part in the middle.
 >
+> **Me:** Listening now...
 >
+> **Me:** Dude.. this is a 20 minute track. What part are you talking about?
 >
+> **Him:** Ugh. Hold on. OK. At like 12:15 - 15:00
 >
-> \
->
->
-> **Me:**
->
->  Oh, yeah? What one? I played like three amazing basslines during that jam if I remember correctly.
->
-> **Him:**
->
->  Well, yeah, that's true, because you are such an amazing musician. But specifically the part in the middle.
->
-> **Me:**
->
->  Listening now...
->
-> **Me:**
->
->  Dude.. this is a 20 minute track. What part are you talking about?
->
-> **Him:**
->
->  Ugh. Hold on. OK. At like 12:15 - 15:00
->
-> **Me: **
->
-> Oh! Yeah, this does sound great. New song potential?
+> **Me: ** Oh! Yeah, this does sound great. New song potential?
 
 These conversations are so frustrating that we don’t have them very often anymore. But we totally would, if it were easier to share clips.
 
