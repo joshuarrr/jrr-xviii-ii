@@ -25,13 +25,15 @@ export class Img extends Component {
           show
           start={{
             opacity: [0],
+            scale: [.95],
           }}
           enter={{
             opacity: [1],
-            timing: { duration: 800, delay: 0 },
+            scale: [1],
+            timing: { duration: 400, delay: 0 },
           }}
         >
-          {({ opacity }) => (
+          {({ opacity, scale }) => (
             <Image
               className={this.props.className}
               cloudName="joshuar"
@@ -45,7 +47,10 @@ export class Img extends Component {
               onLoad={() => {
                 this.setState({loaded: true});
               }}
-              style={{ opacity }}
+              style={{
+                opacity,
+                transform: `scale(${scale})`,
+              }}
             />
           )}
         </Animate>

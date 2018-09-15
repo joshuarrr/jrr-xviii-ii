@@ -5,8 +5,7 @@
   border-radius: 50%;
   @include size(40vw);
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 20vw);
   margin-bottom: $trailer;
 }
 
