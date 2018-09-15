@@ -16,7 +16,19 @@ My buddy and I are in a band together and we are frequently frustrated when we l
 
 > **Him:**
 >
->  That first jam was cool. Your bassline sounds amazing.* Me: Oh, yeah? What one? I played like three amazing basslines during that jam if I remember correctly.
+>  That first jam was cool. Your bassline sounds amazing.* 
+>
+> \
+>
+>
+>
+>
+> \
+>
+>
+> **Me:**
+>
+>  Oh, yeah? What one? I played like three amazing basslines during that jam if I remember correctly.
 >
 > **Him:**
 >
