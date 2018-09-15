@@ -76,7 +76,7 @@ This screen shows a track with three highlights, one of which has been clicked o
 
 
 
-![Hilights - robot 1](/uploads/robot-1.png)
+<img alt="Hilights - robot 1" src="/uploads/robot-1.png" class="center" />
 
 ![Hilights - robot 2](/uploads/robot-2.png)
 
