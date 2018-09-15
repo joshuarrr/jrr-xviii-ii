@@ -34,7 +34,7 @@ He’s is a Software Engineer, and I am a Product Designer, so the solution to o
 
 ## SITEMAP & INFORMATION ARCHITECTURE
 
-![hilights  desktop site map](/uploads/hilights-02-desktop-sitemap.jpg)
+<img alt="desktop site map" src="/uploads/hilights-02-desktop-sitemap.jpg" class="bordered" />
 
 User flows and site maps are incredibly useful when starting up a project, especially when it comes to pairing up with engineers. They’re also one of the funnest things to design, because arrows.
 
@@ -44,21 +44,25 @@ When a user attempts to save or share the project we’ll provide the option to 
 
 ## WIREFRAMES & WIREFLOW
 
-![null](/uploads/hilights-wireframe-sketches.png)
+<img alt="Hilights app - wireframe sketches" src="/uploads/hilights-wireframe-sketches.png" class="bordered" />
 
-![hilights app - desktop wireframe](/uploads/hilights-03-desktop-wireframe.png)
+![Hilights app - desktop wireframe](/uploads/hilights-03-desktop-wireframe.png)
 
 I usually start drawing with pencil and paper as there is less interference between my thoughts and the outcome. Generally, the best interface is the least amount of interface possible. If there is a simpler way to do something it’s probably easier to use.
 
 ## WIREFRAME PROTOTYPE
 
-[![hilights - desktop prototype](/uploads/hilights-prototype.jpg)](https://invis.io/VMGT0GPG6TJ)
+[![Hilights app - desktop prototype]()]()
+
+<a href="https://invis.io/VMGT0GPG6TJ" target="_blank">
+  <img alt="Hilights app - wireframe sketches" src="/uploads/hilights-prototype.jpg" class="bordered" />
+</a>
 
 For this project, I’ve been linking the wireframes up to the sitemap, so you can use it as an interactive map. Check out the [desktop prototype](https://invis.io/VMGT0GPG6TJ).
 
 ## BRAND DEVELOPMENT
 
-![hilights app - logos](/uploads/hilights-04-logos.png)
+<img alt="Hilights app - logos" src="/uploads/hilights-04-logos.png" class="bordered" />
 
 Realizing that we want people to know what the app is called, I started the process of trying to represent abstract concepts with figurative forms. This work is still the early phases and will inform the final brand direction for the entire product.
 
@@ -75,9 +79,8 @@ JK. Normally I’d start with the mobile version, but our research showed that (
 This screen shows a track with three highlights, one of which has been clicked on to gain focus revealing the comment thread. You can play the hilight and converse about it right in context. Also, I drew these friendly (slightly startled looking) robots that are used for anonymous users:
 
 
+<img alt="Hilights app - robot 1" src="/uploads/robot-1.png" class="centered" />
 
-<img alt="Hilights - robot 1" src="/uploads/robot-1.png" class="center" />
+<img alt="Hilights app - robot 2" src="/uploads/robot-2.png" class="centered" />
 
-<img alt="Hilights - robot 2" src="/uploads/robot-2.png" class="center" />
-
-<img alt="Hilights - robot 3" src="/uploads/robot-3.png" class="center" />
+<img alt="Hilights app - robot 3" src="/uploads/robot-3.png" class="centered" />
