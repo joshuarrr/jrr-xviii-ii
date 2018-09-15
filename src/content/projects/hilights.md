@@ -34,9 +34,9 @@ He’s is a Software Engineer, and I am a Product Designer, so the solution to o
 
 
 
-![hilights  desktop site map](/uploads/hilights-02-desktop-sitemap.jpg)
-
 ## SITEMAP & INFORMATION ARCHITECTURE
+
+![hilights  desktop site map](/uploads/hilights-02-desktop-sitemap.jpg)
 
 User flows and site maps are incredibly useful when starting up a project, especially when it comes to pairing up with engineers. They’re also one of the funnest things to design, because arrows.
 
