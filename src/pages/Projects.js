@@ -4,6 +4,7 @@ import { Img } from '../components/image-loader'
 import Markdown from 'react-markdown'
 import MediaQuery from 'react-responsive';
 
+
 export class CurrentProject extends Component {
   constructor() {
     super();
@@ -20,7 +21,7 @@ export class CurrentProject extends Component {
 
 export default withRouteData(({ projects }) => {
   
-  {console.log(projects);}
+  // {console.log(projects);}
   return (
     <div className="page-content projects-page">
       <ul>

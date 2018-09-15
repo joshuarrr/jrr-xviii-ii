@@ -19,6 +19,7 @@ $border: $default-border;
 /* Color Variables -----------------------------------------------------------*/
 $body-black: #4d4d4d;
 $body-gray: #999999;
+$ui-gray: #ccc;
 
 $blue: #87cdea;
 $lightblue: color($blue tint(50%));
