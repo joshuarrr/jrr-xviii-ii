@@ -78,6 +78,6 @@ This screen shows a track with three highlights, one of which has been clicked o
 
 <img alt="Hilights - robot 1" src="/uploads/robot-1.png" class="center" />
 
-![Hilights - robot 2](/uploads/robot-2.png)
+<img alt="Hilights - robot 2" src="/uploads/robot-2.png" class="center" />
 
-![Hilights - robot 3](/uploads/robot-3.png)
+<img alt="Hilights - robot 3" src="/uploads/robot-3.png" class="center" />
