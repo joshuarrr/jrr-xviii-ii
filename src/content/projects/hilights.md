@@ -54,6 +54,8 @@ I usually start drawing with pencil and paper as there is less interference betw
 
 ## WIREFRAME PROTOTYPE
 
+![hilights - desktop prototype](/uploads/hilights-prototype.jpg)
+
 For this project, I’ve been linking the wireframes up to the sitemap, so you can use it as an interactive map. Check out the [desktop prototype.](https://invis.io/VMGT0GPG6TJ)
 
 
