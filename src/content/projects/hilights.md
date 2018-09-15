@@ -52,10 +52,8 @@ I usually start drawing with pencil and paper as there is less interference betw
 
 ## WIREFRAME PROTOTYPE
 
-[![Hilights app - desktop prototype]()]()
-
 <a href="https://invis.io/VMGT0GPG6TJ" target="_blank">
-  <img alt="Hilights app - wireframe sketches" src="/uploads/hilights-prototype.jpg" class="bordered" />
+  <img alt="Hilights app - desktop prototype" src="/uploads/hilights-prototype.jpg" class="bordered" />
 </a>
 
 For this project, I’ve been linking the wireframes up to the sitemap, so you can use it as an interactive map. Check out the [desktop prototype](https://invis.io/VMGT0GPG6TJ).
