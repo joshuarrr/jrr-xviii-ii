@@ -4,7 +4,6 @@ import { Img } from '../components/image-loader'
 import LongText from '../components/truncater'
 import Markdown from 'react-markdown'
 import '../styles/profile.css'
-import donkeys from '../../public/uploads/donkeys.jpg'
 
 
 export default withRouteData(({profile}) => {
