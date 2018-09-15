@@ -31,3 +31,15 @@ My buddy and I are in a band together and we are frequently frustrated when we l
 These conversations are so frustrating that we don’t have them very often anymore. But we totally would, if it were easier to share clips.
 
 He’s is a Software Engineer, and I am a Product Designer, so the solution to our woes quickly made itself clear: build an app!
+
+
+
+![hilights  desktop site map](/uploads/hilights-02-desktop-sitemap.jpg)
+
+## SITEMAP & INFORMATION ARCHITECTURE
+
+User flows and site maps are incredibly useful when starting up a project, especially when it comes to pairing up with engineers. They’re also one of the funnest things to design, because arrows.
+
+The site map to the right shows that as soon a user lands on the homepage they can start using the product by uploading a track. Try before you buy has been shown to improve conversion rates, and provides a more frictionless experience. We check the filenames automatically, and if the file matches a track already in the user’s library we provide the option to store it as a version.
+
+When a user attempts to save or share the project we’ll provide the option to create an account and create a group for collaborating with their friends or bandmates.
