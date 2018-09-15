@@ -8,7 +8,7 @@ summary: >-
   Hilights is an app that facilitates conversations about specific sections of
   recordings. The design and development are currently in progress.
 ---
-![Highlights App on a phone.](/uploads/hilights-01.jpg)
+![Highlights app on a MacBook.](/uploads/hilights-macbook.jpg)
 
 ## INTRODUCTION: THE PROBLEM
 
@@ -44,13 +44,11 @@ When a user attempts to save or share the project we’ll provide the option to 
 
 ## WIREFRAMES & WIREFLOW
 
-![](/uploads/hilights-wireframe-sketches.png)
+![null](/uploads/hilights-wireframe-sketches.png)
 
 ![hilights app - desktop wireframe](/uploads/hilights-03-desktop-wireframe.png)
 
 I usually start drawing with pencil and paper as there is less interference between my thoughts and the outcome. Generally, the best interface is the least amount of interface possible. If there is a simpler way to do something it’s probably easier to use.
-
-
 
 ## WIREFRAME PROTOTYPE
 
@@ -58,10 +56,12 @@ I usually start drawing with pencil and paper as there is less interference betw
 
 For this project, I’ve been linking the wireframes up to the sitemap, so you can use it as an interactive map. Check out the [desktop prototype](https://invis.io/VMGT0GPG6TJ).
 
-
-
 ## BRAND DEVELOPMENT
 
 ![hilights app - logos](/uploads/hilights-04-logos.png)
 
 Realizing that we want people to know what the app is called, I started the process of trying to represent abstract concepts with figurative forms. This work is still the early phases and will inform the final brand direction for the entire product.
+
+## HIGH-FIDELITY COMPS
+
+Currently in development, this screen shows a track with three highlights, one of which has been clicked on to gain focus revealing the comment thread. You can play the hilight and converse about it right in context. Also, I drew these friendly (slightly startled looking) robots that are used for anonymous users:
