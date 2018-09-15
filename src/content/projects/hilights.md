@@ -66,4 +66,18 @@ Realizing that we want people to know what the app is called, I started the proc
 
 ![Hilights app on a macbook.](/uploads/hilights-macbook.jpg)
 
-Currently in development, this screen shows a track with three highlights, one of which has been clicked on to gain focus revealing the comment thread. You can play the hilight and converse about it right in context. Also, I drew these friendly (slightly startled looking) robots that are used for anonymous users:
+Desktop first, as always...
+
+JK. Normally I’d start with the mobile version, but our research showed that (like us), most of the musicians in our friend circles record their practices on their desktops. Well, laptops really. Therefore we’re starting with a responsive webapp which will be supplemented with an iOS app.
+
+![Hilights app on an iMac.](/uploads/hilights-imac.png)
+
+This screen shows a track with three highlights, one of which has been clicked on to gain focus revealing the comment thread. You can play the hilight and converse about it right in context. Also, I drew these friendly (slightly startled looking) robots that are used for anonymous users:
+
+
+
+![Hilights - robot 1](/uploads/robot-1.png)
+
+![Hilights - robot 2](/uploads/robot-2.png)
+
+![Hilights - robot 3](/uploads/robot-3.png)
