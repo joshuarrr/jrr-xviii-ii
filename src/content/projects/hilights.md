@@ -44,6 +44,8 @@ When a user attempts to save or share the project we’ll provide the option to 
 
 ## WIREFRAMES & WIREFLOW
 
+![](/uploads/hilights-wireframe-sketches.png)
+
 ![hilights app - desktop wireframe](/uploads/hilights-03-desktop-wireframe.png)
 
 I usually start drawing with pencil and paper as there is less interference between my thoughts and the outcome. Generally, the best interface is the least amount of interface possible. If there is a simpler way to do something it’s probably easier to use.
