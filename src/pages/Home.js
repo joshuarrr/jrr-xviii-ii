@@ -18,6 +18,9 @@ export default withSiteData(() => {
         showStatus={false}
         selectedItem={1}
         infiniteLoop={true}
+        transitionTime={700}
+        emulateTouch={true}
+        useKeyboardArrows={true}
       >
         <Link to={`projects/project/lumen`}>
           <Img 
