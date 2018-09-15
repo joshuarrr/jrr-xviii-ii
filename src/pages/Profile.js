@@ -35,7 +35,6 @@ export default withRouteData(({profile}) => {
         className="profile-pic-2"
         name="profile/working"
         />*/}
-         <img src={donkeys} alt="" />
       <p>Some more text</p>
     </LongText>
       <h2>Expertise</h2>
