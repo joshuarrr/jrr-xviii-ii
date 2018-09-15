@@ -8,7 +8,7 @@ summary: >-
   Hilights is an app that facilitates conversations about specific sections of
   recordings. The design and development are currently in progress.
 ---
-![Highlights app on a MacBook.](/uploads/hilights-macbook.jpg)
+![Highlights app on an iPhone.](/uploads/hilights-01.jpg)
 
 ## INTRODUCTION: THE PROBLEM
 
@@ -63,5 +63,7 @@ For this project, I’ve been linking the wireframes up to the sitemap, so you c
 Realizing that we want people to know what the app is called, I started the process of trying to represent abstract concepts with figurative forms. This work is still the early phases and will inform the final brand direction for the entire product.
 
 ## HIGH-FIDELITY COMPS
+
+![Hilights app on a macbook.](/uploads/hilights-macbook.jpg)
 
 Currently in development, this screen shows a track with three highlights, one of which has been clicked on to gain focus revealing the comment thread. You can play the hilight and converse about it right in context. Also, I drew these friendly (slightly startled looking) robots that are used for anonymous users:
