@@ -78,9 +78,21 @@ This screen shows a track with three highlights, one of which has been clicked o
 
 Also, I drew these friendly (slightly startled looking) robots that are used for anonymous users:
 
-
 <img alt="Hilights app - robot 1" src="/uploads/robot-1.png" class="centered" />
 
 <img alt="Hilights app - robot 2" src="/uploads/robot-2.png" class="centered" />
 
 <img alt="Hilights app - robot 3" src="/uploads/robot-3.png" class="centered" />
+
+## MOBILE APP
+
+<img alt="Hilights app - logos" src="/uploads/hilights-sitemap-mobile.jpg" class="bordered" />
+
+A lot of people use their iPhone to record their band practices. We want to provide an easy way to record a song and collaborate on it with Hilights.
+
+## MOBILE WIREFRAME PROTOTYPE
+
+![Hilights app - mobile wireframes](/uploads/hilights-mobile-wireframes.png)
+
+Wireframes of the mobile app. 
+Check out the [interactive prototype.](https://invis.io/A7HGN9D8DU5)
