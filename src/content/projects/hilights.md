@@ -92,7 +92,7 @@ A lot of people use their iPhone to record their band practices. We want to prov
 
 ## MOBILE WIREFRAME PROTOTYPE
 
-![Hilights app - mobile wireframes](/uploads/hilights-mobile-wireframes.png)
+<img alt="Hilights app - mobile wireframes" src="/uploads/hilights-mobile-wireframes.png" class="bordered" />
 
 Wireframes of the mobile app. 
 Check out the [interactive prototype.](https://invis.io/A7HGN9D8DU5)
