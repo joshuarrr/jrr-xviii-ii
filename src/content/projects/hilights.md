@@ -74,7 +74,9 @@ JK. Normally I’d start with the mobile version, but our research showed that (
 
 ![Hilights app on an iMac.](/uploads/hilights-imac.png)
 
-This screen shows a track with three highlights, one of which has been clicked on to gain focus revealing the comment thread. You can play the hilight and converse about it right in context. Also, I drew these friendly (slightly startled looking) robots that are used for anonymous users:
+This screen shows a track with three highlights, one of which has been clicked on which revealed the comment thread. You can play the hilight and converse about it right in context. 
+
+Also, I drew these friendly (slightly startled looking) robots that are used for anonymous users:
 
 
 <img alt="Hilights app - robot 1" src="/uploads/robot-1.png" class="centered" />
