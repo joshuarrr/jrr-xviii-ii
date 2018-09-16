@@ -11,8 +11,8 @@
 
 .tippy-popper .tippy-tooltip.light-theme {
   box-shadow: none;
-  color: $darkblue;
-  border: 1px solid $lightblue;
+  color: $dark-blue;
+  border: 1px solid $light-blue;
 }
 
 .tippy-tooltip--big {
@@ -24,7 +24,7 @@
 
 /* arrow color */
 .tippy-popper[x-placement^="top"] .tippy-tooltip.light-theme [x-arrow] {
-  border-top-color: $lightblue;
+  border-top-color: $light-blue;
 }
 
 .tippy-tooltip-content {

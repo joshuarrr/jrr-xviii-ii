@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { withRouteData, Link } from 'react-static'
-import { Img } from '../components/image-loader'
 import Markdown from 'react-markdown'
 import MediaQuery from 'react-responsive';
+import { Img } from '../components/image-loader'
 
 
 export class CurrentProject extends Component {
@@ -41,6 +41,18 @@ export default withRouteData(({ projects }) => {
               source={project.data.summary}
               escapeHtml={false}
             />
+            { project.data.role &&
+              <dl className="project-role">
+                <dt>Role:</dt>
+                <dd>{project.data.role}</dd>
+              </dl>
+            }
+            { project.data.tech &&
+              <dl className="project-tech">
+                <dt>Tech:</dt>
+                <dd>{project.data.tech}</dd>
+              </dl>
+            }
             <Link className="project-more-link" to={`projects/project/${project.data.slug}`}>
               view project
             </Link>

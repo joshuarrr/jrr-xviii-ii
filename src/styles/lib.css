@@ -11,19 +11,15 @@ $guide-color-b: color(blue a(30%));
 $guide-color-c: color(orange a(30%));
 $guide-border: 1px solid $guide-color;
 
-/* Borders -------------------------------------------------------------------*/
-$default-border: 1px solid black(.1);
-$light-border: 1px solid black(.05);
-$border: $default-border;
-
 /* Color Variables -----------------------------------------------------------*/
 $body-black: #4d4d4d;
 $body-gray: #999999;
 $ui-gray: #ccc;
+$light-gray: black(.1);
 
 $blue: #87cdea;
-$lightblue: color($blue tint(50%));
-$darkblue: color($blue shade(20%));
+$light-blue: color($blue tint(50%));
+$dark-blue: color($blue shade(20%));
 
 $dark-red: color(#cc0033 lightness(30%));
 
@@ -31,6 +27,11 @@ $background-color: black(.02);
 $page-color: white;
 
 $link-color: #108db8;
+
+/* Borders -------------------------------------------------------------------*/
+$default-border: 1px solid $light-gray;
+$light-border: 1px solid black(.05);
+$border: $default-border;
 
 /* Vertical Rhythm -----------------------------------------------------------*/
 $trailer: 5vh;
