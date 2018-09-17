@@ -43,7 +43,7 @@ export class Img extends Component {
               dpr="auto"
               crop="scale"
               progressive="false"
-              f_auto
+              f_auto="true"
               secure
               responsive
               onLoad={() => {
