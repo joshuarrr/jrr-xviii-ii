@@ -9,12 +9,10 @@ summary: >-
   recordings. The design and development are currently in progress.
 ---
 <img
-  sizes="100vw"
   srcset="https://res.cloudinary.com/joshuar/image/upload/f_auto,w_320/portfolio/hilights/hilights-iphone.jpg 320w,
   https://res.cloudinary.com/joshuar/image/upload/f_auto,w_1024/portfolio/hilights/hilights-iphone.jpg 1024w"
   src="https://res.cloudinary.com/joshuar/image/upload/f_auto,w_512/portfolio/hilights/hilights-iphone.jpg 512w"
   alt />
-
 
 ## INTRODUCTION: THE PROBLEM
 
