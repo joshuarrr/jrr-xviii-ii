@@ -8,11 +8,7 @@ summary: >-
   Hilights is an app that facilitates conversations about specific sections of
   recordings. The design and development are currently in progress.
 ---
-<img
-  srcset="https://res.cloudinary.com/joshuar/image/upload/f_auto,w_320/portfolio/hilights/hilights-iphone.jpg 320w,
-  https://res.cloudinary.com/joshuar/image/upload/f_auto,w_1024/portfolio/hilights/hilights-iphone.jpg 1024w"
-  src="https://res.cloudinary.com/joshuar/image/upload/f_auto,w_512/portfolio/hilights/hilights-iphone.jpg 512w"
-  alt />
+<img src="https://res.cloudinary.com/joshuar/image/upload/f_auto,w_512/portfolio/hilights/hilights-iphone.jpg 512w" alt />
 
 ## INTRODUCTION: THE PROBLEM
 
