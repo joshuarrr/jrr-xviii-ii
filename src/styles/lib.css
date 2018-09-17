@@ -12,20 +12,25 @@ $guide-color-c: color(orange a(30%));
 $guide-border: 1px solid $guide-color;
 
 /* Color Variables -----------------------------------------------------------*/
+// Blue
 $body-black: #4d4d4d;
 $body-gray: #999999;
 $ui-gray: #ccc;
 $light-gray: black(.1);
 
+// Black
 $blue: #87cdea;
 $light-blue: color($blue tint(50%));
 $dark-blue: color($blue shade(20%));
 
+// Red
 $dark-red: color(#cc0033 lightness(30%));
 
+// Contextual
 $background-color: black(.02);
 $page-color: white;
 
+// Links
 $link-color: #108db8;
 
 /* Borders -------------------------------------------------------------------*/

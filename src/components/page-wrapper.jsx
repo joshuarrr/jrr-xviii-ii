@@ -13,7 +13,7 @@ export class PageWrapper extends Component {
     children: PropTypes.node,
   }
   render = () => (
-    <RouteData render={({ pageNumber }) => (
+    <RouteData render={({ pageNumber, path }) => (
       <Div100vh className="page-wrap" style={{ minHeight: '100rvh' }}>
         <Animate
           show
@@ -28,6 +28,7 @@ export class PageWrapper extends Component {
           {({ opacity }) => (
             <Header
               pageNum={`${pageNumber}`}
+              page={`${location.pathname}`}
               style={{ opacity }}
               key="header"
             />
@@ -57,9 +58,6 @@ export class PageWrapper extends Component {
             </footer>
           )}
         </Animate>
-        <ul className="css-console">
-          <li>pageNumber: { pageNumber }</li>
-        </ul>
       </Div100vh>
     )} />
   )

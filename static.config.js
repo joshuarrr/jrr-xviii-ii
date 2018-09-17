@@ -60,8 +60,9 @@ function getContent (type) {
 }
 
 export default {
-  getSiteData: () => ({
+  getSiteData: async () => ({
     title: 'JOSHUAR 🦁',
+    projects: await getContent('projects'),
   }),
 
   getRoutes: async () => {
@@ -98,11 +99,13 @@ export default {
           projects,
           pageNumber: 4,
         }),
-        children: projects.map(project => ({
+        children: projects.map((project, index) => ({
           path: `/project/${project.data.title}`,
-          component: 'src/containers/Project',
+          component: 'src/pages/Projects',
           getData: () => ({
+            currentProject: index,
             project,
+            projects,
           }),
         })),
       },

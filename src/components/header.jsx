@@ -9,36 +9,35 @@ export class Header extends Component {
   constructor() {
     super();
     this.state = {
-      pageNum: '',
-      arrowPos: -25 + 'px'
+      arrowPos: '-25px',
     }
-    this.profileLink = React.createRef();
-    this.projectsLink = React.createRef();
-    this.processLink = React.createRef();
+    this.profileLink = React.createRef()
+    this.projectsLink = React.createRef()
+    this.processLink = React.createRef()
   }
 
-  arrowMover = (page) => {
-    // console.log("current page: " + this.props.pageNum);
+  arrowMover = page => {
+    // console.log("current page: " + this.props.pageNum)
 
     if (page == 3) {
-      let link = this.profileLink.current;
-      let width = link.getBoundingClientRect().width;
-      let left = link.getBoundingClientRect().left;
-      // console.log("to page: " + page, "arrowPos: " + this.state.arrowPos);
-      // console.log(link, width, left);
-      this.setState({ arrowPos: (width / 2 ) + left + 'px' });
+      const link = this.profileLink.current
+      const width = link.getBoundingClientRect().width
+      const left = link.getBoundingClientRect().left
+      // console.log("to page: " + page, "arrowPos: " + this.state.arrowPos)
+      // console.log(link, width, left)
+      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
     } else if (page == 4) {
-      let link = this.projectsLink.current;
-      let width = link.getBoundingClientRect().width;
-      let left = link.getBoundingClientRect().left;
-      this.setState({ arrowPos: (width / 2 ) + left + 'px' });
+      const link = this.projectsLink.current
+      const width = link.getBoundingClientRect().width
+      const left = link.getBoundingClientRect().left
+      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
     } else if (page == 5) {
-      let link = this.processLink.current;
-      let width = link.getBoundingClientRect().width;
-      let left = link.getBoundingClientRect().left;
-      this.setState({ arrowPos: (width / 2 ) + left + 'px' });
+      const link = this.processLink.current
+      const width = link.getBoundingClientRect().width
+      const left = link.getBoundingClientRect().left
+      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
     } else {
-       this.setState({ arrowPos: -25 + 'px' });
+      this.setState({ arrowPos: '-25px' })
     }
   }
 

@@ -8,8 +8,8 @@ import '../styles/home.css'
 import '../styles/vendor/carousel.css'
 
 
-export default withSiteData(() => {
-  return(
+export default withSiteData(({ projects }) => {
+  return (
     <div className="page-content home-page">
       <h1 className="site-title">Joshua Richey</h1>
       <h2 className="site-subtitle">Product Designer</h2>
@@ -22,25 +22,18 @@ export default withSiteData(() => {
         emulateTouch={true}
         useKeyboardArrows={true}
       >
-        <Link to={`projects/project/lumen`}>
-          <Img 
-            className="cover-image"
-            name="portfolio/lumen"
-          />
-        </Link>
-        <Link to={`projects/project/hilights`}>
-          <Img 
-            className="cover-image"
-            name="portfolio/hilights"
-          />        
-        </Link>
-        <Link to={`projects/project/idealist`}>
-          <Img 
-            className="cover-image"
-            name="portfolio/idealist"
-          />
-        </Link>
-        </Carousel>
+        {
+          projects.map((project) => (
+            <Link key={project.data.slug} to={`projects/project/${project.data.slug}`}>
+              <Img
+                className="cover-image"
+                name={`portfolio/${project.data.slug}`}
+              />
+            </Link>
+            )
+          )
+        }
+      </Carousel>
     </div>
   )
 })

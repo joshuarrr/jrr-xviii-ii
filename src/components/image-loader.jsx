@@ -34,6 +34,7 @@ export class Img extends Component {
           }}
         >
           {({ opacity, scale }) => (
+            // console.log(opacity, scale) ||
             <Image
               className={this.props.className}
               cloudName="joshuar"
@@ -41,9 +42,10 @@ export class Img extends Component {
               width="auto"
               dpr="auto"
               crop="scale"
+              progressive="false"
+              f_auto
               secure
               responsive
-              progressive="false"
               onLoad={() => {
                 this.setState({loaded: true});
               }}
