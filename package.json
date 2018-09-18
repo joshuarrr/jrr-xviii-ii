@@ -17,6 +17,7 @@
     "gray-matter": "^3.1.1",
     "klaw": "^2.1.1",
     "moment": "^2.20.1",
+    "postcss": "^7.0.2",
     "postcss-advanced-variables": "^2.3.3",
     "postcss-calc": "^6.0.1",
     "postcss-color-alpha": "^2.0.0",
@@ -43,11 +44,13 @@
     "react-static": "^5.9.8",
     "react-tippy": "^1.2.2",
     "recompose": "^0.27.1",
-    "stylelint-config-recommended": "^2.1.0",
     "yarn": "^1.9.4"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
-    "serve": "^10.0.1"
+    "serve": "^10.0.1",
+    "stylelint": "^9.5.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-scss": "^3.3.0"
   }
 }

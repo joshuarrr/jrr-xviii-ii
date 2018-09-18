@@ -1,10 +1,11 @@
 import React from 'react'
 import Routes from 'react-static-routes'
 import PropTypes from 'prop-types'
-import { Router, Route, cleanPath } from 'react-static'
+import { Router, Route, cleanPath, withRouteData } from 'react-static'
 import { hot } from 'react-hot-loader'
 import { NodeGroup } from 'react-move'
 import { withContext, getContext } from 'recompose'
+import { contains } from 'underscore';
 import { PageWrapper } from './components/page-wrapper'
 import './styles/app.css'
 
@@ -45,6 +46,21 @@ const AnimatedRoutes = getContext({
         )
       }
 
+
+      // Also don't animate project pages
+      // const possiblyAnimatedRoute =
+      //  props.location.pathname.match(/^(\/projects\/project\/)(?:.*)?$/)
+      //   ? console.log('match')
+      //   : console.log('no match')
+      // if (props.location.pathname.match(/^(\/projects\/project\/)(?:.*)?$/)) {
+      //   return (
+      //     <PageWrapper>
+      //       <div style={{ position: 'relative' }}>
+      //         <Comp {...props} />
+      //       </div>
+      //     </PageWrapper>
+      //   )
+      // }
       // Use React-Move to animate the different components coming in and out
       return (
         <PageWrapper>
@@ -124,4 +140,4 @@ const App = () => (
   </Router>
 )
 
-export default hot(module)(App)
+export default hot(module)(App); withRouteData()

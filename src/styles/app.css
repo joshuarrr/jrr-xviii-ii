@@ -2,6 +2,7 @@
 @import './lib.css';
 @import "./reset.css";
 @import "./elements/type.css";
+@import "./elements/buttons.css";
 @import "./elements/images.css";
 @import "./components/page-wrapper.css";
 
@@ -27,4 +28,3 @@ body {
     }
   }
 }
-

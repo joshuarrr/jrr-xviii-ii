@@ -1,0 +1,8 @@
+@import '../lib.css';
+
+.button-basic {
+  background: transparent;
+  font-size: inherit;
+  color: $link-color;
+  font-family: $book;
+}

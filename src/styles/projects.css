@@ -2,7 +2,6 @@
 @import './lib.css';
 @import './mixins/helpers.css';
 
-
 .project {
   position: relative;
   text-align: center;
@@ -104,11 +103,12 @@
   }
 }
 
-.projects-page {
+/* Projects */
+.projects {
   .project {
-    padding-bottom: calc($trailer * 1.5);
+    padding-bottom: $trailer;
   }
-  
+
   .image-holder {
     padding: calc($trailer / 2) 0;
     padding-bottom: calc(71% + ($trailer / 2));
@@ -121,7 +121,6 @@
 
     &:hover {
       transform: scale(1.1);
-    }    
-  }  
+    }
+  }
 }
-

@@ -40,6 +40,7 @@ $border: $default-border;
 
 /* Vertical Rhythm -----------------------------------------------------------*/
 $trailer: 5vh;
+$gutter: 2.5vh;
 
 /* Transitions ---------------------------------------------------------------*/
 $default-duration: .3s;
