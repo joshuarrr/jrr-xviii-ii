@@ -2,7 +2,7 @@
 layout: blog
 title: Profile
 tldr: >-
-  I‘m a Product Designer in Portland, OR. I design fun and easy to use websites
+  I’m a Product Designer in Portland, OR. I design fun and easy to use websites
   and apps. And I’m nice.
 date: '2018-09-03T12:40:55-07:00'
 preview: >-
