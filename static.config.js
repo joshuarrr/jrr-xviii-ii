@@ -18,7 +18,7 @@ const matter = require('gray-matter')
 
 function getContent (type) {
   // console.log(type);
-  let contentType = type;
+  const contentType = type
   const items = []
   // Walk ("klaw") through projects directory and push file paths into items array //
   const getFiles = () => new Promise(resolve => {

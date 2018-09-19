@@ -12,19 +12,4 @@ html, body, #root, #root>div {
 
 body {
   background: $background-color;
-
-  @if $guides == true {
-    box-shadow: inset 0 0 0 5px black(.2);
-
-    &:before {
-      content: '';
-      position: fixed;
-      width: 1px;
-      height: inherit;
-      border-left: .5px dashed $guide-color;
-      left: 50%;
-      z-index: 3000;
-      transform: translateX(-.5px);
-    }
-  }
 }

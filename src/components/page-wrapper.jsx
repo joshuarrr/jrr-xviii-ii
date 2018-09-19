@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import Div100vh from 'react-div-100vh'
 import { RouteData } from 'react-static'
 import { Animate } from 'react-move'
-import { SocialLinks } from './social-links'
 import { Header } from './header'
-import '../styles/components/header.css'
+import { Footer } from './footer'
 
 
 export class PageWrapper extends Component {
@@ -49,13 +48,10 @@ export class PageWrapper extends Component {
           }}
         >
           {({ opacity }) => (
-            <footer
+            <Footer
               className="footer"
-              style={{
-                opacity,
-            }}>
-              <SocialLinks />
-            </footer>
+              style={{ opacity }}
+            />
           )}
         </Animate>
       </Div100vh>

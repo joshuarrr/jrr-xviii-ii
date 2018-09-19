@@ -1,15 +1,4 @@
-/* 📚 Lib */
-
-/* Config --------------------------------------------------------------------*/
-$guides: false;
-$cssConsole: false;
-
-/* Guides --------------------------------------------------------------------*/
-$guide-color: color(red a(30%));
-$guide-color-a: color(green a(30%));
-$guide-color-b: color(blue a(30%));
-$guide-color-c: color(orange a(30%));
-$guide-border: 1px solid $guide-color;
+/* 📚 Lib *********************************************************************/
 
 /* Color Variables -----------------------------------------------------------*/
 /* Blue */

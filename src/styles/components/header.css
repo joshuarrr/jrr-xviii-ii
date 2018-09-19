@@ -1,4 +1,45 @@
+/* 💆🏽‍ Header ******************************************************************/
 @import '../lib.css';
 
 .header {
+  background: black(.02);
+  border-bottom: $light-border;
+}
+
+/* Nav */
+nav {
+  width: 100%;
+  text-align: center;
+  grid-area: nav;
+  position: relative; /* bound the nav arrow */
+
+  a {
+    color: $body-gray;
+    padding: 2.5vh 4vw;
+    display: inline-block;
+    font-weight: 100;
+    letter-spacing: .1rem;
+    position: relative;
+    vertical-align: middle; /* prevents line-height shifting */
+
+    &.active {
+      color: $body-black;
+      cursor: default;
+    }
+  }
+}
+
+.nav-link {
+  display: inline-block;
+}
+
+.nav-arrow {
+  position: absolute;
+  bottom: calc(-1.5vw - 1px); /* arrow height + nav border height*/
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+  border-top: 1.5vw solid red;
 }

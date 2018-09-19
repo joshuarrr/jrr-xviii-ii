@@ -1,48 +1,34 @@
+/* 🎁 Page Wrapper ************************************************************/
 @import '../lib.css';
-@import './nav.css';
 
 .page-wrap {
   background: $page-color;
   max-width: 100vw;
   overflow-x: hidden;
-  /* Height set by javascript (react-div-100vh) to negate mobile safari vh bs. */
-  /* height: 100vh; */
-
   /* Flexbox for mobile (one dimension) */
   display: flex;
   flex-direction: column;
-
-  @if $guides == true {
-    box-shadow: inset 0 0 0 5px $guide-color;
-  }
+  /* Height set by javascript (react-div-100vh) to negate mobile toolbar bugs */
 }
 
 
 .header { /*------------------------------------------------------------------*/
   grid-area: header;
-  flex: initial;
-
-  @if $guides == true {
-    box-shadow: inset 0 0 0 5px $guide-color-a;
-  }
+  position: relative;
 }
 
 
 .content { /*-----------------------------------------------------------------*/
   flex: auto;
-  padding: 3vh;
+  padding: 3vh 3vw;
 
   @media w(768) {
     padding: $trailer;
   }
-
-  @if $guides == true {
-    box-shadow: inset 0 0 0 5px $guide-color-b;
-  }
 }
 
 
-/* Responsive AF -------------------------------------------------------------*/
+/* Horizontal Responsive -----------------------------------------------------*/
 @media w(768) {
   .page-content {
     display: grid;
@@ -73,7 +59,7 @@
   }
 }
 
-@media w(1024) {
+@media w(1024) { /*-----------------------------------------------------------*/
    /* Projects */
   .projects-page {
     display: grid;
@@ -94,8 +80,79 @@
   }
 }
 
-.footer {/*-------------------------------------------------------------------*/
-  @if $guides == true {
-    box-shadow: inset 0 0 0 5px $guide-color-c;
+@media w(1280) { /*-----------------------------------------------------------*/
+  .page-wrap {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "header content";
+  }
+
+  .header {
+    grid-area: header;
+    border-right: $default-border;
+    height: 100vh;
+    width: 25vw;
+    position: fixed;
+    transition: $default-transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    z-index: 2;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    grid-area: content;
+    z-index: 1;
+  }
+
+  .footer {
+    bottom: 0;
+    position: fixed;
+    width: 25vw;
+    z-index: 3;
   }
 }
+
+
+/* Vertical Responsive -------------------------------------------------------*/
+
+/* Profile pic */
+:root {
+  --ppsize: 10rem;
+}
+
+@media h(481) {
+  .site-logo {
+    @include size(11vh);
+  }
+
+  :root {
+    --ppsize: 20vh;
+  }
+}
+
+@media h(768) { /*------------------------------------------------------------*/
+  .site-logo {
+    top: 12vh;
+  }
+}
+
+@media h(768) { /*------------------------------------------------------------*/
+  .site-logo.minimized {
+    @include size(4rem);
+  }
+}
+
+@media h(1024) { /*-----------------------------------------------------------*/
+  .site-logo.minimized {
+    @include size(5rem);
+  }
+}
+
+

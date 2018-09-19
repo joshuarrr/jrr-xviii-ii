@@ -3,10 +3,11 @@
 
 .profile-pic {
   border-radius: 50%;
-  @include size(40vw);
+  /* @include size(var(--ppsize)); */
+  width: var(--ppsize);
   position: relative;
-  left: calc(50% - 20vw);
-  margin-bottom: $trailer;
+  left: calc(50% - (var(--ppsize) / 2));
+  margin: calc(var(--ppsize) / 4) 0 $trailer 0;
 }
 
 .expertise {

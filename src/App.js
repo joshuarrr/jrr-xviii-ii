@@ -5,7 +5,6 @@ import { Router, Route, cleanPath, withRouteData } from 'react-static'
 import { hot } from 'react-hot-loader'
 import { NodeGroup } from 'react-move'
 import { withContext, getContext } from 'recompose'
-import { contains } from 'underscore';
 import { PageWrapper } from './components/page-wrapper'
 import './styles/app.css'
 
@@ -84,7 +83,7 @@ const AnimatedRoutes = getContext({
             enter={() => ({
               opacity: [1],
               translateX: [0],
-              timing: { duration: 1000, delay: 500 },
+              timing: { duration: 1000, delay: 2500 },
             })}
             update={() => ({
               opacity: [1],
@@ -92,7 +91,7 @@ const AnimatedRoutes = getContext({
             leave={() => ({
               opacity: [0],
               translateX: [-100],
-              timing: { duration: 500 },
+              timing: { duration: 2500 },
             })}
           >
             {nodes => (
@@ -119,6 +118,7 @@ const AnimatedRoutes = getContext({
                         left: 0,
                         transform: `translateX(${translateX}vw)`,
                         opacity,
+                        zIndex: 1,
                       }}
                     >
                     <data.Comp {...data.props} />

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-static'
 import { Animate } from 'react-move'
-import '../styles/elements/logo.css'
 import { easeQuadInOut } from 'd3-ease'
+import '../styles/components/header.css'
+import '../styles/elements/logo.css'
 
 
 export class Header extends Component {
@@ -77,7 +78,7 @@ export class Header extends Component {
           </span>
         </Link>
         <nav>
-          <ul>
+          <ul className="nav-links">
             <li className="nav-link" ref={this.profileLink}>
               <Link
                 to="/profile"

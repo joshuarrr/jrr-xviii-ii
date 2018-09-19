@@ -1,41 +1,33 @@
+/*! Logo --------------------------------------------------------------------*/
 @import '../lib.css';
 @import '../mixins/helpers.css';
 
-/*! Logo --------------------------------------------------------------------*/
 .site-logo {
   display: block;
   position: absolute;
-  top: 12vh;
+  @include size(5rem);
+  top: 15vh;
   left: 50%;
   /* iOS disable selection on tap */
   -webkit-tap-highlight-color: transparent;
   z-index: 2;
   fill: black;
   grid-area: logo;
-  @include size(9vh);
-  margin-bottom: $trailer;
-  transform: translateX(-50%) scale(1) rotate3d(0, 1, 0, 0deg);
   transform-style: preserve-3d;
   transition: all 700ms $default-ease;
   perspective: 1000px;
-
-  @if $guides == true {
-    border: $guide-border;
-    background: $guide-color;
-  }
-
-  @media h(481) {
-    @include size(11vh);
-  }
+  transform:
+    translateX(-50%)
+    rotate3d(0, 1, 0, 0deg);
 
   &.minimized {
-    position: absolute;
-    top: -.9vh;
-    left: -3.5vw;
+    @include size(3rem);
+    left: 3vw; /* match content padding */
+    top: 50%;
     transform:
-      translateX(0%)
-      scale(.6)
+      translateY(-50%)
       rotate3d(0, 1, 0, -359.9deg);
+    position: absolute;
   }
 }
 
