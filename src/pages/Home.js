@@ -1,7 +1,6 @@
 import React from 'react'
 import { withSiteData, Link } from 'react-static'
 import Carousel from 'react-flex-carousel'
-import { easeQuadInOut } from 'd3-ease'
 import { Img } from '../components/image-loader'
 import '../styles/home.css'
 
@@ -13,7 +12,7 @@ export default withSiteData(({ projects }) => (
       switcher
       indicator
       transitionDuration=".5s"
-      ease={easeQuadInOut}
+      transitionTimingFunction="cubic-bezier(.16, .035, .214, 1.15)"
     >
       {
         projects.map(project => (

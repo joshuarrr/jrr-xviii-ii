@@ -29,7 +29,9 @@
 
 
 /* Horizontal Responsive -----------------------------------------------------*/
-@media w(768) {
+
+
+@media w(768) { /*------------------------------------------------------------*/
   .page-content {
     display: grid;
     grid-gap: calc($trailer / 2) $gutter;
@@ -83,7 +85,7 @@
 @media w(1280) { /*-----------------------------------------------------------*/
   .page-wrap {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 25vw 75vw;
     grid-template-areas: "header content";
   }
 
@@ -124,7 +126,8 @@
 
 /* Profile pic */
 :root {
-  --ppsize: 10rem;
+  --profile-pic-size
+.: 10rem;
 }
 
 @media h(481) {
@@ -133,7 +136,8 @@
   }
 
   :root {
-    --ppsize: 20vh;
+    --profile-pic-size
+.: 20vh;
   }
 }
 

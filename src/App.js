@@ -83,7 +83,7 @@ const AnimatedRoutes = getContext({
             enter={() => ({
               opacity: [1],
               translateX: [0],
-              timing: { duration: 1000, delay: 2500 },
+              timing: { duration: 1000, delay: 500 },
             })}
             update={() => ({
               opacity: [1],
@@ -91,7 +91,7 @@ const AnimatedRoutes = getContext({
             leave={() => ({
               opacity: [0],
               translateX: [-100],
-              timing: { duration: 2500 },
+              timing: { duration: 500 },
             })}
           >
             {nodes => (

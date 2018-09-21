@@ -7,7 +7,7 @@ img {
 .image-holder {
   position: relative;
 
-  & > div {
+  > div {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -15,7 +15,7 @@ img {
     right: 0;
   }
 
-  & svg {
+  svg {
     position: absolute;
     left: 50%;
     top: 45%;
