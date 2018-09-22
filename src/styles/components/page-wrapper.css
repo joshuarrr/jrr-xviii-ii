@@ -32,7 +32,15 @@
 
 
 @media w(768) { /*------------------------------------------------------------*/
-  .page-content {
+  .home.route-wrapper {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-content:not(.home-page) {
     display: grid;
     grid-gap: calc($trailer / 2) $gutter;
     grid-template-columns: 3fr 1fr;

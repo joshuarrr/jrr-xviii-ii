@@ -1,278 +1,88 @@
 @import '../lib.css';
 @import '../mixins/helpers.css';
 
+/* flex-carousel */
+.slider ul li > img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+}
 
-.carousel {
-  position: relative;
+.slider ol {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  bottom: .5em;
+  text-align: center;
   width: 100%;
+}
 
+.slider ol li {
+  @include size(.5em);
+  display: inline-block;
+  min-width: 5px;
+  min-height: 5px;
+  background-color: #BEC0BC;
+  margin: 0 .5em;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  text-indent: 100%;
+}
 
-  /* Prev / next control arrows */
-  .control-arrow {
-    top: 50%;
-    margin-top: -13px;
-    font-size: 18px;
-  }
+.slider ol [aria-current = "true"] {
+  pointer-events: none;
+  cursor: auto;
+  background-color: black;
+}
 
-  .control-arrow,
-  &.carousel-slider .control-arrow {
-    transition: all 0.25s ease-in;
-    opacity: 0.4;
-    filter: alpha(opacity=40);
-    position: absolute;
-    z-index: 2;
-    top: 20px;
-    background: none;
-    border: 0;
-    font-size: 32px;
-    cursor: pointer;
-  }
+.slider ul ~ div {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -1em;
+  padding: 0;
+}
 
-  .control-arrow:hover {
-    opacity: 1;
-    filter: alpha(opacity=100);
-  }
-
-  .control-arrow:before,
-  &.carousel-slider .control-arrow:before {
-    margin: 0 5px;
-    display: inline-block;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    content: '';
-  }
-
-  .control-disabled.control-arrow {
-    opacity: 0;
-    filter: alpha(opacity=0);
-    cursor: inherit;
+/* Arrows */
+@media w(> 376) {
+  .slider ul ~ div button {
     display: none;
   }
+}
 
-  .control-prev.control-arrow {
-    left: 0;
+.slider ul ~ div button {
+  @include size(2em);
+  position: absolute;
+  font-size: 2em;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  color: $ui-gray;
+  transition: color .5s, transform .5s $bounce-in;
+
+  &:hover {
+    color: $link-color;
+    transform: scale(1.2);
   }
+}
 
-  .control-prev.control-arrow:before {
-    border-right: 8px solid #fff;
+.slider .prev {
+  left: 0;
+
+  &:before {
+    content: "⟨";
   }
+}
 
-  .control-next.control-arrow {
-    right: 0;
-  }
+.slider .next {
+  right: 0;
 
-  .control-next.control-arrow:before {
-    border-left: 8px solid #fff;
-  }
-
-
-  /* General */
-  button {
-    outline: 0;
-    border: 0;
-    background: none;
-  }
-  
-  img {
-    width: 100%;
-    display: inline-block;
-    pointer-events: none;
-  }
-  
-  .carousel {
-    position: relative;
-  }
-    
-
-  /* Thumbs */
-  .thumbs-wrapper {
-    margin: 20px;
-    overflow: hidden;
-  }
-
-  .thumbs {
-    transition: all 0.15s ease-in;
-    transform: translate3d(0, 0, 0);
-    position: relative;
-    list-style: none;
-    white-space: nowrap;
-  }
-
-  .thumb {
-    transition: border 0.15s ease-in;
-    display: inline-block;
-    width: 80px;
-    margin-right: 6px;
-    white-space: nowrap;
-    overflow: hidden;
-    border: 3px solid #fff;
-    padding: 2px;
-  }
-
-  .thumb.selected,
-  .thumb:hover {
-    border: 3px solid #333;
-    padding: 2px;
-  }
-
-  .thumb img {
-    vertical-align: top;
-  }
-
-
-  /* Slide */
-  .slide {
-    min-width: 100%;
-    position: relative;
-    text-align: center;
-    padding: $trailer 0;
-  }
-
-  .slide img {
-    width: 100%;
-    vertical-align: top;
-    border: 0;
-  }
-
-  .slide iframe {
-    display: inline-block;
-    width: calc(100% - 80px);
-    margin: 0 40px 40px;
-    border: 0;
-  }
-
-  .slide .legend {
-    transition: all 0.5s ease-in-out;
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    margin-left: -45%;
-    width: 90%;
-    border-radius: 10px;
-    background: #000;
-    color: #fff;
-    padding: 10px;
-    font-size: 12px;
-    text-align: center;
-    opacity: 0.25;
-  }
-
-  /* Image Holder */
-  .image-holder {
-    padding: calc($trailer / 2) 0;
-    padding-bottom: calc(71% + ($trailer / 2));
-
-    img {
-      width: 100%;
-      position: absolute;
-      left: 0;
-    }
-  }
-
-  /* Slider */
-  .slider {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    list-style: none;
-    width: 100%;
-  }
-
-  &.carousel-slider {
-    position: relative;
-    margin: 0;
-    overflow: hidden;
-  }
-
-  &.carousel-slider .control-arrow {
-    top: 0;
-    color: #fff;
-    font-size: 26px;
-    bottom: 0;
-    margin-top: 0;
-    padding: 5px;
-  }
-
-  &.carousel-slider .control-arrow:hover {
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  .slider-wrapper {
-    overflow: hidden;
-    margin: auto;
-    width: 100%;
-    transition: height 0.15s ease-in;
-  }
-
-  .slider-wrapper.axis-horizontal .slider {
-    -ms-box-orient: horizontal;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: flex;
-  }
-
-  .slider-wrapper.axis-horizontal .slider .slide {
-    flex-flow: column;
-    flex-direction: column;
-  }
-
-  .slider-wrapper.axis-vertical {
-    -ms-box-orient: horizontal;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: flex;
-  }
-
-  .slider-wrapper.axis-vertical .slider {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .slider.animated {
-    transition: all 0.35s ease-in-out;
-  }
-
-
-  /* Control Dots */
-  .control-dots {
-    .dot {
-      transition: opacity 0.25s ease-in;
-      opacity: 0.3;
-      filter: alpha(opacity=30);
-      background: $ui-gray;
-      border-radius: 50%;
-      @include size(1rem);
-      cursor: pointer;
-      display: inline-block;
-      margin: 0 1rem;
-    }
-
-  .dot.selected,
-  .dot:hover {
-      opacity: 1;
-      filter: alpha(opacity=100);
-    }
-  }
-
-
-  /* Status */
-  .carousel-status {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px;
-    font-size: 10px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
-    color: #fff;
-  }
-
-  &:hover .slide .legend {
-    opacity: 1;
+  &:before {
+    content: "⟩";
   }
 }

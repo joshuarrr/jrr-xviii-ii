@@ -5,13 +5,10 @@
   border-radius: 50%;
   /* @include size(var(--profile-pic-size
 .)); */
-  width: var(--profile-pic-size
-.);
+  width: var(--profile-pic-size);
   position: relative;
-  left: calc(50% - (var(--profile-pic-size
-.) / 2));
-  margin: calc(var(--profile-pic-size
-.) / 4) 0 $trailer 0;
+  left: calc(50% - (var(--profile-pic-size) / 2));
+  margin: calc(var(--profile-pic-size) / 4) 0 $trailer 0;
 }
 
 .expertise {

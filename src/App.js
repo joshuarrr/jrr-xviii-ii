@@ -61,6 +61,9 @@ const AnimatedRoutes = getContext({
       //   )
       // }
       // Use React-Move to animate the different components coming in and out
+      const lastSegment = props.location.pathname.split("/").pop()
+      const pathClass = lastSegment ? lastSegment : "home"
+
       return (
         <PageWrapper>
           <NodeGroup
@@ -95,7 +98,7 @@ const AnimatedRoutes = getContext({
             })}
           >
             {nodes => (
-              <div style={{ position: 'relative' }}>
+              <div className={`route-wrapper ${pathClass}`} style={{ position: 'relative', minHeight: '100%' }}>
                 {nodes.map(({ key, data, state: { opacity, translateX } }) => {
                   // Here, we override the router context with the one that was
                   // passed with each route
@@ -110,6 +113,7 @@ const AnimatedRoutes = getContext({
 
                   return (
                     <PreservedRouterContext
+                      className="router-context"
                       key={key}
                       style={{
                         top: 0,

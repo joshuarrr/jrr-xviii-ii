@@ -3,6 +3,7 @@ import { withSiteData, Link } from 'react-static'
 import Carousel from 'react-flex-carousel'
 import { Img } from '../components/image-loader'
 import '../styles/home.css'
+import '../styles/vendor/carousel.css'
 
 export default withSiteData(({ projects }) => (
   <div className="page-content home-page">
