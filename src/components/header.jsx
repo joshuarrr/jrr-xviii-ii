@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { Link } from 'react-static'
 import { Animate } from 'react-move'
 import { easeQuadInOut } from 'd3-ease'
+import MediaQuery from 'react-responsive'
 import '../styles/components/header.css'
 import '../styles/elements/logo.css'
 
 
 export class Header extends Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.state = {
       arrowPos: '-25px',
     }
@@ -26,47 +27,46 @@ export class Header extends Component {
       const left = link.getBoundingClientRect().left
       // console.log("to page: " + page, "arrowPos: " + this.state.arrowPos)
       // console.log(link, width, left)
-      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
+      this.setState({ arrowPos: `(${width} / 2 ) + ${left}px` })
     } else if (page == 4) {
       const link = this.projectsLink.current
       const width = link.getBoundingClientRect().width
       const left = link.getBoundingClientRect().left
-      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
+      this.setState({ arrowPos: `(${width} / 2 ) + ${left}px` })
     } else if (page == 5) {
       const link = this.processLink.current
       const width = link.getBoundingClientRect().width
       const left = link.getBoundingClientRect().left
-      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
+      this.setState({ arrowPos: `(${width} / 2 ) + ${left}px` })
     } else {
       this.setState({ arrowPos: '-25px' })
     }
   }
 
   repositionArrow = () => {
-    this.arrowMover(this.props.pageNum);
+    this.arrowMover(this.props.pageNum)
   }
 
   componentDidMount = () => {
-    this.arrowMover(this.props.pageNum);
-    window.addEventListener("resize", this.repositionArrow);
+    this.arrowMover(this.props.pageNum)
+    window.addEventListener('resize', this.repositionArrow)
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.repositionArrow);
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.repositionArrow)
   }
 
   render = () => {
-    // console.log( "pageNum = "+ this.props.pageNum);
-    const toggleClass = this.props.pageNum == 1 ? '' : 'minimized';
-    // console.log(this.arrowMover());
-    // console.log(this.state.arrowPos)
+    // console.log( "pageNum = "+ this.props.pageNum)
+    const toggleClass = this.props.pageNum == 1 ? '' : 'minimized'
+
     return (
       <header className="header">
         <Link
           to="/"
           tabIndex="-1"
           className={` site-logo ${toggleClass}`}
-          onClick={() => {this.arrowMover()}}
+          onClick={() => { this.arrowMover() }}
         >
           <span className="site-logo-link-text">
             Joshuar
@@ -77,13 +77,19 @@ export class Header extends Component {
             </svg>
           </span>
         </Link>
+        <span className="name-wrapper">
+          <MediaQuery minWidth={1280}>
+            <h1 className="site-title">Joshua Richey</h1>
+            <h2 className="site-subtitle">Product Designer</h2>
+          </MediaQuery>
+        </span>
         <nav>
           <ul className="nav-links">
             <li className="nav-link" ref={this.profileLink}>
               <Link
                 to="/profile"
                 activeClassName="active"
-                onClick={() => {this.arrowMover(3)}}
+                onClick={() => { this.arrowMover(3) }}
               >profile
               </Link>
             </li>
@@ -91,8 +97,9 @@ export class Header extends Component {
               <Link
                 to="/projects"
                 activeClassName="active"
-                onClick={() => {this.arrowMover(4)}}
-              >projects</Link>
+                onClick={() => { this.arrowMover(4) }}
+              >projects
+              </Link>
             </li>
             <li className="nav-link" ref={this.processLink}>
               <Link
@@ -106,7 +113,7 @@ export class Header extends Component {
           <Animate
             show
             start={{
-              left: [-10 + '%'],
+              left: ['-10%'],
             }}
             enter={{
               left: [this.state.arrowPos],
@@ -118,7 +125,7 @@ export class Header extends Component {
             }}
           >
             {({ left }) => (
-              <div className="nav-arrow" style={{ left: left, }} />
+              <div className="nav-arrow" style={{ left }} />
             )}
           </Animate>
         </nav>

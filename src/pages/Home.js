@@ -1,14 +1,17 @@
 import React from 'react'
 import { withSiteData, Link } from 'react-static'
 import Carousel from 'react-flex-carousel'
+import MediaQuery from 'react-responsive'
 import { Img } from '../components/image-loader'
 import '../styles/home.css'
 import '../styles/vendor/carousel.css'
 
 export default withSiteData(({ projects }) => (
   <div className="page-content home-page">
-    <h1 className="site-title">Joshua Richey</h1>
-    <h2 className="site-subtitle">Product Designer</h2>
+    <MediaQuery maxWidth={1279}>
+      <h1 className="site-title">Joshua Richey</h1>
+      <h2 className="site-subtitle">Product Designer</h2>
+    </MediaQuery>
     <Carousel
       switcher
       indicator

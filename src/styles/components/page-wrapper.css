@@ -117,6 +117,16 @@
 }
 
 @media w(1280) { /*-----------------------------------------------------------*/
+  .route-wrapper.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .home-page {
+    padding: 0;
+  }
+
   .slider {
     width: 75vw;
 
@@ -141,8 +151,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background: #fafafa;
     z-index: 2;
+  }
+
+  .name-wrapper {
+    position: absolute;
+    top: 26vh;
+  }
+
+  .site-title {
+    padding-bottom: 1em;
+  }
+
+  .site-subtitle {
+    margin-bottom: 6em;
+    text-align: center;
   }
 
   .nav-links {
@@ -174,10 +199,6 @@
         max-width: 900px;
       }
     }
-  }
-
-  .home-page {
-    padding: 11.5vh 0 0 0;
   }
 }
 
