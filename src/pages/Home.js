@@ -12,7 +12,7 @@ export default withSiteData(({ projects }) => (
     <Carousel
       switcher
       indicator
-      transitionDuration=".5s"
+      transitionDuration=".7s"
       transitionTimingFunction="cubic-bezier(.16, .035, .214, 1.15)"
     >
       {

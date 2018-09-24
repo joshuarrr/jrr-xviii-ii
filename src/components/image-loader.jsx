@@ -13,8 +13,9 @@ export class Img extends Component {
   }
 
   render () {
+    const loadingClass = !this.state.loaded ? 'loading' : ''
     return (
-      <div className="image-holder">
+      <div className={`image-holder ${loadingClass}`}>
         {!this.state.loaded && <Loader
           type="TailSpin"
           color="#00BFFF"

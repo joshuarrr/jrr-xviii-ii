@@ -1,7 +1,19 @@
 @import '../lib.css';
 @import '../mixins/helpers.css';
 
-/* flex-carousel */
+/* react-flex-carousel */
+.slider {
+  width: 100vw;
+  padding-bottom: 5vh; /* pushes indicators down */
+
+  .image-holder {
+    /* aspect ratio hack */
+    height: 0;
+    padding-bottom: 75%;
+    overflow: hidden;
+  }
+}
+
 .slider ul li > img {
   display: block;
   max-width: 100%;
@@ -38,15 +50,15 @@
   background-color: black;
 }
 
+/* Arrows */
 .slider ul ~ div {
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 40%;
   margin-top: -1em;
   padding: 0;
 }
 
-/* Arrows */
 @media w(> 376) {
   .slider ul ~ div button {
     display: none;
