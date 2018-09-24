@@ -198,10 +198,6 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@brainhubeu/react-carousel@^1.7.2":
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/@brainhubeu/react-carousel/-/react-carousel-1.7.2.tgz#6253556c8c9287dde9a3a110e036f1a78cf2126f"
-
 "@csstools/sass-import-resolve@^1":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@csstools/sass-import-resolve/-/sass-import-resolve-1.0.0.tgz#32c3cdb2f7af3cd8f0dca357b592e7271f3831b5"
@@ -1934,10 +1930,6 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-class-autobind@^0.1.0:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/class-autobind/-/class-autobind-0.1.4.tgz#34516c49167cf8d3f639ddc186bcfa2268afff34"
-
 class-utils@^0.3.5:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
@@ -1946,10 +1938,6 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
-
-classnames@^2.0.0:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
 clean-css@4.1.x:
   version "4.1.11"
@@ -4942,21 +4930,9 @@ lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
 
-lodash.inrange@^3.3.6:
-  version "3.3.6"
-  resolved "https://registry.yarnpkg.com/lodash.inrange/-/lodash.inrange-3.3.6.tgz#dfdfe915f6e30e8056293707e2395dab88ea128d"
-
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
-
-lodash.merge@^4.6.0:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
-
-lodash.nth@^4.11.2:
-  version "4.11.2"
-  resolved "https://registry.yarnpkg.com/lodash.nth/-/lodash.nth-4.11.2.tgz#16ae87a38cdae2092cb48655f7eb0fc878930f33"
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -5316,10 +5292,6 @@ mri@1.1.0:
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
-
-ms@^0.7.2:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.3.tgz#708155a5e44e33f5fd0fc53e81d0d40a91be1fff"
 
 ms@^2.1.1:
   version "2.1.1"
@@ -6690,18 +6662,6 @@ react-hot-loader@^4, react-hot-loader@^4.0.0-beta.21:
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
-
-react-img-carousel@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/react-img-carousel/-/react-img-carousel-1.3.3.tgz#a7f80e43eb7e24d6d6ac13612f36b157fdd63035"
-  dependencies:
-    class-autobind "^0.1.0"
-    classnames "^2.0.0"
-    lodash.inrange "^3.3.6"
-    lodash.merge "^4.6.0"
-    lodash.nth "^4.11.2"
-    ms "^0.7.2"
-    prop-types "^15.5.10"
 
 react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"

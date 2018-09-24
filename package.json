@@ -10,7 +10,6 @@
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.7.2",
     "autoprefixer": "^8.6.5",
     "axios": "^0.16.2",
     "cloudinary-react": "^1.0.6",
@@ -36,7 +35,6 @@
     "react-dom": "^16.0.0",
     "react-flex-carousel": "^1.1.0",
     "react-hot-loader": "^4.0.0-beta.21",
-    "react-img-carousel": "^1.3.3",
     "react-loader-spinner": "^2.1.0",
     "react-markdown": "^3.1.0",
     "react-moment": "^0.7.0",
