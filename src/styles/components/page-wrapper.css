@@ -40,18 +40,9 @@
 }
 
 @media w(768) { /*------------------------------------------------------------*/
-  .home {
-/*     &.route-wrapper {
-      display: flex;
-      position: absolute;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .router-context {
-      position: absolute;
-    } */
+  .nav-arrow {
+    transform-origin: top center;
+    transform: scale(.8) translateX(-50%);
   }
 
   .slider {
@@ -88,6 +79,10 @@
 }
 
 @media w(1024) { /*-----------------------------------------------------------*/
+  .nav-arrow {
+    transform: scale(.6) translateX(-50%);
+  }
+
   .slider {
     .image-holder {
       width: 50vw;

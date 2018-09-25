@@ -41,5 +41,5 @@ nav {
   height: 0;
   border-left: 1vw solid transparent;
   border-right: 1vw solid transparent;
-  border-top: 1.5vw solid red;
+  border-top: 1.5vw solid $red;
 }

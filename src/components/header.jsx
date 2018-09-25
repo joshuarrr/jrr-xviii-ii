@@ -27,17 +27,17 @@ export class Header extends Component {
       const left = link.getBoundingClientRect().left
       // console.log("to page: " + page, "arrowPos: " + this.state.arrowPos)
       // console.log(link, width, left)
-      this.setState({ arrowPos: `(${width} / 2 ) + ${left}px` })
+      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
     } else if (page == 4) {
       const link = this.projectsLink.current
       const width = link.getBoundingClientRect().width
       const left = link.getBoundingClientRect().left
-      this.setState({ arrowPos: `(${width} / 2 ) + ${left}px` })
+      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
     } else if (page == 5) {
       const link = this.processLink.current
       const width = link.getBoundingClientRect().width
       const left = link.getBoundingClientRect().left
-      this.setState({ arrowPos: `(${width} / 2 ) + ${left}px` })
+      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
     } else {
       this.setState({ arrowPos: '-25px' })
     }
@@ -77,12 +77,12 @@ export class Header extends Component {
             </svg>
           </span>
         </Link>
-        <span className="name-wrapper">
-          <MediaQuery minWidth={1280}>
+        <MediaQuery minWidth={1280}>
+          <span className="name-wrapper">
             <h1 className="site-title">Joshua Richey</h1>
             <h2 className="site-subtitle">Product Designer</h2>
-          </MediaQuery>
-        </span>
+          </span>
+        </MediaQuery>
         <nav>
           <ul className="nav-links">
             <li className="nav-link" ref={this.profileLink}>
