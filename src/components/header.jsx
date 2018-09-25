@@ -47,25 +47,33 @@ export class Header extends Component {
     this.arrowMover(this.props.pageNum)
   }
 
+  toggleLogoClass () {
+    const logoClass =
+      (this.props.pageNum == 1 || window.innerWidth >= 1280)
+       ? 'site-logo'
+       : 'site-logo minimized'
+    return (logoClass)
+  }
+
   componentDidMount = () => {
     this.arrowMover(this.props.pageNum)
     window.addEventListener('resize', this.repositionArrow)
   }
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.repositionArrow)
+    window.removeEventListener('resize', this.repositionArrow, this.toggleLogo)
   }
 
   render = () => {
     // console.log( "pageNum = "+ this.props.pageNum)
-    const toggleClass = this.props.pageNum == 1 ? '' : 'minimized'
+    // const toggleClass = (this.props.pageNum == 1 || window.innerWidth >= 1280) ? '' : 'minimized'
 
     return (
       <header className="header">
         <Link
           to="/"
           tabIndex="-1"
-          className={` site-logo ${toggleClass}`}
+          className={ this.toggleLogoClass() }
           onClick={() => { this.arrowMover() }}
         >
           <span className="site-logo-link-text">

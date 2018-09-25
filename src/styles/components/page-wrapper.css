@@ -201,8 +201,7 @@
 
 /* Profile pic */
 :root {
-  --profile-pic-size
-.: 10rem;
+  --profile-pic-size: 10rem;
 }
 
 @media h(481) {
@@ -211,8 +210,7 @@
   }
 
   :root {
-    --profile-pic-size
-.: 20vh;
+    --profile-pic-size: 20vh;
   }
 }
 
