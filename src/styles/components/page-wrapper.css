@@ -88,25 +88,6 @@
       padding-bottom: 40%;
     }
   }
-
-   /* Projects */
-  .projects-page {
-    display: grid;
-    grid-gap: calc($trailer / 2) $gutter;
-    grid-template-areas:
-      "projects project";
-    grid-template-columns: 1fr 4fr;
-  }
-
-  .projects {
-    grid-area: projects;
-    border-right: $default-border;
-    padding-right: $gutter;
-  }
-
-  .project {
-    grid-area: project;
-  }
 }
 
 @media w(1280) { /*-----------------------------------------------------------*/
@@ -172,11 +153,6 @@
   .content {
     grid-area: content;
     z-index: 1;
-  }
-
-  .project-summaries .project-title {
-    font-size: calc(13px + .4vw);
-    line-height: 1.9;
   }
 
   .footer {

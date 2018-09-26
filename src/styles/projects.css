@@ -2,7 +2,7 @@
 @import './lib.css';
 @import './mixins/helpers.css';
 
-.project {
+.project { /*-----------------------------------------------------------------*/
   position: relative;
   text-align: center;
 }
@@ -103,10 +103,12 @@
   }
 }
 
-/* Projects ------------------------------------------------------------------*/
-.projects {
+
+
+.project-summaries { /*-------------------------------------------------------*/
   .project {
     padding-bottom: $trailer;
+    /* margin: 0 -2vw 3vw -4vw; */
 
     &.current-project {
       border-right: 1px solid $red;
@@ -127,4 +129,40 @@
       transform: scale(1.1);
     }
   }
+}
+
+
+@media w(1024) { /*-----------------------------------------------------------*/
+  .projects-page {
+    display: grid;
+    grid-gap: calc($trailer / 2) $gutter;
+    grid-template-areas: "projects project";
+    grid-template-columns: 1fr 4fr;
+  }
+
+  .project-summaries {
+    grid-area: projects;
+    border-right: $default-border;
+  }
+
+  .project-summaries .project-title {
+    font-size: calc(13px + .4vw);
+    line-height: 1.9;
+  }
+
+  .project {
+    grid-area: project;
+  }
+}
+
+
+@media w(1280) { /*-----------------------------------------------------------*/
+  .project-summaries {
+    margin: -5vh 0 -5vh -5vh;
+    padding: 5vh 2.5vh;
+  }
+}
+
+
+@media w(1650) { /*-----------------------------------------------------------*/
 }
