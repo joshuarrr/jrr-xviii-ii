@@ -5,6 +5,7 @@
 .slider {
   width: 100vw;
   padding-bottom: 5vh; /* pushes indicators down */
+  overflow: visible;
 
   .image-holder {
     /* aspect ratio hack */

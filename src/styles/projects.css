@@ -63,7 +63,7 @@
   padding: 1rem;
   border: 1px solid $light-gray;
   border-radius: 50%;
-  margin: calc($trailer /2) 0;
+  margin: calc($trailer / 2) 0;
   display: inline-block;
   color: transparent;
   font: 0/0 a;
@@ -103,10 +103,14 @@
   }
 }
 
-/* Projects */
+/* Projects ------------------------------------------------------------------*/
 .projects {
   .project {
     padding-bottom: $trailer;
+
+    &.current-project {
+      border-right: 1px solid $red;
+    }
   }
 
   .image-holder {

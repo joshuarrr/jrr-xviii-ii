@@ -50,8 +50,8 @@ export class Header extends Component {
   toggleLogoClass () {
     const logoClass =
       (this.props.pageNum == 1 || window.innerWidth >= 1280)
-       ? 'site-logo'
-       : 'site-logo minimized'
+        ? 'site-logo'
+        : 'site-logo minimized'
     return (logoClass)
   }
 
@@ -73,7 +73,7 @@ export class Header extends Component {
         <Link
           to="/"
           tabIndex="-1"
-          className={ this.toggleLogoClass() }
+          className={this.toggleLogoClass()}
           onClick={() => { this.arrowMover() }}
         >
           <span className="site-logo-link-text">
@@ -113,7 +113,7 @@ export class Header extends Component {
               <Link
                 to="/process"
                 activeClassName="active"
-                onClick={() => {this.arrowMover(5)}}
+                onClick={() => { this.arrowMover(5) }}
               >process
               </Link>
             </li>

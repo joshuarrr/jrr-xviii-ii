@@ -6,12 +6,17 @@ import { Img } from '../components/image-loader'
 import '../styles/projects.css'
 
 
-const ProjectSummaries = ({ projects }) => {
+const ProjectSummaries = ({ projects, currentProject }) => {
   return (
-    <ul className="projects">
+    <ul className="projects project-summaries">
+
       {projects.map(project => ([
         <MediaQuery maxWidth={1023} key="mobile">
-          <li className="project" key={project.data.slug}>
+          <li
+            className={project.data.slug === currentProject.data.slug
+              && 'project'}
+            key={project.data.slug}
+          >
             <Link to={`/projects/project/${project.data.slug}`}>
               <h2 className="project-title">
                 {project.data.title}
@@ -44,7 +49,12 @@ const ProjectSummaries = ({ projects }) => {
           </li>
         </MediaQuery>,
         <MediaQuery minWidth={1024} key="desktop">
-          <li className="project" key={project.data.slug}>
+          <li
+            className={project.data.slug === currentProject.data.slug
+              ? 'project current-project'
+              : 'project'}
+            key={project.data.slug}
+          >
             <Link to={`/projects/project/${project.data.slug}`}>
               <h2 className="project-title">
                 {project.data.title}

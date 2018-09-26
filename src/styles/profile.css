@@ -3,8 +3,6 @@
 
 .profile-pic {
   border-radius: 50%;
-  /* @include size(var(--profile-pic-size
-.)); */
   width: var(--profile-pic-size);
   position: relative;
   left: calc(50% - (var(--profile-pic-size) / 2));
@@ -21,6 +19,7 @@
     padding-left: 2rem;
   }
 }
+
 .text-container {
   position: relative;
   display: inline-block;
