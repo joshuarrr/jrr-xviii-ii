@@ -3,6 +3,7 @@ import { Link } from 'react-static'
 import { Animate } from 'react-move'
 import { easeQuadInOut } from 'd3-ease'
 import MediaQuery from 'react-responsive'
+import { Desktop } from '../constants'
 import '../styles/components/header.css'
 import '../styles/elements/logo.css'
 
@@ -11,35 +12,36 @@ export class Header extends Component {
   constructor () {
     super()
     this.state = {
-      arrowPos: '-25px',
+      arrowPos: '',
     }
     this.profileLink = React.createRef()
     this.projectsLink = React.createRef()
     this.processLink = React.createRef()
   }
 
-  arrowMover = page => {
-    // console.log("current page: " + this.props.pageNum)
 
-    if (page == 3) {
-      const link = this.profileLink.current
-      const width = link.getBoundingClientRect().width
-      const left = link.getBoundingClientRect().left
-      // console.log("to page: " + page, "arrowPos: " + this.state.arrowPos)
-      // console.log(link, width, left)
-      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
-    } else if (page == 4) {
-      const link = this.projectsLink.current
-      const width = link.getBoundingClientRect().width
-      const left = link.getBoundingClientRect().left
-      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
-    } else if (page == 5) {
-      const link = this.processLink.current
-      const width = link.getBoundingClientRect().width
-      const left = link.getBoundingClientRect().left
-      this.setState({ arrowPos: (width / 2 ) + left + 'px' })
+  arrowMover = () => {
+    const desktop = parseInt(Desktop)
+    const navLinks = document.querySelector('.nav-links')
+    const activeLink = document.querySelector('.nav-links a.active')
+    const navTop = navLinks.getBoundingClientRect().top
+    if (activeLink) {
+      const {
+        width, height, left, top,
+      } = activeLink.getBoundingClientRect()
+      const pos = window.innerWidth <= desktop
+        ? `${(width / 2) + left}px`
+        : `${(height / 2) + (top - navTop)}px`
+      this.setState({
+        arrowPos: pos,
+      })
     } else {
-      this.setState({ arrowPos: '-25px' })
+      const offScreen = window.innerWidth <= desktop
+        ? '-25px'
+        : `${(-navTop - 25)}px`
+      this.setState({
+        arrowPos: offScreen,
+      })
     }
   }
 
@@ -48,16 +50,23 @@ export class Header extends Component {
   }
 
   toggleLogoClass () {
+    const desktop = parseInt(Desktop)
     const logoClass =
-      (this.props.pageNum == 1 || window.innerWidth >= 1280)
+      (this.props.pageNum === 1 || window.innerWidth >= desktop)
         ? 'site-logo'
         : 'site-logo minimized'
     return (logoClass)
   }
 
   componentDidMount = () => {
-    this.arrowMover(this.props.pageNum)
     window.addEventListener('resize', this.repositionArrow)
+    this.arrowMover()
+  }
+
+  componentDidUpdate= prevProps => {
+    if (prevProps.pageNum !== this.props.pageNum) {
+      this.arrowMover()
+    }
   }
 
   componentWillUnmount () {
@@ -66,8 +75,8 @@ export class Header extends Component {
 
   render = () => {
     // console.log( "pageNum = "+ this.props.pageNum)
-    // const toggleClass = (this.props.pageNum == 1 || window.innerWidth >= 1280) ? '' : 'minimized'
-
+    // const toggleClass = (this.props.pageNum == 1 || window.innerWidth >= desktop) ? '' : 'minimized'
+    const desktop = parseInt(Desktop)
     return (
       <header className="header">
         <Link
@@ -85,7 +94,7 @@ export class Header extends Component {
             </svg>
           </span>
         </Link>
-        <MediaQuery minWidth={1280}>
+        <MediaQuery minWidth={desktop}>
           <span className="name-wrapper">
             <h1 className="site-title">Joshua Richey</h1>
             <h2 className="site-subtitle">Product Designer</h2>
@@ -118,24 +127,48 @@ export class Header extends Component {
               </Link>
             </li>
           </ul>
-          <Animate
-            show
-            start={{
-              left: ['-10%'],
-            }}
-            enter={{
-              left: [this.state.arrowPos],
-              timing: { duration: 500, delay: 0, ease: easeQuadInOut },
-            }}
-            update={{
-              left: [this.state.arrowPos],
-              timing: { duration: 500, delay: 0, ease: easeQuadInOut },
-            }}
-          >
-            {({ left }) => (
-              <div className="nav-arrow" style={{ left }} />
-            )}
-          </Animate>
+          {/* Arrow Mover < Desktop */}
+          <MediaQuery maxWidth={1279}>
+            <Animate
+              show
+              start={{
+                left: ['-10%'],
+              }}
+              enter={{
+                left: [this.state.arrowPos],
+                timing: { duration: 500, delay: 0, ease: easeQuadInOut },
+              }}
+              update={{
+                left: [this.state.arrowPos],
+                timing: { duration: 500, delay: 0, ease: easeQuadInOut },
+              }}
+            >
+              {({ left }) => (
+                <div className="nav-arrow" style={{ left }} />
+              )}
+            </Animate>
+          </MediaQuery>
+          {/* Arrow Mover > Desktop */}
+          <MediaQuery minWidth={desktop}>
+            <Animate
+              show
+              start={{
+                top: ['-10%'],
+              }}
+              enter={{
+                top: [this.state.arrowPos],
+                timing: { duration: 500, delay: 0, ease: easeQuadInOut },
+              }}
+              update={{
+                top: [this.state.arrowPos],
+                timing: { duration: 500, delay: 0, ease: easeQuadInOut },
+              }}
+            >
+              {({ top }) => (
+                <div className="nav-arrow" style={{ top }} />
+              )}
+            </Animate>
+          </MediaQuery>
         </nav>
       </header>
     )

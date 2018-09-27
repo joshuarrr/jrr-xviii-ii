@@ -36,7 +36,7 @@
 .slider ol li {
   @include size(.3em);
   display: inline-block;
-  overflow: hidden;
+  /* overflow: hidden; */
   cursor: pointer;
   text-indent: 100%;
   padding: 3rem;

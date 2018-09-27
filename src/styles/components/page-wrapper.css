@@ -38,11 +38,6 @@
 }
 
 @media w(768) { /*------------------------------------------------------------*/
-  .nav-arrow {
-    transform-origin: top center;
-    transform: scale(.8) translateX(-50%);
-  }
-
   .slider {
     margin-top: 5vh;
   }
@@ -77,9 +72,6 @@
 }
 
 @media w(1024) { /*-----------------------------------------------------------*/
-  .nav-arrow {
-    transform: scale(.6) translateX(-50%);
-  }
 
   .slider {
     .image-holder {

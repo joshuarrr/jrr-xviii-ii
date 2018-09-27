@@ -9,6 +9,8 @@ import '../styles/projects.css'
 export class Projects extends Component {
   render () {
   // {console.log(projects)
+    // console.log(this.props.pageNumber)
+    // console.log(this.props)
     const projects = this.props.projects
     const currentProject = this.props.project != null
       ? this.props.project

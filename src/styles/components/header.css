@@ -42,4 +42,23 @@ nav {
   border-left: 1vw solid transparent;
   border-right: 1vw solid transparent;
   border-top: 1.5vw solid $red;
+
+  @media w(768) {
+    transform-origin: top center;
+    transform: scale(.8) translateX(-50%);
+  }
+
+  @media w(1024) {
+    transform: scale(.6) translateX(-50%);
+  }
+
+  @media w(1280) {
+    top: 0;
+    right: 0;
+    border: 0;
+    border-top: .5vw solid transparent;
+    border-bottom: .5vw solid transparent;
+    border-left: .75vw solid $red;
+    transform: translate(100%, -50%);
+  }
 }
