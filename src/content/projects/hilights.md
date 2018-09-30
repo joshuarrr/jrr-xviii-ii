@@ -11,7 +11,7 @@ summary: >-
 <img src="https://res.cloudinary.com/joshuar/image/upload/f_auto,w_512/portfolio/hilights/hilights-iphone.jpg" alt />
 
 <section id="introduction">
-INTRODUCTION: THE PROBLEM
+##INTRODUCTION: THE PROBLEM
 
 My buddy and I are in a band together and we are frequently frustrated when we listen  to recordings of our practices and want to discuss a particular section of the music. Conversations usually go something like this:
 
