@@ -27,7 +27,7 @@ My buddy and I are in a band together and we are frequently frustrated when we l
 >
 > **Him:** Ugh. Hold on. OK. At like 12:15 - 15:00
 >
-> **Me: ** Oh! Yeah, this does sound great. New song potential?
+> **Me:** Oh! Yeah, this does sound great. New song potential?
 
 These conversations are so frustrating that we don’t have them very often anymore. But we totally would, if it were easier to share clips.
 
