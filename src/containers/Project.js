@@ -1,8 +1,6 @@
 import React from 'react'
-import { withRouteData, Link } from 'react-static'
-import Moment from 'react-moment'
+import { withRouteData } from 'react-static'
 import Markdown from 'react-markdown'
-import { Img } from '../components/image-loader'
 import '../styles/projects.css'
 
 

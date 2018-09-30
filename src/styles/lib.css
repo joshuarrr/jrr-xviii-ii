@@ -6,6 +6,8 @@ $body-black: #4d4d4d;
 $body-gray: #999999;
 $ui-gray: #ccc;
 $light-gray: black(.1);
+$lighter-gray: black(.05);
+$lightest-gray: black(.02);
 
 /* Black */
 $blue: #87cdea;
@@ -17,7 +19,7 @@ $dark-red: color(#cc0033 lightness(30%));
 $red: #e62739;
 
 /* Contextual */
-$background-color: black(.02);
+$background-color: $lightest-gray;
 $page-color: white;
 
 /* Links */
@@ -26,7 +28,12 @@ $link-color: #108db8;
 /* Borders -------------------------------------------------------------------*/
 $default-border: 1px solid $light-gray;
 $light-border: 1px solid black(.05);
+$ui-border: 1px solid $ui-gray;
 $border: $default-border;
+
+/* Shadows -------------------------------------------------------------------*/
+/* offset-x | offset-y | blur-radius | color */
+$shadow: 0 0 2rem $lighter-gray;
 
 /* Vertical Rhythm -----------------------------------------------------------*/
 $trailer: 5vh;

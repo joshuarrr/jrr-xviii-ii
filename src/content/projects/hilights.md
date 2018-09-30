@@ -11,7 +11,7 @@ summary: >-
 <img src="https://res.cloudinary.com/joshuar/image/upload/f_auto,w_512/portfolio/hilights/hilights-iphone.jpg" alt />
 
 <section id="introduction">
-INTRODUCTION: THE PROBLEM
+<h2>INTRODUCTION: THE PROBLEM</h2>
 
 My buddy and I are in a band together and we are frequently frustrated when we listen  to recordings of our practices and want to discuss a particular section of the music. Conversations usually go something like this:
 
@@ -78,7 +78,7 @@ JK. Normally I’d start with the mobile version, but our research showed that (
 
 ![Hilights app on an iMac.](/uploads/hilights-imac.png)
 
-This screen shows a track with three highlights, one of which has been clicked on which revealed the comment thread. You can play the hilight and converse about it right in context. 
+This screen shows a track with three highlights, one of which has been clicked on which revealed the comment thread. You can play the hilight and converse about it right in context.
 
 Also, I drew these friendly (slightly startled looking) robots that are used for anonymous users:
 
@@ -98,5 +98,5 @@ A lot of people use their iPhone to record their band practices. We want to prov
 
 <img alt="Hilights app - mobile wireframes" src="/uploads/hilights-mobile-wireframes.png" class="bordered" />
 
-Wireframes of the mobile app. 
+Wireframes of the mobile app.
 Check out the [interactive prototype.](https://invis.io/A7HGN9D8DU5)

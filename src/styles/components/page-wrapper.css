@@ -26,22 +26,7 @@
   }
 }
 
-/* Horizontal Responsive -----------------------------------------------------*/
-@media w(560) {
-  .slider {
-    .image-holder {
-      width: 70vw;
-      margin: 0 auto;
-      padding-bottom: 53%;
-    }
-  }
-}
-
 @media w(768) { /*------------------------------------------------------------*/
-  .slider {
-    margin-top: 5vh;
-  }
-
   .page-content:not(.home-page) {
     display: grid;
     grid-gap: calc($trailer / 2) $gutter;
@@ -71,16 +56,6 @@
   }
 }
 
-@media w(1024) { /*-----------------------------------------------------------*/
-
-  .slider {
-    .image-holder {
-      width: 50vw;
-      margin: 0 auto;
-      padding-bottom: 40%;
-    }
-  }
-}
 
 @media w(1280) { /*-----------------------------------------------------------*/
   .route-wrapper.home {
@@ -91,15 +66,6 @@
 
   .home-page {
     padding: 0;
-  }
-
-  .slider {
-    width: 75vw;
-    margin-top: 0;
-
-    .image-holder {
-      padding-bottom: 50%;
-    }
   }
 
   .page-wrap {
@@ -152,16 +118,6 @@
     position: fixed;
     width: 25vw;
     z-index: 3;
-  }
-}
-
-@media w(1650) { /*-----------------------------------------------------------*/
-  .slider {
-    width: 75vw;
-
-    .image-holder {
-      padding-bottom: 50%;
-    }
   }
 }
 

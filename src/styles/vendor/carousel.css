@@ -5,13 +5,38 @@
 .slider {
   width: 100vw;
   padding-bottom: 5vh; /* pushes indicators down */
-  overflow: visible;
+
+  @media w(768) {
+    margin-top: 5vh;
+  }
+
+  @media w(1280) {
+    width: 75vw;
+    margin-top: 0;
+    overflow: visible !important;
+  }
 
   .image-holder {
     /* aspect ratio hack */
     height: 0;
     padding-bottom: 75%;
     overflow: hidden;
+
+    @media w(560) {
+      width: 70vw;
+      margin: 0 auto;
+      padding-bottom: 53%;
+    }
+
+    @media w(1024) {
+      width: 50vw;
+      margin: 0 auto;
+      padding-bottom: 40%;
+    }
+
+    @media w(1280) {
+      padding-bottom: 50%;
+    }
   }
 }
 
@@ -31,6 +56,10 @@
   bottom: .5em;
   text-align: center;
   width: 100%;
+
+  @media w(1280) {
+    bottom: -$trailer;
+  }
 }
 
 .slider ol li {
@@ -98,7 +127,7 @@
   color: $ui-gray;
   transition: color .5s, transform .5s $bounce-in;
 
-  &:hover {`
+  &:hover {
     color: $link-color;
     transform: scale(1.2);
   }

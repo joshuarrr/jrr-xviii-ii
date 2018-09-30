@@ -19,7 +19,6 @@ export class Header extends Component {
     this.processLink = React.createRef()
   }
 
-
   arrowMover = () => {
     const desktop = parseInt(Desktop)
     const navLinks = document.querySelector('.nav-links')
@@ -106,7 +105,7 @@ export class Header extends Component {
               <Link
                 to="/profile"
                 activeClassName="active"
-                onClick={() => { this.arrowMover(3) }}
+                onClick={() => { this.arrowMover() }}
               >profile
               </Link>
             </li>
@@ -114,7 +113,7 @@ export class Header extends Component {
               <Link
                 to="/projects"
                 activeClassName="active"
-                onClick={() => { this.arrowMover(4) }}
+                onClick={() => { this.arrowMover() }}
               >projects
               </Link>
             </li>
@@ -122,12 +121,12 @@ export class Header extends Component {
               <Link
                 to="/process"
                 activeClassName="active"
-                onClick={() => { this.arrowMover(5) }}
+                onClick={() => { this.arrowMover() }}
               >process
               </Link>
             </li>
           </ul>
-          {/* Arrow Mover < Desktop */}
+          {/* Arrow Mover <= Desktop */}
           <MediaQuery maxWidth={1279}>
             <Animate
               show
@@ -148,7 +147,7 @@ export class Header extends Component {
               )}
             </Animate>
           </MediaQuery>
-          {/* Arrow Mover > Desktop */}
+          {/* Arrow Mover >= Desktop */}
           <MediaQuery minWidth={desktop}>
             <Animate
               show
