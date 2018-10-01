@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// PostCSS
 import autoprefixer from 'autoprefixer'
 import nested from 'postcss-nested'
 import calc from 'postcss-calc'
@@ -16,15 +17,15 @@ const fs = require('fs')
 const klaw = require('klaw')
 const matter = require('gray-matter')
 
-function getContent (type) {
-  // console.log(type);
-  const contentType = type
+function getContent (category) {
+  // console.log(Category);
+  const contentCategory = category
   const items = []
   // Walk ("klaw") through projects directory and push file paths into items array //
   const getFiles = () => new Promise(resolve => {
     // Check if projects directory exists //
-    if (fs.existsSync(`./src/content/${contentType}`)) {
-      klaw(`./src/content/${contentType}`)
+    if (fs.existsSync(`./src/content/${contentCategory}`)) {
+      klaw(`./src/content/${contentCategory}`)
         .on('data', item => {
           // Filter function to retrieve .md files //
           if (path.extname(item.path) === '.md') {
