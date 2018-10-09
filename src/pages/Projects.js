@@ -10,7 +10,7 @@ export class Projects extends Component {
   render () {
   // {console.log(projects)
     // console.log(this.props.pageNumber)
-    // console.log(this.props)
+    // console.log(this.props.projects[0])
     const projects = this.props.projects
     const currentProject = this.props.project != null
       ? this.props.project
@@ -27,7 +27,7 @@ export class Projects extends Component {
         </MediaQuery>
         <MediaQuery key="mobile" maxWidth={1023}>
           {this.props.project == null
-            ? <ProjectSummaries projects={projects} />
+            ? <ProjectSummaries projects={projects} currentProject={currentProject} />
             : <Project project={currentProject} />
           }
         </MediaQuery>

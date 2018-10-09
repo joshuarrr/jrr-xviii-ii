@@ -24,13 +24,15 @@ function getContent (category) {
   // Walk ("klaw") through projects directory and push file paths into items array //
   const getFiles = () => new Promise(resolve => {
     // Check if projects directory exists //
-    if (fs.existsSync(`./src/content/${contentCategory}`)) {
-      klaw(`./src/content/${contentCategory}`)
+    if (fs.existsSync(`./src/pages/${contentCategory}`)) {
+      klaw(`./src/pages/${contentCategory}`)
         .on('data', item => {
           // Filter function to retrieve .md files //
-          if (path.extname(item.path) === '.md') {
+          if (path.extname(item.path) === '.js') {
+            // console.log('• item path: ', item.path)
             // If markdown file, read contents //
             const data = fs.readFileSync(item.path, 'utf8')
+            // console.log('• data: ', data)
             // Convert to frontmatter object and markdown content //
             const dataObj = matter(data)
             // Create slug for URL //
@@ -40,7 +42,8 @@ function getContent (category) {
               .replace(/[^\w-]+/g, '')
             // Remove unused key //
             delete dataObj.orig
-            // Push object into items array //
+            // Push object into items array
+            // console.log('dataObj', dataObj)
             items.push(dataObj)
           }
         })
@@ -48,6 +51,7 @@ function getContent (category) {
           console.log(e)
         })
         .on('end', () => {
+          console.dir('items: ', items)
           // Resolve promise for async getRoutes request //
           // projects = items for below routes //
           resolve(items)
@@ -104,13 +108,11 @@ export default {
         // an object {...} and not interpret the braces as the opening
         // of a block which would require a `return` since that makes it
         // a statement body instead of an expression body!
-        children: ['Hilights', 'Idealist', 'Lumen'].map( (project, index) => ({
+        children: ['Hilights', 'Idealist', 'Lumen'].map((project, index) => ({
           path: `project/${project}`,
-          component: `src/pages/projects/${project}`,
+          component: 'src/pages/Projects',
           getData: () => ({
-            currentProject: index,
-            project,
-            projects,
+            currentProject: index, project, projects,
           }),
         })),
       },
