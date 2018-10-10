@@ -28,7 +28,7 @@ function getContent (category) {
       klaw(`./src/pages/${contentCategory}`)
         .on('data', item => {
           // Filter function to retrieve .md files //
-          if (path.extname(item.path) === '.js') {
+          if (path.extname(item.path) === '.md') {
             // console.log('• item path: ', item.path)
             // If markdown file, read contents //
             const data = fs.readFileSync(item.path, 'utf8')
