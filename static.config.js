@@ -104,7 +104,7 @@ export default {
         // an object {...} and not interpret the braces as the opening
         // of a block which would require a `return` since that makes it
         // a statement body instead of an expression body!
-        children: ['Hilights', 'Idealist', 'Lumen'].map( (project, index) => ({
+        children: ['Hilights', 'Idealist', 'Lumen'].map((project, index) => ({
           path: `project/${project}`,
           component: `src/pages/projects/${project}`,
           getData: () => ({
