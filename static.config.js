@@ -11,99 +11,46 @@ import functions from 'postcss-functions'
 import postcssImport from 'postcss-import'
 import colorFunc from 'postcss-color-function'
 import conditionals from 'postcss-conditionals'
-
+// json
+import projects from './src/data/projects'
+// etc
 const path = require('path')
-const fs = require('fs')
-const klaw = require('klaw')
-const matter = require('gray-matter')
+//
 
-function getContent (category) {
-  // console.log(Category);
-  const contentCategory = category
-  const items = []
-  // Walk ("klaw") through projects directory and push file paths into items array //
-  const getFiles = () => new Promise(resolve => {
-    // Check if projects directory exists //
-    if (fs.existsSync(`./src/pages/${contentCategory}`)) {
-      klaw(`./src/pages/${contentCategory}`)
-        .on('data', item => {
-          // Filter function to retrieve .md files //
-          if (path.extname(item.path) === '.md') {
-            // console.log('• item path: ', item.path)
-            // If markdown file, read contents //
-            const data = fs.readFileSync(item.path, 'utf8')
-            // console.log('• data: ', data)
-            // Convert to frontmatter object and markdown content //
-            const dataObj = matter(data)
-            // Create slug for URL //
-            dataObj.data.slug = dataObj.data.title
-              .toLowerCase()
-              .replace(/ /g, '-')
-              .replace(/[^\w-]+/g, '')
-            // Remove unused key //
-            delete dataObj.orig
-            // Push object into items array
-            // console.log('dataObj', dataObj)
-            items.push(dataObj)
-          }
-        })
-        .on('error', e => {
-          console.log(e)
-        })
-        .on('end', () => {
-          console.dir('items: ', items)
-          // Resolve promise for async getRoutes request //
-          // projects = items for below routes //
-          resolve(items)
-        })
-    } else {
-      // If src/projects directory doesn't exist, return items as empty array //
-      resolve(items)
-    }
-  })
-  return getFiles()
-}
 
 export default {
   getSiteData: async () => ({
     title: 'JOSHUAR 🦁',
-    projects: await getContent('projects'),
   }),
 
   getRoutes: async () => {
-    const projects = await getContent('projects')
-    const profile = await getContent('profile')
-    // console.log(profile);
+    // console.log('projects: ', projects)
     return [
       {
         path: '/',
         component: 'src/pages/Home',
-        getData: () => ({
-          pageNumber: 1,
-        }),
+        getData: () => {
+          return {
+            projects,
+          }
+        },
       },
       {
         path: '/contact',
         component: 'src/pages/Contact',
-        getData: () => ({
-          pageNumber: 2,
-        }),
       },
       {
         path: '/profile',
         component: 'src/pages/Profile',
-        getData: () => ({
-          profile,
-          pageNumber: 3,
-        }),
       },
       {
         path: '/projects',
         component: 'src/pages/Projects',
-        getData: () => ({
-          projects,
-          pageNumber: 4,
-        }),
+        getData: async () => {
+          return {
+            projects,
+          }
+        },
         // Note: the parentheses after fat arrow allow it to return
         // an object {...} and not interpret the braces as the opening
         // of a block which would require a `return` since that makes it
@@ -119,9 +66,6 @@ export default {
       {
         path: '/process',
         component: 'src/pages/Process',
-        getData: () => ({
-          pageNumber: 5,
-        }),
       },
       {
         is404: true,

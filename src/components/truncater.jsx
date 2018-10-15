@@ -14,34 +14,31 @@ class LongText extends Component {
     node.style.height = `${node.scrollHeight}px`
   }
 
-  componentDidUpdate() {
-    this.resizer();
+  componentDidUpdate () {
+    this.resizer()
   }
 
-  truncatedText() {
-    if(this.props.short && !this.state.expanded){
-      return (
+  truncatedText () {
+    const truncatedContent = this.props.short && !this.state.expanded
+      ? (
         <span>
           {this.props.short}
           <button
             className="button-basic"
-            onClick={() =>
-            { this.setState(
-              {expanded: true},
-            );
+            onClick={() => {
+              this.setState(
+              { expanded: true },
+            )
           }}>
              &nbsp;Read more ››
           </button>
         </span>
       )
-    } else {
-      return (
-        this.props.children
-      )
-    }
+      : this.props.children
+    return truncatedContent
   }
 
-  render() {
+  render () {
     return (
       <div
         className="text-container"

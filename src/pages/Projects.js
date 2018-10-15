@@ -15,13 +15,14 @@ export class Projects extends Component {
     const currentProject = this.props.project != null
       ? this.props.project
       : this.props.projects[0]
+
+    // console.log(this.props.projects)
     return (
       <div className="projects-page">
         <MediaQuery key="desktop" minWidth={1024}>
           <ProjectSummaries
             projects={projects}
             currentProject={currentProject}
-            page={this.props.pageNumber}
           />
           <Project project={currentProject} />
         </MediaQuery>

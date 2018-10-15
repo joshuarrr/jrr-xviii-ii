@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-static'
-import Markdown from 'react-markdown'
 import MediaQuery from 'react-responsive'
 import { Img } from '../components/image-loader'
 
@@ -12,35 +11,30 @@ const ProjectSummaries = ({ projects, currentProject }) => (
       <MediaQuery maxWidth={1023} key="mobile">
         <dd
           className="project"
-          key={project.data.slug}
+          key={project.title}
         >
-          <Link to={`/projects/project/${project.data.slug}`}>
+          <Link to={`/projects/project/${project.title}`}>
             <h2 className="project-title">
-              {project.data.title}
+              {project.title}
             </h2>
             <Img
               className="project-cover"
-              name={`portfolio/${project.data.slug}`}
+              name={`portfolio/${project.title}`}
             />
           </Link>
-          <Markdown
-            className="project-content"
-            source={project.data.summary}
-            escapeHtml={false}
-          />
-          { project.data.role &&
+          { project.role &&
             <dl className="project-role">
               <dt>Role:</dt>
-              <dd>{project.data.role}</dd>
+              <dd>{project.role}</dd>
             </dl>
           }
-          { project.data.tech &&
+          { project.tech &&
             <dl className="project-tech">
               <dt>Tech:</dt>
-              <dd>{project.data.tech}</dd>projects
+              <dd>{project.tech}</dd>projects
             </dl>
           }
-          <Link className="project-more-link" to={`/projects/project/${project.data.slug}`}>
+          <Link className="project-more-link" to={`/projects/project/${project.slug}`}>
             view project
           </Link>
         </dd>
@@ -49,27 +43,27 @@ const ProjectSummaries = ({ projects, currentProject }) => (
         <dd
           className={
             currentProject &&
-            project.data.slug === currentProject.data.slug
+            project.slug === currentProject.slug
             ? 'project current-project'
             : 'project'
           }
-          key={project.data.slug}
+          key={project.slug}
         >
           <Link
             className="project-summary-link"
-            to={`/projects/project/${project.data.slug}`}>
+            to={`/projects/project/${project.title}`}>
             <Img
               className="project-cover"
-              name={`portfolio/${project.data.slug}`}
+              name={`portfolio/${project.title}`}
             />
             <h2 className="project-title">
-              {project.data.title}
+              {project.title}
             </h2>
           </Link>
           {/*
           <Link
             className="project-more-link"
-            to={`/projects/project/${project.data.slug}`}>
+            to={`/projects/project/${project.slug}`}>
             view project
           </Link>
           */}
