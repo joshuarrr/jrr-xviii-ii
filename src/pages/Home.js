@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouteData, Link } from 'react-static'
-import Carousell from 'react-flex-carousel'
+import Carousel from 'react-flex-carousel'
 import MediaQuery from 'react-responsive'
 import { Img } from '../components/image-loader'
 import '../styles/home.css'
@@ -13,7 +13,7 @@ export default withRouteData(({ projects }) => {
         <h1 className="site-title">Joshua Richey</h1>
         <h2 className="site-subtitle">Product Designer</h2>
       </MediaQuery>
-      <Carousell
+      <Carousel
         switcher
         indicator
         transitionDuration=".7s"
@@ -30,7 +30,7 @@ export default withRouteData(({ projects }) => {
             )
           )
         }
-      </Carousell>
+      </Carousel>
     </div>
   )
 })

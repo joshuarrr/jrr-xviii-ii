@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-static'
 import MediaQuery from 'react-responsive'
+import { Link } from 'react-static'
 import { Img } from '../components/image-loader'
 
 

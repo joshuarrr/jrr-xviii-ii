@@ -14,10 +14,6 @@ class LongText extends Component {
     node.style.height = `${node.scrollHeight}px`
   }
 
-  componentDidUpdate () {
-    this.resizer()
-  }
-
   truncatedText () {
     const truncatedContent = this.props.short && !this.state.expanded
       ? (
@@ -38,14 +34,19 @@ class LongText extends Component {
     return truncatedContent
   }
 
+  componentDidUpdate () {
+    this.resizer()
+  }
+
   render () {
+    console.log(this.truncatedText())
     return (
       <div
         className="text-container"
         {...this.props}
         ref={this.textContainer}
       >
-        {this.truncatedText()}
+        { this.truncatedText() }
       </div>
     )
   }

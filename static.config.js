@@ -46,7 +46,7 @@ export default {
       {
         path: '/projects',
         component: 'src/pages/Projects',
-        getData: async () => {
+        getData: () => {
           return {
             projects,
           }
@@ -55,11 +55,13 @@ export default {
         // an object {...} and not interpret the braces as the opening
         // of a block which would require a `return` since that makes it
         // a statement body instead of an expression body!
-        children: ['Hilights', 'Idealist', 'Lumen'].map((project, index) => ({
-          path: `project/${project}`,
+        children: projects.map((project, index) => ({
+          path: `project/${project.title.toLowerCase()}`,
           component: 'src/pages/Projects',
           getData: () => ({
-            currentProject: index, project, projects,
+            currentProject: index,
+            project,
+            projects,
           }),
         })),
       },
