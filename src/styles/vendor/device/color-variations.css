@@ -1,4 +1,4 @@
-/* Portrait Gradients*/
+/* Portrait Gradients */
 %white-gradient {
   background: linear-gradient(#d0d0c5, #eeeeea);
 }
@@ -60,7 +60,9 @@
   }
 
   &.md-landscape {
-    .md-home-button, .md-front-camera, .md-top-speaker {
+    .md-home-button,
+    .md-front-camera,
+    .md-top-speaker {
         @extend %white-gradient-landscape;
     }
   }
@@ -109,7 +111,9 @@
   }
 
   &.md-landscape {
-    .md-home-button, .md-front-camera, .md-top-speaker {
+    .md-home-button,
+    .md-front-camera,
+    .md-top-speaker {
       @extend %black-gradient-landscape;
     }
   }

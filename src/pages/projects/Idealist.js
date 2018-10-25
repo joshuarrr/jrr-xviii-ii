@@ -94,10 +94,10 @@ export class Idealist extends Component {
 
         <section id="homepage">
           <h2>Homepage & Search</h2>
+          <p>Idealist's job and volunteer search function is central to product.</p>
           <Img
             name="portfolio/idealist/idealist-home-ipad"
           />
-          <p>Idealist's job and volunteer search function is central to product.</p>
           <DeviceMock size="small" scrollable>
             <Img
               name="portfolio/idealist/idealist-search-mobile"
