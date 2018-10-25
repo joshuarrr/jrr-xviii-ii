@@ -1,0 +1,6 @@
+/* Device Mocks Component */
+.device {
+  .image-holder img {
+    margin: 0;
+  }
+}

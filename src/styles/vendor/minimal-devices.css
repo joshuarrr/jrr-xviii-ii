@@ -1,0 +1,13 @@
+/* Minimal Devices ************************************************************/
+/******************************************************************************/
+/******************************************************************************/
+@import "./device/iphone.css";
+@import "./device/color-variations.css";
+/* @import "./device/ipad.css"; */
+/* @import "./device/macbook-pro.css"; */
+/* @import "./device/imac.css"; */
+
+
+body {
+  background: red !important;
+}
