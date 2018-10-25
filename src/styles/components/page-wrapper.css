@@ -42,12 +42,12 @@
     @include size(20vw);
     margin: 0;
     left: calc(50% - 10vw);
-    border: $default-border inset;
+    border: $border inset;
   }
 
   .profile-bio {
     grid-area: bio;
-    border-right: $default-border;
+    border-right: $border;
     padding-right: $gutter;
   }
 
@@ -76,7 +76,7 @@
 
   .header {
     grid-area: header;
-    border-right: $default-border;
+    border-right: $border;
     height: 100vh;
     width: 25vw;
     position: fixed;

@@ -5,10 +5,10 @@ import { Image } from 'cloudinary-react'
 
 
 export class Img extends Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.state = {
-      loaded: false
+      loaded: false,
     }
   }
 
@@ -26,7 +26,7 @@ export class Img extends Component {
           show
           start={{
             opacity: [0],
-            scale: [.95],
+            scale: [0.95],
           }}
           enter={{
             opacity: [1],
@@ -48,7 +48,7 @@ export class Img extends Component {
               secure
               responsive
               onLoad={() => {
-                this.setState({loaded: true});
+                this.setState({ loaded: true })
               }}
               style={{
                 opacity,

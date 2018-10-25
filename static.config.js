@@ -5,6 +5,7 @@ import nested from 'postcss-nested'
 import calc from 'postcss-calc'
 import colorAlpha from 'postcss-color-alpha'
 import advancedVars from 'postcss-advanced-variables'
+import extend from 'postcss-extend'
 import customMedia from 'postcss-custom-media'
 import mediaMinMax from 'postcss-media-minmax'
 import functions from 'postcss-functions'
@@ -108,6 +109,7 @@ export default {
             advancedVars,
             customMedia,
             mediaMinMax,
+            extend,
             nested,
             calc,
             colorFunc,

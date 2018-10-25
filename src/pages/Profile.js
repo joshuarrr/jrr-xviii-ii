@@ -1,8 +1,6 @@
 import React from 'react'
-import { withRouteData } from 'react-static'
-import Markdown from 'react-markdown'
-import LongText from '../components/truncater'
 import MediaQuery from 'react-responsive'
+import LongText from '../components/truncater'
 import { Img } from '../components/image-loader'
 import '../styles/profile.css'
 
