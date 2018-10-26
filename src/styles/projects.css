@@ -39,10 +39,6 @@
     transform: translateX(-50%);
   }
 
-  .small {
-    width: 33%;
-  }
-
   .medium {
     width: 50%;
   }

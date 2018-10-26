@@ -98,7 +98,7 @@ export class Idealist extends Component {
           <Img
             name="portfolio/idealist/idealist-home-ipad"
           />
-          <DeviceMock size="small" scrollable>
+          <DeviceMock device="iPhoneX" size="medium" scrollable>
             <Img
               name="portfolio/idealist/idealist-search-mobile"
             />
