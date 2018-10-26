@@ -1,6 +1,182 @@
-/* Device Mocks Component */
+/* Device Mocks ************************************************************* */
 .device {
   .image-holder img {
     margin: 0;
+  }
+}
+
+
+/* Device ------------------------------------------------------------- */
+.device {
+  display: inline-block;
+  position: relative;
+  box-sizing: content-box;
+}
+
+
+/* Devices  ------------------------------------------------------------------*/
+
+/* iPhoneX ----------------------------------------------*/
+  /* medium */
+  $w-med: 265px;
+  $h-med: 541px;
+  /* large */
+  $w-lrg: 375px;
+  $h-lrg: 812px;
+
+.device.iphone-x {
+  background: #fdfdfd;
+
+  &:before {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    position: absolute;
+    top: 5px;
+    // content: '';
+    left: 5px;
+    border-radius: 46px;
+    background: black;
+    z-index: 1;
+  }
+
+  .top-bar,
+  .bottom-bar {
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  .volume,
+  .volume:before,
+  .volume:after,
+  .sleep {
+    background: #b5b5b5;
+    position: absolute;
+  }
+
+  .glare {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 83%;
+    position: absolute;
+    top: pxtoem(10);
+    right: pxtoem(10);
+    border-radius: 0 pxtoem(50) 0 0;
+    z-index: 1;
+  }
+
+
+  /* Props -------------------------------------------------------------------*/
+  &.black {
+    background: #333;
+    box-shadow: inset 0 0 8px 0 black;
+
+    &:before {
+      background: #333;
+    }
+
+  .top-bar,
+  .bottom-bar {
+    background: rgba(255, 255, 255, .1);
+  }
+
+    .volume,
+    .volume:before,
+    .volume:after,
+    .sleep {
+      background: #222;
+    }
+  }
+
+  &.medium {
+    padding: 15px;
+    border-radius: 40px;
+    width: $w-med;
+    height: $h-med;
+
+    .screen {
+      $bezel-width: 5px;
+
+      border-radius: 25px;
+      box-shadow: 0 0 5px 5px #111;
+      background: #111;
+    }
+
+    .top-bar,
+    .bottom-bar {
+      height: 5px;
+    }
+
+    .top-bar {
+      top: 50px;
+    }
+
+    .bottom-bar {
+      bottom: 50px;
+    }
+
+    .volume,
+    .volume:before,
+    .volume:after,
+    .sleep {
+      width: 3px;
+      border-radius: 3px;
+    }
+
+    .volume {
+      left: -2px;
+      top: 100px;
+      height: 25px;
+
+      &:before {
+        height: 50px;
+        top: 47px;
+        content: '';
+        left: 0;
+      }
+
+      &:after {
+        height: 50px;
+        top: 118px;
+        content: '';
+        left: 0;
+      }
+    }
+
+    .sleep {
+      height: 70px;
+      top: 135px;
+      right: -2px;
+      border-radius: 3px;
+    }
+  }
+}
+
+
+/* Scroll panel ------------------------------------------------------------- */
+.element,
+.scroll-container {
+  width: $w-med;
+  height: $h-med;
+}
+
+.scroll-container {
+    // border: 1px solid red;
+    position: relative;
+    overflow: hidden;
+}
+
+.scrollable {
+  .inner-container {
+    position: absolute;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 1;
+  }
+
+  .inner-container::-webkit-scrollbar {
+      display: none;
   }
 }

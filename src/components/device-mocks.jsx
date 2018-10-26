@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import '../styles/vendor/device-mocks.css'
 import '../styles/vendor/minimal-devices.css'
-import '../styles/vendor/marvel-devices.css'
+// import '../styles/vendor/marvel-devices.css'
 
 export class DeviceMock extends Component {
   static propTypes = {
@@ -51,28 +51,25 @@ export class DeviceMock extends Component {
     if (device === 'iPhoneX') {
       console.log('true')
       return (
-        <div
-          className={
-            `marvel-device iphone-x
-             ${scrollable}
-             ${size}
-             ${color}`
-          }
-          key={`device-${device}`}
-        >
-          <div className="notch">
-            <div className="camera" />
-            <div className="speaker" />
+        [
+          <div
+            className={`device iphone-x ${size} ${color}`}
+            key={`device-${device}`}
+          >
+            <div className="top-bar" />
+            <div className="sleep" />
+            <div className="bottom-bar" />
+            <div className="volume" />
+            <div className="glare" />
+            <div className={`screen scroll-container ${scrollable}`}>
+              <div className="inner-container">
+                <div className="element">
+                  { mockContent }
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="top-bar" />
-          <div className="sleep" />
-          <div className="bottom-bar" />
-          <div className="volume" />
-          <div className="inner-shadow" />
-          <div className="screen">
-            { mockContent }
-          </div>
-        </div>
+        ]
       )
     }
     return (device)
