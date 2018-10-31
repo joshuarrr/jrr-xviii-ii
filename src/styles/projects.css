@@ -26,7 +26,11 @@
   }
 
   img {
-    margin: calc($trailer / 2) 0;
+    /* margin: calc($trailer / 2) 0; */
+  }
+
+  .image-holder {
+    margin-bottom: calc($trailer / 2);
   }
 
   .bordered {
@@ -55,10 +59,11 @@
 
   .image-row {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     /* align-items: center; */
     flex-direction: row;
     flex-wrap: nowrap;
+    margin-bottom: calc($trailer / 2);
 
     &.robots .image-holder {
       margin: 0 3vw;
@@ -73,6 +78,12 @@
     &.three-up {
       > * {
         width: 33%;
+      }
+    }
+
+    &.four-up {
+      > * {
+        width: 20%;
       }
     }
 

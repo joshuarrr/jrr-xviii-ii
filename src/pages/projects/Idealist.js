@@ -98,16 +98,50 @@ export class Idealist extends Component {
           <Img
             name="portfolio/idealist/idealist-home-ipad"
           />
-          <DeviceMock device="iPhoneX" size="medium" scrollable>
-            <Img
-              name="portfolio/idealist/idealist-search-mobile"
-            />
-          </DeviceMock>
+
+          <div className="image-row four-up">
+              <DeviceMock device="iPhoneX" size="small" scrollable>
+                <Img
+                  name="portfolio/idealist/idealist-search-mobile-0-"
+                />
+              </DeviceMock>
+              <DeviceMock device="iPhoneX" size="small" scrollable>
+                <Img
+                  name="portfolio/idealist/idealist-search-mobile-02"
+                />
+              </DeviceMock>
+              <DeviceMock device="iPhoneX" size="small" scrollable>
+                <Img
+                  name="portfolio/idealist/idealist-search-mobile-03"
+                />
+              </DeviceMock>
+              <DeviceMock device="iPhoneX" size="small" scrollable>
+                <Img
+                  name="portfolio/idealist/idealist-search-mobile-04"
+                />
+              </DeviceMock>
+          </div>
+
+          <div className="image-row">
+            <figure>
+              <DeviceMock device="iPhoneX" size="medium" scrollable>
+                <Img
+                  name="portfolio/idealist/idealist-search-mobile-05"
+                />
+              </DeviceMock>
+              <figcaption className="caption">Mobile homepage</figcaption>
+            </figure>
+          </div>
         </section>
 
 
-        <section id="ux-audit">
-          <h2>CONTEXT: UX AUDIT</h2>
+        <section id="team">
+          <h2>Idealist Team</h2>
+          <DeviceMock device="iPhoneX" size="medium" scrollable>
+            <Img
+              name="portfolio/idealist/idealist-our-team-mobile"
+            />
+          </DeviceMock>
           <p>3D-printed rain bridge augmented reality military-grade courier BASE jump footage claymore mine dolphin disposable tanto smart-neon. Courier plastic drone sunglasses dead tanto bridge post. Geodesic Legba nano-narrative A.I.</p>
         </section>
       </div>
