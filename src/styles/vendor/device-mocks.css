@@ -15,30 +15,15 @@
 
 
 /* Devices  ------------------------------------------------------------------*/
-
-/* iPhoneX ----------------------------------------------*/
-  /* iphoneX ratio: .46 */
-  /* small */
-  $w-sm: 200px;
-  $h-sm: 433px;
-    /* medium */
-  $w-med: 265px;
-  $h-med: 574px;
-  /* large */
-  $w-lrg: 375px;
-  $h-lrg: 812px;
-
+/* iPhoneX (ratio: .46 | .216) -----------------------------------------------*/
 .device.iphone-x {
-  // background: #fdfdfd;
-
   &:before {
     content: '';
-    // background: black;
     z-index: 1;
   }
 
-  .top-bar,
-  .bottom-bar {
+  .top-band,
+  .bottom-band {
     width: 100%;
     position: absolute;
     left: 0;
@@ -77,15 +62,14 @@
   /* Props -------------------------------------------------------------------*/
   /* Black iPhoneX -----------------------------------------------------------*/
   &.black {
-    background: #333;
-    box-shadow: inset 0 0 8px 0 black;
+    background: #111;
 
     &:before {
       background: #333;
     }
 
-  .top-bar,
-  .bottom-bar {
+  .top-band,
+  .bottom-band {
     background: rgba(255, 255, 255, .04);
   }
 
@@ -97,8 +81,17 @@
     }
   }
 
+  /* Large */
+  $w-lrg: 375px;
+  $h-lrg: 812px;
 
 /* Medium iPhoneX ------------------------------------------------------------*/
+
+  /* Medium */
+  $w-med: 265px;
+  $h-med: 574px;
+  $bezel-width-med: 5px;
+
   &.medium {
     padding: 15px;
     border-radius: 40px;
@@ -115,23 +108,21 @@
     }
 
     .screen {
-      $bezel-width: 5px;
-
       border-radius: 25px;
-      box-shadow: 0 0 5px 5px #111;
+      box-shadow: 0 0 $bezel-width-med $bezel-width-med #111;
       background: #111;
     }
 
-    .top-bar,
-    .bottom-bar {
-      height: 5px;
+    .top-band,
+    .bottom-band {
+      height: $bezel-width-med;
     }
 
-    .top-bar {
+    .top-band {
       top: 50px;
     }
 
-    .bottom-bar {
+    .bottom-band {
       bottom: 50px;
     }
 
@@ -170,6 +161,36 @@
       border-radius: 3px;
     }
 
+    .notch {
+      position: absolute;
+      width: 210px;
+      height: 30px;
+      top: 26px;
+      left: 108px;
+      z-index: 4;
+      background: black;
+      border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+
+        &:before, &:after {
+        content: '';
+        height: 8px;
+        position: absolute;
+        top: 0;
+        width: 8px;
+        }
+
+      &:after {
+        background: radial-gradient(circle at bottom left, transparent 0, transparent 70%, black 70%, black 100%);
+        left: -8px;
+      }
+
+      &:before {
+        background: radial-gradient(circle at bottom right, transparent 0, transparent 70%, black 70%, black 100%);
+        right: -8px;
+      }
+    }
+
     .element,
     .scroll-container {
       width: $w-med;
@@ -179,57 +200,42 @@
 
 
   /* Small iPhoneX -----------------------------------------------------------*/
+  $w-sm: 200px;
+  $h-sm: 433px;
+  $bezel-width-sm: 5px;
+
   &.small {
-    padding: 15px;
-    border-radius: 40px;
-    // width: 100%;
-    /* width: $w-sm;
-    height: $h-sm;
-    */
-    padding-top: 46%;
+    border-radius: 20px;
+    padding: 5px;
+
+    $inner-radius: 16px;
 
     &:before {
-      width: calc(100% - 14px);
-      height: calc(100% - 14px);
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
       position: absolute;
-      top: 7px;
-      left: 7px;
-      border-radius: 35px;
+      top: 5px;
+      left: 5px;
+      border-radius: $inner-radius;
       box-shadow: 0 0 .5px 0 #2b2b2b;
-      background: white(.08)
-    }
-
-    &:after {
-      content: '';
-      background: #2b2b2b;
-      width: calc(100% - 14px);
-      height: calc(100% - 14px);
-      position: absolute;
-      top: 7px;
-      left: 7px;
-      border-radius: 40px;
-      box-shadow: 0 0 .5px 0 #2b2b2b;
-      z-index: 2;
+      background: white(.1)
     }
 
     .screen {
-      $bezel-width: 5px;
-
-      border-radius: 25px;
-      box-shadow: 0 0 5px 5px #111;
+      border-radius: $inner-radius;
       background: #111;
     }
 
-    .top-bar,
-    .bottom-bar {
+    .top-band,
+    .bottom-band {
       height: 3px;
     }
 
-    .top-bar {
+    .top-band {
       top: 40px;
     }
 
-    .bottom-bar {
+    .bottom-band {
       bottom: 40px;
     }
 
@@ -237,62 +243,104 @@
     .volume:before,
     .volume:after,
     .sleep {
-      width: 3px;
-      border-radius: 3px;
+      width: 2px;
+      border-radius: 2px;
     }
 
     .volume {
-      left: -2px;
-      top: 60px;
-      height: 20px;
+      left: -1px;
+      top: 43px;
+      height: 15px;
 
       &:before {
-        height: 35px;
-        top: 37px;
+        height: 25px;
+        top: 28px;
         content: '';
         left: 0;
       }
 
       &:after {
-        height: 35px;
-        top: 80px;
+        height: 25px;
+        top: 60px;
         content: '';
         left: 0;
       }
     }
 
     .sleep {
-      height: 50px;
-      top: 100px;
-      right: -2px;
-      border-radius: 3px;
+      height: 35px;
+      top: 82px;
+      right: -1px;
+      border-radius: 1px;
     }
 
+    .notch {
+      position: absolute;
+      width: 50%;
+      height: .7em;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      background: black;
+      border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+
+        &:before, &:after {
+        content: '';
+        height: 8px;
+        position: absolute;
+        top: 0;
+        width: 8px;
+        }
+
+      &:after {
+        background: radial-gradient(circle at bottom left, transparent 0, transparent 70%, black 70%, black 100%);
+        left: -8px;
+      }
+
+      &:before {
+        background: radial-gradient(circle at bottom right, transparent 0, transparent 70%, black 70%, black 100%);
+        right: -8px;
+      }
+    }
+
+    /* the magic */
     .scroll-container {
-      // width: $w-sm;
-      // height: $h-sm;
-      // padding-top: 216%;
-      width: 100%;
-      height: 100%;
+      // padding-bottom: 216%;
+    }
+
+    .scrollable .inner-container {
+      bottom: -$bezel-width-sm;
+    }
+
+    .shadow {
+      box-shadow: 0 3px 15px 1px rgba(0, 0, 0, .25);
+      z-index: -1;
+      position: absolute;
+      border-radius: 24px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 1px;
+      background: #333;
     }
 
     .element {
+      /*top: 0;
+      padding-top: 1rem;
+      background: white;*/
       top: 0;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
     }
   }
 }
 
 
 /* Scroll panel ------------------------------------------------------------- */
-
-/*
-.element,
-.scroll-container {
-  width: $w-med;
-  height: $h-med;
-}
-*/
-
 .scroll-container {
     position: relative;
     overflow: hidden;
@@ -302,6 +350,8 @@
   .inner-container {
     position: absolute;
     left: 0;
+    top: 0;
+    right: 0;
     overflow-x: hidden;
     overflow-y: scroll;
     z-index: 1;

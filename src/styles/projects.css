@@ -30,7 +30,7 @@
   }
 
   .image-holder {
-    margin-bottom: calc($trailer / 2);
+    height: 100%;
   }
 
   .bordered {
@@ -84,6 +84,12 @@
     &.four-up {
       > * {
         width: 20%;
+      }
+    }
+
+    &.five-up {
+      > * {
+        width: 15%;
       }
     }
 
