@@ -7,9 +7,38 @@ import '../styles/vendor/minimal-devices.css'
 export class DeviceMock extends Component {
   constructor () {
     super()
-    this.device = React.createRef()
+    // this.device = React.createRef()
     this.scrollContainer = React.createRef()
     this.innerScrollContainer = React.createRef()
+    this.device = null
+    this.setDeviceRef = element => {
+      this.device = element
+    }
+
+    this.resizer = () => {
+      const device = this.device
+      device.style.width = `${device.clientWidth}px`
+      device.style.height = `${device.clientWidth * 2.16}px`
+      console.log('* device: ', device)
+      console.log('* device W: ', device.clientWidth)
+      console.log('* device H: ', device.clientWidth * 2.16)
+
+      const scrollNode = this.scrollContainer.current
+      scrollNode.style.width = `${device.clientWidth - 10}px`
+      scrollNode.style.height = `${device.clientWidth * 2.16}px`
+      console.log('scrollNode: ', scrollNode)
+
+      const innerScrollNode = this.innerScrollContainer.current
+      console.log('innerScrollNode: ', innerScrollNode)
+
+      const scrollbarWidth = `${innerScrollNode.offsetWidth - innerScrollNode.clientWidth}px`
+      console.log('* scrollbarWidth: ' + scrollbarWidth)
+
+      innerScrollNode.style.right = `${-(innerScrollNode.offsetWidth - innerScrollNode.clientWidth + 1)}px`
+      // innerScrollNode.style.width = `${device.clientWidth - 10}px`
+
+      console.log("* resized")
+    }
   }
 
   static propTypes = {
@@ -24,35 +53,8 @@ export class DeviceMock extends Component {
     shadow: PropTypes.bool,
   }
 
-
-  resizer = () => {
-    const deviceNode = this.device.current
-    deviceNode.style.width = `${deviceNode.clientWidth}px`
-    deviceNode.style.height = `${deviceNode.clientWidth * 2.16}px`
-    console.log('* deviceNode: ', deviceNode)
-    console.log('* deviceNode W: ', deviceNode.clientWidth)
-    console.log('* deviceNode H: ', deviceNode.clientWidth * 2.16)
-
-
-    const scrollNode = this.scrollContainer.current
-    scrollNode.style.width = `${deviceNode.clientWidth - 10}px`
-    scrollNode.style.height = `${deviceNode.clientWidth * 2.16}px`
-    console.log('scrollNode: ', scrollNode)
-
-    const innerScrollNode = this.innerScrollContainer.current
-    console.log('innerScrollNode: ', innerScrollNode)
-
-    const scrollbarWidth = `${innerScrollNode.offsetWidth - innerScrollNode.clientWidth}px`
-    console.log('* scrollbarWidth: ' + scrollbarWidth)
-
-    innerScrollNode.style.right = `${-(innerScrollNode.offsetWidth - innerScrollNode.clientWidth + 1)}px`
-    // innerScrollNode.style.width = `${deviceNode.clientWidth - 10}px`
-
-    console.log("* resized")
-  }
-
-  componentDidMount = () => {
-    window.addEventListener('resize', this.resizer.bind(this))
+  componentDidMount () {
+    window.addEventListener('resize', this.resizer)
     this.resizer()
   }
 
@@ -116,25 +118,11 @@ export class DeviceMock extends Component {
       )
     } else
     if (device === 'iPhoneX') {
-      // console.log('device: ' + device)
-      // const node = this.device
-      // const deviceWidth = node.innerWidth
-      // console.log('deviceWidth: ' + deviceWidth)
-
-      // const width = document.getElementByClass('device').offsetWidth
-      // console.log('width: ' + width)
-
-      // const device = this.device.current
-      // console.log('* device = ' + device)
-      // this.device.element.width = `${device.clientWidth}px`
-
-
-    // node.style.height = `${node.scrollHeight}px`
       return (
         <div
           className={`device iphone-x ${size} ${color}`}
           key={`device-${device}`}
-          ref={this.device}
+          ref={this.setDeviceRef}
         >
           { bands && <div className="top-band" /> }
           { buttons && <div className="sleep" /> }
