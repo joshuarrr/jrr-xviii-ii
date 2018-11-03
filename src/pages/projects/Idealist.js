@@ -6,7 +6,39 @@ import { DeviceMock } from '../../components/device-mocks'
 
 
 export class Idealist extends Component {
+
+  constructor () {
+    super()
+    this.imageRow = React.createRef()
+    this.state = {
+      rowWidth: '',
+      deviceWidth: null,
+    }
+    this.getRowWidth = this.getRowWidth.bind(this)
+  }
+
+  componentDidMount () {
+    // console.log(`cdm this.state.rowWidth: ${this.state.rowWidth}`)
+    // console.log(`cdm rowWidth: ${rowWidth}`)
+    window.addEventListener('resize', this.getRowWidth())
+  }
+
+  getRowWidth = () => {
+    const rowWidth = this.imageRow.current.clientWidth
+    // console.log(`grw rowWidth: ${rowWidth}`)
+    const rowCount = this.imageRow.current.childNodes.length
+    // console.log(`grw rowCount: ${rowCount}`)
+    const deviceWidth = rowWidth / rowCount
+    // console.log(`grw deviceWidth: ${deviceWidth}`)
+    this.setState({
+      rowWidth: rowWidth,
+      deviceWidth: deviceWidth,
+    })
+  }
+
   render () {
+    console.log(`IDEALIST this.state.deviceWidth: ${this.state.deviceWidth}`)
+
     return (
       <div className="project project-content">
 
@@ -91,7 +123,6 @@ export class Idealist extends Component {
           </li>
         </ul>
 
-
         <section id="homepage">
           <h2>Homepage & Search</h2>
           <p>Idealist's job and volunteer search function is central to product.</p>
@@ -100,36 +131,48 @@ export class Idealist extends Component {
           />
         </section>
 
-
         <section id="search">
           <h2>Search</h2>
           <p>3D-printed rain bridge augmented reality military-grade courier BASE jump footage claymore mine dolphin disposable tanto smart-neon. Courier plastic drone sunglasses dead tanto bridge post. Geodesic Legba nano-narrative A.I.</p>
-          <div className="image-row five-up">
-              <DeviceMock device="iPhoneX" size="small">
-                <Img
-                  name="portfolio/idealist/idealist-search-mobile-01"
-                />
-              </DeviceMock>
-              <DeviceMock device="iPhoneX" size="small">
-                <Img
-                  name="portfolio/idealist/idealist-search-mobile-02"
-                />
-              </DeviceMock>
-              <DeviceMock device="iPhoneX" size="small">
-                <Img
-                  name="portfolio/idealist/idealist-search-mobile-03"
-                />
-              </DeviceMock>
-              <DeviceMock device="iPhoneX" size="small">
-                <Img
-                  name="portfolio/idealist/idealist-search-mobile-04"
-                />
-              </DeviceMock>
-              <DeviceMock device="iPhoneX" size="small">
-                <Img
-                  name="portfolio/idealist/idealist-search-mobile-05"
-                />
-              </DeviceMock>
+          <div
+            className="image-row five-up"
+            ref={this.imageRow}
+          >
+            <DeviceMock
+              device="iPhoneX"
+              size="small"
+              width={`${this.state.deviceWidth}px`}
+            >
+              <Img name="portfolio/idealist/idealist-search-mobile-01" />
+            </DeviceMock>
+            <DeviceMock
+              device="iPhoneX"
+              size="small"
+              width={this.state.deviceWidth}
+            >
+              <Img name="portfolio/idealist/idealist-search-mobile-02" />
+            </DeviceMock>
+            <DeviceMock
+              device="iPhoneX"
+              size="small"
+              width={this.state.deviceWidth}
+            >
+              <Img name="portfolio/idealist/idealist-search-mobile-03" />
+            </DeviceMock>
+            <DeviceMock
+              device="iPhoneX"
+              size="small"
+              width={this.state.deviceWidth}
+            >
+              <Img name="portfolio/idealist/idealist-search-mobile-04" />
+            </DeviceMock>
+            <DeviceMock
+              device="iPhoneX"
+              size="small"
+              width={this.state.deviceWidth}
+            >
+              <Img name="portfolio/idealist/idealist-search-mobile-05" />
+            </DeviceMock>
           </div>
         </section>
 
@@ -145,6 +188,10 @@ export class Idealist extends Component {
         </section>
       </div>
     )
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.getRowWidth)
   }
 }
 

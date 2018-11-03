@@ -7,43 +7,18 @@ import '../styles/vendor/minimal-devices.css'
 export class DeviceMock extends Component {
   constructor () {
     super()
-    // this.device = React.createRef()
     this.scrollContainer = React.createRef()
     this.innerScrollContainer = React.createRef()
     this.device = null
     this.setDeviceRef = element => {
       this.device = element
     }
-
-    this.resizer = () => {
-      const device = this.device
-      device.style.width = `${device.clientWidth}px`
-      device.style.height = `${device.clientWidth * 2.16}px`
-      console.log('* device: ', device)
-      console.log('* device W: ', device.clientWidth)
-      console.log('* device H: ', device.clientWidth * 2.16)
-
-      const scrollNode = this.scrollContainer.current
-      scrollNode.style.width = `${device.clientWidth - 10}px`
-      scrollNode.style.height = `${device.clientWidth * 2.16}px`
-      console.log('scrollNode: ', scrollNode)
-
-      const innerScrollNode = this.innerScrollContainer.current
-      console.log('innerScrollNode: ', innerScrollNode)
-
-      const scrollbarWidth = `${innerScrollNode.offsetWidth - innerScrollNode.clientWidth}px`
-      console.log('* scrollbarWidth: ' + scrollbarWidth)
-
-      innerScrollNode.style.right = `${-(innerScrollNode.offsetWidth - innerScrollNode.clientWidth + 1)}px`
-      // innerScrollNode.style.width = `${device.clientWidth - 10}px`
-
-      console.log("* resized")
-    }
   }
 
   static propTypes = {
     children: PropTypes.node.isRequired,
     size: PropTypes.string,
+    width: PropTypes.string,
     device: PropTypes.string,
     scrollable: PropTypes.bool,
     color: PropTypes.string,
@@ -53,17 +28,27 @@ export class DeviceMock extends Component {
     shadow: PropTypes.bool,
   }
 
+  resizer () {
+    // const device = this.device
+    // console.log(`device: ${device}`)
+    // const deviceWidth = this.props.width
+    console.log(`resizer - this.props.width: ${this.props.width}`)
+    // const deviceWidth = this.props.width
+    // console.log(`render - this.props.width: ${deviceWidth}`)
+    // device.style.width = deviceWidth
+    // const outer = this.scrollContainer.current
+    // const outerWidth = `${device.clientWidth - 10}px`
+    // const outerHeight = `${Math.round(this.props.width * 2.16)}px`
+    // outer.style.width = outerWidth
+    // outer.style.height = outerHeight
+    // const inner = this.innerScrollContainer.current
+    // const scrollbarWidth = `-${inner.offsetWidth - inner.clientWidth + 1}px`
+    // inner.style.right = scrollbarWidth
+  }
+
   componentDidMount () {
     window.addEventListener('resize', this.resizer)
     this.resizer()
-  }
-
-  // componentDidUpdate () {
-  //   this.resizer()
-  // }
-
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.resizer)
   }
 
   render () {
@@ -71,13 +56,20 @@ export class DeviceMock extends Component {
     const mockContent = this.props.children
     // Device (iPhoneX, iPhone5)
     const device = !this.props.device ? 'defaultDevice' : this.props.device
+    // Width - defaults to ''
+    // const width = Math.round(this.props.width)
     // Scrollable - defaults to true
+    // console.log(`width: ${this.props.width}`)
+    // Width - defaults to ''
+    // const height = Math.round(this.props.width  * 2.16)
+    const deviceWidth = this.props.width
+    console.log(`DM render - this.props.width: ${deviceWidth}`)
+
     const scrollable = this.props.scrollable && 'scrollable'
     // Size - defaults to medium
     const size = !this.props.size ? 'small' : this.props.size
     // Color - defaults to black
     const color = !this.props.color ? 'black' : this.props.color
-    // console.log(color)
     // Buttons - defaults to false
     const buttons = this.props.buttons
     // Glare - defaults to false
@@ -88,13 +80,8 @@ export class DeviceMock extends Component {
     const notch = this.props.notch
     // Shadow - defaults to false
     const shadow = this.props.shadow
-    // console.log(shadow)
-    /*
-      md-iPhone5
-      iPhoneX
-    */
+
     if (device === 'md-iPhone5') {
-      // console.log('device: ' + device)
       return (
         <div
           className={
@@ -153,6 +140,11 @@ export class DeviceMock extends Component {
       )
     }
     return (device)
+  }
+
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.resizer)
   }
 }
 
