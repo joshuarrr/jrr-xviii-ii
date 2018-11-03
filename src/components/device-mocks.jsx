@@ -28,30 +28,8 @@ export class DeviceMock extends Component {
     shadow: PropTypes.bool,
   }
 
-  resizer () {
-    // const device = this.device
-    // console.log(`device: ${device}`)
-    // const deviceWidth = this.props.width
-    console.log(`resizer - this.props.width: ${this.props.width}`)
-    // const deviceWidth = this.props.width
-    // console.log(`render - this.props.width: ${deviceWidth}`)
-    // device.style.width = deviceWidth
-    // const outer = this.scrollContainer.current
-    // const outerWidth = `${device.clientWidth - 10}px`
-    // const outerHeight = `${Math.round(this.props.width * 2.16)}px`
-    // outer.style.width = outerWidth
-    // outer.style.height = outerHeight
-    // const inner = this.innerScrollContainer.current
-    // const scrollbarWidth = `-${inner.offsetWidth - inner.clientWidth + 1}px`
-    // inner.style.right = scrollbarWidth
-  }
-
-  componentDidMount () {
-    window.addEventListener('resize', this.resizer)
-    this.resizer()
-  }
-
   render () {
+    // debugger;
     // Content
     const mockContent = this.props.children
     // Device (iPhoneX, iPhone5)
@@ -63,7 +41,7 @@ export class DeviceMock extends Component {
     // Width - defaults to ''
     // const height = Math.round(this.props.width  * 2.16)
     const deviceWidth = this.props.width
-    console.log(`DM render - this.props.width: ${deviceWidth}`)
+    console.log(`${this.props.children.props.name} - this.props.width: ${deviceWidth}`)
 
     const scrollable = this.props.scrollable && 'scrollable'
     // Size - defaults to medium
@@ -125,6 +103,7 @@ export class DeviceMock extends Component {
           <div
             className={`screen scroll-container ${scrollable}`}
             ref={this.scrollContainer}
+            style={{ width: Math.round(deviceWidth), height: Math.round(deviceWidth * 2.16) }}
           >
             <div
               ref={this.innerScrollContainer}
@@ -140,11 +119,6 @@ export class DeviceMock extends Component {
       )
     }
     return (device)
-  }
-
-
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.resizer)
   }
 }
 

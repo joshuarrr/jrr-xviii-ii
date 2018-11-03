@@ -14,22 +14,18 @@ export class Idealist extends Component {
       rowWidth: '',
       deviceWidth: null,
     }
-    this.getRowWidth = this.getRowWidth.bind(this)
   }
 
   componentDidMount () {
-    // console.log(`cdm this.state.rowWidth: ${this.state.rowWidth}`)
-    // console.log(`cdm rowWidth: ${rowWidth}`)
-    window.addEventListener('resize', this.getRowWidth())
+    this.getRowWidth()
+    window.addEventListener('resize', this.getRowWidth)
   }
 
   getRowWidth = () => {
     const rowWidth = this.imageRow.current.clientWidth
-    // console.log(`grw rowWidth: ${rowWidth}`)
+    console.log(`grw rowWidth: ${rowWidth}`)
     const rowCount = this.imageRow.current.childNodes.length
-    // console.log(`grw rowCount: ${rowCount}`)
     const deviceWidth = rowWidth / rowCount
-    // console.log(`grw deviceWidth: ${deviceWidth}`)
     this.setState({
       rowWidth: rowWidth,
       deviceWidth: deviceWidth,
@@ -106,7 +102,7 @@ export class Idealist extends Component {
           <li>
             <AnchorLink
               className="toc-link"
-              href="#contact">Concact
+              href="#contact">Contact
             </AnchorLink>
           </li>
           <li>
@@ -141,7 +137,7 @@ export class Idealist extends Component {
             <DeviceMock
               device="iPhoneX"
               size="small"
-              width={`${this.state.deviceWidth}px`}
+              width={this.state.deviceWidth}
             >
               <Img name="portfolio/idealist/idealist-search-mobile-01" />
             </DeviceMock>
@@ -176,10 +172,9 @@ export class Idealist extends Component {
           </div>
         </section>
 
-
         <section id="team">
           <h2>Idealist Team</h2>
-          <DeviceMock device="iPhoneX" size="medium" scrollable>
+          <DeviceMock device="iPhoneX" size="medium" scrollable bands>
             <Img
               name="portfolio/idealist/idealist-our-team-mobile"
             />
