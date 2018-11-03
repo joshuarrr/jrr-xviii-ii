@@ -128,7 +128,18 @@ export default {
     config.module.rules = [
       {
         oneOf: [
-          defaultLoaders.jsLoader,
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules\/(?!react-flex-carousel)/,
+            use: [
+              {
+                loader: 'babel-loader',
+                options: {
+                  cacheDirectory: stage !== 'prod',
+                },
+              },
+            ],
+          },
           {
             test: /\.css$/,
             use: loaders,
@@ -143,7 +154,7 @@ export default {
   Document: class CustomDocument extends Component {
     render () {
       const {
-        Html, Head, Body, children, renderMeta,
+        Html, Head, Body, children,
       } = this.props
 
       return (
