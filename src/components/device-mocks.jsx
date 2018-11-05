@@ -2,69 +2,97 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import '../styles/vendor/device-mocks.css'
 import '../styles/vendor/minimal-devices.css'
-// import '../styles/vendor/marvel-devices.css'
+
 
 export class DeviceMock extends Component {
-  static propTypes = {
-    // Content
-    children: PropTypes.node.isRequired,
+  static defaultProps = {
     // Device (iPhoneX, iPhone5)
+    device: 'iPhoneX',
+    size: 'medium',
+    width: null,
+    scrollable: true,
+    color: 'black',
+    buttons: true,
+    bands: false,
+    notch: false,
+    shadow: true,
+    glare: true,
+  }
+
+  static propTypes = {
+    children: PropTypes.node.isRequired,
     device: PropTypes.string,
-    // Size - defaults to medium
     size: PropTypes.string,
-    // Width - defaults to null
     width: PropTypes.number,
-    // Scrollable - defaults to true
     scrollable: PropTypes.bool,
-    // Color - defaults to black
     color: PropTypes.string,
-    // Buttons - defaults to false
     buttons: PropTypes.bool,
-    // Bands - defaults to false
     bands: PropTypes.bool,
-    // Notch - defaults to false
     notch: PropTypes.bool,
-    // Shadow - defaults to false
     shadow: PropTypes.bool,
-    // Glare - defaults to true
     glare: PropTypes.bool,
   }
 
-  constructor () {
-    super()
-    this.setScrollContainerRef = element => {
-      this.scrollContainer = element
+  constructor (props) {
+    super(props)
+
+    this.setDeviceRef = element => {
+      this.device = element
     }
+
+    this.scrollContainer = React.createRef()
     this.setInnerScrollContainerRef = element => {
       this.innerScrollContainer = element
     }
-
-    this.scrollBarWidth = () => {
-      // debugger
-      // console.log(`scrollBarWidth - innerScrollContainer: ${this.innerScrollContainer}`)
-      const i = this.innerScrollContainer
-      const scrollbarWidth = i.offsetWidth - i.clientWidth
-      const right = scrollbarWidth
-      console.log(`right: -${right}px`)
-      i.style.right = `-${right}px`
-      // return `-${right}px`
-    }
   }
 
+  handleResize = () => {
+    // Device dimensions
+    // console.log('*====== Device-mocks sizer() ======*')
+    const device = this.device
+    // console.log(this.props.width
+    //   ? `* this.props.width: ${this.props.width}`
+    //   : '* this.props.width: null'
+    // )
+    // console.log(`* device.offsetWidth ${device.offsetWidth}`)
+    // console.log(`* device.clientWidth ${device.clientWidth}`)
+    // set device dimensions based on props if available, otherwise use
+    // callback refs
+    const w = this.props.width ? this.props.width : device.offsetWidth
+    // console.log(this.props.width
+    //   ? `* w using props: ${w}`
+    //   : `* w using refs: ${w}`
+    // )
+
+    // console.log(`* this.state.deviceHeight ${this.state.deviceHeight}`)
+    const h = Math.round(w * 2.16)
+    // console.log(`* w ${w}`)
+    // console.log(`* h ${h}`)
+    // device.style.width = `${w}px`
+    // device.style.height = `${h}px`
+    this.setState({
+      height: h,
+    })
+    // Hide firefox srollbars
+    const i = this.innerScrollContainer
+    const scrollbarWidth = i.offsetWidth - i.clientWidth
+    i.style.right = `-${scrollbarWidth + 1}px`
+  }
 
   componentDidMount () {
-    this.scrollBarWidth()
+    this.handleResize()
+    window.addEventListener('resize', this.handleResize)
   }
 
   render () {
+    // console.log('*====== Device-mocks render() ======*')
+    // console.log(`* this.props.width: ${this.props.width}`)
+    const width = this.props.width
+    // console.log(`* this.props.height: ${this.props.height}`)
+    const height = this.props.height
     const mockContent = this.props.children
     const device = !this.props.device ? 'defaultDevice' : this.props.device
     const size = !this.props.size ? 'small' : this.props.size
-    const deviceWidth = this.props.width !== null && Math.round(this.props.width)
-    // this.props.width !== null && console.log(`* deviceWidth: ${deviceWidth}`)
-    // Height - iPhoneX aspect = ratio 2.16
-    const deviceHeight = this.props.width !== null && Math.round(this.props.width * 2.16)
-    // this.props.width !== null && console.log(`* deviceHeight: ${deviceHeight}`)
     const color = !this.props.color ? 'black' : this.props.color
     const scrollable = this.props.scrollable && 'scrollable'
 
@@ -95,10 +123,10 @@ export class DeviceMock extends Component {
       return (
         <div
           className={`device iphone-x ${size} ${color}`}
-          key={`device-${device}`}
+          ref={this.setDeviceRef}
           style={{
-            width: `${deviceWidth}px`,
-            height: `${deviceHeight}px`,
+            width: `${width}px`,
+            height: `${height}px`
           }}
         >
           { this.props.bands && <div className="top-band" /> }
@@ -112,14 +140,7 @@ export class DeviceMock extends Component {
               <div className="speaker" />
             </div>
           }
-          <div
-            className={`screen scroll-container ${scrollable}`}
-            ref={this.setScrollContainerRef}
-            style={{
-              width: `${deviceWidth}px`,
-              height: `${deviceHeight}px`,
-            }}
-          >
+          <div className={`screen scroll-container ${scrollable}`}>
             <div
               ref={this.setInnerScrollContainerRef}
               className="inner-container"
@@ -135,17 +156,8 @@ export class DeviceMock extends Component {
     }
     return (device)
   }
-}
 
-DeviceMock.defaultProps = {
-  device: 'iPhoneX',
-  size: 'medium',
-  width: null,
-  scrollable: true,
-  color: 'black',
-  buttons: true,
-  bands: false,
-  notch: false,
-  shadow: true,
-  glare: true,
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.handleResize)
+  }
 }
