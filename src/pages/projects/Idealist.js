@@ -20,14 +20,10 @@ export class Idealist extends Component {
   }
 
   getDeviceWidth = () => {
-    // console.log('*====== Idealist getDeviceWidth() ======*')
-    // console.log(`* rowWidth:$this.imageRow: ${this.imageRow}`)
     const rowWidth = this.imageRow.clientWidth
-    // console.log(`* rowWidth: ${this.imageRow.clientWidth}`)
     const rowCount = this.imageRow.childNodes.length
     const margin = '33'
     const deviceWidth = (rowWidth / rowCount) - margin
-    // console.log(`* deviceWidth: ${Math.round(deviceWidth)}`)
     this.setState({
       deviceWidth: Math.round(deviceWidth),
       deviceHeight: Math.round(deviceWidth * 2.16),
@@ -35,16 +31,11 @@ export class Idealist extends Component {
   }
 
   componentDidMount () {
-    // console.log('*====== idealist componentDidMount() ======*')
-    // console.log(`* this.state.deviceWidth: ${this.state.deviceWidth}`)
     this.getDeviceWidth()
     window.addEventListener('resize', this.getDeviceWidth)
   }
 
-
   render () {
-    // console.log('*====== Idealist render() ======*')
-    // console.log(`* this.state.deviceWidth: ${this.state.deviceWidth}`)
     return (
       <div className="project project-content">
 
@@ -196,13 +187,20 @@ export class Idealist extends Component {
 
         <section id="team">
           <h2>Idealist Team</h2>
-{/*          <DeviceMock
-            device="iPhoneX"
-            size="medium"
-            scrollable bands
+          <div
+            className="image-row"
+            ref={this.setImageRowRef}
           >
-            <Img name="portfolio/idealist/idealist-our-team-mobile" />
-          </DeviceMock>*/}
+            <DeviceMock
+              device="iPhoneX"
+              size="medium"
+              scrollable bands
+              width={this.state.deviceWidth}
+              height={this.state.deviceHeight}
+            >
+              <Img name="portfolio/idealist/idealist-our-team-mobile" />
+            </DeviceMock>
+          </div>
           <p>3D-printed rain bridge augmented reality military-grade courier BASE jump footage claymore mine dolphin disposable tanto smart-neon. Courier plastic drone sunglasses dead tanto bridge post. Geodesic Legba nano-narrative A.I.</p>
         </section>
       </div>

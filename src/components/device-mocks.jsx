@@ -46,49 +46,15 @@ export class DeviceMock extends Component {
     }
   }
 
-  handleResize = () => {
-    // Device dimensions
-    // console.log('*====== Device-mocks sizer() ======*')
-    const device = this.device
-    // console.log(this.props.width
-    //   ? `* this.props.width: ${this.props.width}`
-    //   : '* this.props.width: null'
-    // )
-    // console.log(`* device.offsetWidth ${device.offsetWidth}`)
-    // console.log(`* device.clientWidth ${device.clientWidth}`)
-    // set device dimensions based on props if available, otherwise use
-    // callback refs
-    const w = this.props.width ? this.props.width : device.offsetWidth
-    // console.log(this.props.width
-    //   ? `* w using props: ${w}`
-    //   : `* w using refs: ${w}`
-    // )
-
-    // console.log(`* this.state.deviceHeight ${this.state.deviceHeight}`)
-    const h = Math.round(w * 2.16)
-    // console.log(`* w ${w}`)
-    // console.log(`* h ${h}`)
-    // device.style.width = `${w}px`
-    // device.style.height = `${h}px`
-    this.setState({
-      height: h,
-    })
+  componentDidMount () {
     // Hide firefox srollbars
     const i = this.innerScrollContainer
     const scrollbarWidth = i.offsetWidth - i.clientWidth
     i.style.right = `-${scrollbarWidth + 1}px`
   }
 
-  componentDidMount () {
-    this.handleResize()
-    window.addEventListener('resize', this.handleResize)
-  }
-
   render () {
-    // console.log('*====== Device-mocks render() ======*')
-    // console.log(`* this.props.width: ${this.props.width}`)
     const width = this.props.width
-    // console.log(`* this.props.height: ${this.props.height}`)
     const height = this.props.height
     const mockContent = this.props.children
     const device = !this.props.device ? 'defaultDevice' : this.props.device
@@ -126,7 +92,7 @@ export class DeviceMock extends Component {
           ref={this.setDeviceRef}
           style={{
             width: `${width}px`,
-            height: `${height}px`
+            height: `${height}px`,
           }}
         >
           { this.props.bands && <div className="top-band" /> }
@@ -155,9 +121,5 @@ export class DeviceMock extends Component {
       )
     }
     return (device)
-  }
-
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.handleResize)
   }
 }
