@@ -5,59 +5,68 @@ import '../styles/vendor/minimal-devices.css'
 // import '../styles/vendor/marvel-devices.css'
 
 export class DeviceMock extends Component {
+  static propTypes = {
+    // Content
+    children: PropTypes.node.isRequired,
+    // Device (iPhoneX, iPhone5)
+    device: PropTypes.string,
+    // Size - defaults to medium
+    size: PropTypes.string,
+    // Width - defaults to null
+    width: PropTypes.number,
+    // Scrollable - defaults to true
+    scrollable: PropTypes.bool,
+    // Color - defaults to black
+    color: PropTypes.string,
+    // Buttons - defaults to false
+    buttons: PropTypes.bool,
+    // Bands - defaults to false
+    bands: PropTypes.bool,
+    // Notch - defaults to false
+    notch: PropTypes.bool,
+    // Shadow - defaults to false
+    shadow: PropTypes.bool,
+    // Glare - defaults to true
+    glare: PropTypes.bool,
+  }
+
   constructor () {
     super()
-    this.scrollContainer = React.createRef()
-    this.innerScrollContainer = React.createRef()
-    this.device = null
-    this.setDeviceRef = element => {
-      this.device = element
+    this.setScrollContainerRef = element => {
+      this.scrollContainer = element
+    }
+    this.setInnerScrollContainerRef = element => {
+      this.innerScrollContainer = element
+    }
+
+    this.scrollBarWidth = () => {
+      // debugger
+      // console.log(`scrollBarWidth - innerScrollContainer: ${this.innerScrollContainer}`)
+      const i = this.innerScrollContainer
+      const scrollbarWidth = i.offsetWidth - i.clientWidth
+      const right = scrollbarWidth
+      console.log(`right: -${right}px`)
+      i.style.right = `-${right}px`
+      // return `-${right}px`
     }
   }
 
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    size: PropTypes.string,
-    width: PropTypes.string,
-    device: PropTypes.string,
-    scrollable: PropTypes.bool,
-    color: PropTypes.string,
-    buttons: PropTypes.bool,
-    bands: PropTypes.bool,
-    notch: PropTypes.bool,
-    shadow: PropTypes.bool,
+
+  componentDidMount () {
+    this.scrollBarWidth()
   }
 
   render () {
-    // debugger;
-    // Content
     const mockContent = this.props.children
-    // Device (iPhoneX, iPhone5)
     const device = !this.props.device ? 'defaultDevice' : this.props.device
-    // Width - defaults to ''
-    // const width = Math.round(this.props.width)
-    // Scrollable - defaults to true
-    // console.log(`width: ${this.props.width}`)
-    // Width - defaults to ''
-    // const height = Math.round(this.props.width  * 2.16)
-    const deviceWidth = this.props.width
-    console.log(`${this.props.children.props.name} - this.props.width: ${deviceWidth}`)
-
-    const scrollable = this.props.scrollable && 'scrollable'
-    // Size - defaults to medium
     const size = !this.props.size ? 'small' : this.props.size
-    // Color - defaults to black
+    const deviceWidth = this.props.width !== null && Math.round(this.props.width)
+    // this.props.width !== null && console.log(`* deviceWidth: ${deviceWidth}`)
+    // Height - iPhoneX aspect = ratio 2.16
+    const deviceHeight = this.props.width !== null && Math.round(this.props.width * 2.16)
+    // this.props.width !== null && console.log(`* deviceHeight: ${deviceHeight}`)
     const color = !this.props.color ? 'black' : this.props.color
-    // Buttons - defaults to false
-    const buttons = this.props.buttons
-    // Glare - defaults to false
-    const glare = this.props.glare
-    // Bands - defaults to false
-    const bands = this.props.bands
-    // Notch - defaults to false
-    const notch = this.props.notch
-    // Shadow - defaults to false
-    const shadow = this.props.shadow
+    const scrollable = this.props.scrollable && 'scrollable'
 
     if (device === 'md-iPhone5') {
       return (
@@ -87,14 +96,17 @@ export class DeviceMock extends Component {
         <div
           className={`device iphone-x ${size} ${color}`}
           key={`device-${device}`}
-          ref={this.setDeviceRef}
+          style={{
+            width: `${deviceWidth}px`,
+            height: `${deviceHeight}px`,
+          }}
         >
-          { bands && <div className="top-band" /> }
-          { buttons && <div className="sleep" /> }
-          { bands && <div className="bottom-bar" /> }
-          { buttons && <div className="volume" /> }
-          { glare && <div className="glare" /> }
-          { notch &&
+          { this.props.bands && <div className="top-band" /> }
+          { this.props.buttons && <div className="sleep" /> }
+          { this.props.bands && <div className="bottom-bar" /> }
+          { this.props.buttons && <div className="volume" /> }
+          { this.props.glare && <div className="glare" /> }
+          { this.props.notch &&
             <div className="notch">
               <div className="camera" />
               <div className="speaker" />
@@ -102,11 +114,14 @@ export class DeviceMock extends Component {
           }
           <div
             className={`screen scroll-container ${scrollable}`}
-            ref={this.scrollContainer}
-            style={{ width: Math.round(deviceWidth), height: Math.round(deviceWidth * 2.16) }}
+            ref={this.setScrollContainerRef}
+            style={{
+              width: `${deviceWidth}px`,
+              height: `${deviceHeight}px`,
+            }}
           >
             <div
-              ref={this.innerScrollContainer}
+              ref={this.setInnerScrollContainerRef}
               className="inner-container"
             >
               <div className="element">
@@ -114,7 +129,7 @@ export class DeviceMock extends Component {
               </div>
             </div>
           </div>
-          {shadow === true && <div className="shadow" />}
+          { this.props.shadow && <div className="shadow" />}
         </div>
       )
     }
@@ -123,12 +138,14 @@ export class DeviceMock extends Component {
 }
 
 DeviceMock.defaultProps = {
-  size: 'medium',
   device: 'iPhoneX',
+  size: 'medium',
+  width: null,
   scrollable: true,
   color: 'black',
   buttons: true,
   bands: false,
   notch: false,
   shadow: true,
+  glare: true,
 }

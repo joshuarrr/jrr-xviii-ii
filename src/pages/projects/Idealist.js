@@ -23,17 +23,19 @@ export class Idealist extends Component {
 
   getRowWidth = () => {
     const rowWidth = this.imageRow.current.clientWidth
-    console.log(`grw rowWidth: ${rowWidth}`)
+    // console.log(`getRowWidth - rowWidth: ${rowWidth}`)
     const rowCount = this.imageRow.current.childNodes.length
-    const deviceWidth = rowWidth / rowCount
+    const margin = '33'
+    const deviceWidth = rowWidth / rowCount - margin
+    // console.log(`getRowWidth - deviceWidth: ${deviceWidth}`)
     this.setState({
       rowWidth: rowWidth,
-      deviceWidth: deviceWidth,
+      deviceWidth: Math.round(deviceWidth),
     })
   }
 
   render () {
-    console.log(`IDEALIST this.state.deviceWidth: ${this.state.deviceWidth}`)
+    // console.log(`IDEALIST this.state.deviceWidth: ${this.state.deviceWidth}`)
 
     return (
       <div className="project project-content">
