@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import { withRouteData } from 'react-static'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Img } from '../../components/image-loader'
@@ -10,29 +11,42 @@ export class Idealist extends Component {
     super()
     this.imageRow = React.createRef()
     this.state = {
-      deviceWidth: 100,
-      deviceHeight: 216,
+      rowWidth: undefined,
     }
 
     this.setImageRowRef = element => {
       this.imageRow = element
     }
+
+    this.setImageRow1upRef = element => {
+      this.imageRow1up = element
+    }
   }
 
-  getDeviceWidth = () => {
-    const rowWidth = this.imageRow.clientWidth
-    const rowCount = this.imageRow.childNodes.length
-    const margin = '33'
-    const deviceWidth = (rowWidth / rowCount) - margin
+  getWidth = row => {
+    if (row !== undefined && row.childNodes !== undefined && this.state.rowWidth !== undefined) {
+      const rowWidth = this.state.rowWidth
+      console.log(`* rowWidth: ${rowWidth}`)
+      const rowCount = row.childNodes.length
+      const margin = 33
+      const deviceWidth = Math.min((rowWidth / rowCount) - margin, 250)
+
+      return {
+        width: Math.round(deviceWidth),
+        height: Math.round(deviceWidth * 2.16),
+      }
+    }
+  }
+
+  getRowWidth = () => {
     this.setState({
-      deviceWidth: Math.round(deviceWidth),
-      deviceHeight: Math.round(deviceWidth * 2.16),
+      rowWidth: ReactDOM.findDOMNode(this).clientWidth,
     })
   }
 
   componentDidMount () {
-    this.getDeviceWidth()
-    window.addEventListener('resize', this.getDeviceWidth)
+    this.getRowWidth()
+    window.addEventListener('resize', this.getRowWidth)
   }
 
   render () {
@@ -121,14 +135,13 @@ export class Idealist extends Component {
         </ul>
 
         <section id="homepage">
-          <h2>Homepage & Search</h2>
-          <p>Idealist's job and volunteer search function is central to product.</p>
+          <h2>Homepage</h2>
+          <p>Idealist has two target audiences: opportunity seekers, and posters. The homepage provides seekers with search options and posters with the ability to post a new listing.</p>
+          <p>We tracked changes closely in Google Analytics to validate design decisions in relation to KPIs such as number of searches and number of new posts. </p>
           <Img name="portfolio/idealist/idealist-home-ipad" />
-        </section>
 
-        <section id="search">
-          <h2>Search</h2>
-          <p>3D-printed rain bridge augmented reality military-grade courier BASE jump footage claymore mine dolphin disposable tanto smart-neon. Courier plastic drone sunglasses dead tanto bridge post. Geodesic Legba nano-narrative A.I.</p>
+          <h3>Search</h3>
+          <p>As part of the redesign we made the site responsive for the first time, and mobile friendliness improved our mobile search rates up by ~250%.</p>
           <div
             className="image-row five-up"
             ref={this.setImageRowRef}
@@ -137,8 +150,7 @@ export class Idealist extends Component {
               device="iPhoneX"
               size="small"
               key="1"
-              width={this.state.deviceWidth}
-              height={this.state.deviceHeight}
+              {...this.getWidth(this.imageRow)}
             >
               <Img name="portfolio/idealist/idealist-search-mobile-01" />
             </DeviceMock>
@@ -147,8 +159,7 @@ export class Idealist extends Component {
               device="iPhoneX"
               size="small"
               key="2"
-              width={this.state.deviceWidth}
-              height={this.state.deviceHeight}
+              {...this.getWidth(this.imageRow)}
             >
               <Img name="portfolio/idealist/idealist-search-mobile-02" />
             </DeviceMock>
@@ -157,8 +168,7 @@ export class Idealist extends Component {
               key="3"
               device="iPhoneX"
               size="small"
-              width={this.state.deviceWidth}
-              height={this.state.deviceHeight}
+              {...this.getWidth(this.imageRow)}
             >
               <Img name="portfolio/idealist/idealist-search-mobile-03" />
             </DeviceMock>
@@ -167,8 +177,7 @@ export class Idealist extends Component {
               key="4"
               device="iPhoneX"
               size="small"
-              width={this.state.deviceWidth}
-              height={this.state.deviceHeight}
+              {...this.getWidth(this.imageRow)}
             >
               <Img name="portfolio/idealist/idealist-search-mobile-04" />
             </DeviceMock>
@@ -177,8 +186,7 @@ export class Idealist extends Component {
               key="5"
               device="iPhoneX"
               size="small"
-              width={this.state.deviceWidth}
-              height={this.state.deviceHeight}
+              {...this.getWidth(this.imageRow)}
             >
               <Img name="portfolio/idealist/idealist-search-mobile-05" />
             </DeviceMock>
@@ -189,26 +197,25 @@ export class Idealist extends Component {
           <h2>Idealist Team</h2>
           <div
             className="image-row"
-            ref={this.setImageRowRef}
+            ref={this.setImageRow1upRef}
           >
             <DeviceMock
               device="iPhoneX"
               size="medium"
               scrollable bands
-              width={this.state.deviceWidth}
-              height={this.state.deviceHeight}
+              {...this.getWidth(this.imageRow1up)}
             >
               <Img name="portfolio/idealist/idealist-our-team-mobile" />
             </DeviceMock>
           </div>
-          <p>3D-printed rain bridge augmented reality military-grade courier BASE jump footage claymore mine dolphin disposable tanto smart-neon. Courier plastic drone sunglasses dead tanto bridge post. Geodesic Legba nano-narrative A.I.</p>
+          <p>3D-printed rain bridge augmented reality military-grade courier BASE jump footage claymore mine dolphin disposable tanto smart-neon. Courier plastic drone sunglasses dead tanto bridge post. Geodesic nano-narrative A.I.</p>
         </section>
       </div>
     )
   }
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.getDeviceWidth)
+    window.removeEventListener('resize', this.getRowWidth)
   }
 }
 
