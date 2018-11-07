@@ -15,26 +15,19 @@ body {
   }
 }
 
-h1 {
-  font-family: $demi;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $book;
   font-weight: normal;
   padding-bottom: 1rem;
   color: $body-black;
 }
 
-h2 {
-  font-family: $book;
-  font-weight: normal;
-  padding-bottom: 1rem;
-  color: $body-black;
+h1 {
+  font-family: $demi;
 }
 
 h3 {
-  font-family: $book;
-  font-weight: normal;
-  padding-bottom: 1rem;
   color: #666;
-  font-size: 1.1em;
   margin-top: 2rem;
 }
 

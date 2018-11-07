@@ -1,17 +1,16 @@
-/* Device Mocks ************************************************************* */
-.device {
-  .image-holder img {
-    margin: 0;
-  }
-}
-
+/* 📱 Device Mocks ************************************************************* */
 
 /* Device ------------------------------------------------------------------- */
 .device {
   display: inline-block;
   position: relative;
   box-sizing: content-box;
+
+  .image-holder img {
+    margin: 0;
+  }
 }
+
 
 /* Scroll panel ------------------------------------------------------------- */
 .scroll-container {
@@ -42,9 +41,141 @@
 /* Devices  ------------------------------------------------------------------*/
 /* iPhoneX (ratio: .46 | .216) -----------------------------------------------*/
 .device.iphone-x {
+  border-radius: 20px;
+  padding: 5px;
+  $inner-radius: 16px;
+
   &:before {
     content: '';
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: $inner-radius;
+    box-shadow: 0 0 .5px 0 #2b2b2b;
+    background: white(.1);
     z-index: 1;
+  }
+
+  .screen {
+    border-radius: $inner-radius;
+    background: #111;
+  }
+
+  .top-band,
+  .bottom-band {
+    height: 3px;
+  }
+
+  .top-band {
+    top: 40px;
+  }
+
+  .bottom-band {
+    bottom: 40px;
+  }
+
+  .volume,
+  .volume:before,
+  .volume:after,
+  .sleep {
+    width: 2px;
+    border-radius: 2px;
+  }
+
+  .volume {
+    left: -1px;
+    top: 43px;
+    height: 15px;
+
+    &:before {
+      height: 25px;
+      top: 28px;
+      content: '';
+      left: 0;
+    }
+
+    &:after {
+      height: 25px;
+      top: 60px;
+      content: '';
+      left: 0;
+    }
+  }
+
+  .sleep {
+    height: 35px;
+    top: 82px;
+    right: -1px;
+    border-radius: 1px;
+  }
+
+  .notch {
+    position: absolute;
+    width: 50%;
+    height: .7em;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    background: black;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: 0;
+    }
+
+    &:after {
+      background: radial-gradient(
+        circle at bottom left,
+          transparent 0,
+          transparent 70%,
+          black 70%,
+          black 100%
+        );
+      left: -8px;
+    }
+
+    &:before {
+      background: radial-gradient(
+        circle at bottom right,
+          transparent 0,
+          transparent 70%,
+          black 70%,
+          black 100%
+        );
+      right: -8px;
+    }
+  }
+
+  .inner-container {
+    bottom: -5px;
+  }
+
+  .shadow {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #333;
+    border-radius: 24px;
+    padding: 1px;
+    box-shadow: 0 3px 15px 1px rgba(0, 0, 0, .25);
+  }
+
+  .element {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
   }
 
   .top-band,
@@ -83,9 +214,7 @@
     }
   }
 
-
-  /* Props -------------------------------------------------------------------*/
-  /* Black iPhoneX -----------------------------------------------------------*/
+  /* Colors -----------------------------*/
   &.black {
     background: #111;
 
@@ -93,295 +222,16 @@
       background: #333;
     }
 
-  .top-band,
-  .bottom-band {
-    background: rgba(255, 255, 255, .04);
-  }
+    .top-band,
+    .bottom-band {
+      background: rgba(255, 255, 255, .04);
+    }
 
     .volume,
     .volume:before,
     .volume:after,
     .sleep {
       background: #222;
-    }
-  }
-
-  /* Large */
-  $w-lrg: 375px;
-  $h-lrg: 812px;
-
-/* Medium iPhoneX ------------------------------------------------------------*/
-
-  /* Medium */
-  $w-med: 265px;
-  $h-med: 574px;
-  $bezel-width-med: 5px;
-
-  &.medium {
-    padding: 15px;
-    border-radius: 40px;
-    /*
-    width: $w-med;
-    height: $h-med;
-    */
-
-    /*
-    &:before {
-      width: calc(100% - 10px);
-      height: calc(100% - 10px);
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      border-radius: 46px;
-    }
-    */
-
-    .screen {
-      border-radius: 25px;
-      box-shadow: 0 0 $bezel-width-med $bezel-width-med #111;
-      background: #111;
-    }
-
-    .top-band,
-    .bottom-band {
-      height: $bezel-width-med;
-    }
-
-    .top-band {
-      top: 50px;
-    }
-
-    .bottom-band {
-      bottom: 50px;
-    }
-
-    .volume,
-    .volume:before,
-    .volume:after,
-    .sleep {
-      width: 3px;
-      border-radius: 3px;
-    }
-
-    .volume {
-      left: -2px;
-      top: 100px;
-      height: 25px;
-
-      &:before {
-        height: 50px;
-        top: 47px;
-        content: '';
-        left: 0;
-      }
-
-      &:after {
-        height: 50px;
-        top: 118px;
-        content: '';
-        left: 0;
-      }
-    }
-
-    .sleep {
-      height: 70px;
-      top: 135px;
-      right: -2px;
-      border-radius: 3px;
-    }
-
-    .notch {
-      position: absolute;
-      width: 210px;
-      height: 30px;
-      top: 26px;
-      left: 108px;
-      z-index: 4;
-      background: black;
-      border-bottom-left-radius: 24px;
-        border-bottom-right-radius: 24px;
-
-        &:before, &:after {
-        content: '';
-        height: 8px;
-        position: absolute;
-        top: 0;
-        width: 8px;
-        }
-
-      &:after {
-        background: radial-gradient(
-          circle at bottom left,
-            transparent 0,
-            transparent 70%,
-            black 70%,
-            black 100%
-          );
-        left: -8px;
-      }
-
-      &:before {
-        background: radial-gradient(
-          circle at bottom right,
-            transparent 0,
-            transparent 70%,
-            black 70%,
-            black 100%
-          );
-        right: -8px;
-      }
-    }
-
-    .element,
-    .scroll-container {
-      /*
-      width: $w-med;
-      height: $h-med;
-      */
-    }
-  }
-
-
-  /* Small iPhoneX -----------------------------------------------------------*/
-  $w-sm: 200px;
-  $h-sm: 433px;
-  $bezel-width-sm: 5px;
-
-  &.small {
-    border-radius: 20px;
-    padding: 5px;
-
-    $inner-radius: 16px;
-
-    &:before {
-      width: calc(100% - 10px);
-      height: calc(100% - 10px);
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      border-radius: $inner-radius;
-      box-shadow: 0 0 .5px 0 #2b2b2b;
-      background: white(.1)
-    }
-
-    .screen {
-      border-radius: $inner-radius;
-      background: #111;
-    }
-
-    .top-band,
-    .bottom-band {
-      height: 3px;
-    }
-
-    .top-band {
-      top: 40px;
-    }
-
-    .bottom-band {
-      bottom: 40px;
-    }
-
-    .volume,
-    .volume:before,
-    .volume:after,
-    .sleep {
-      width: 2px;
-      border-radius: 2px;
-    }
-
-    .volume {
-      left: -1px;
-      top: 43px;
-      height: 15px;
-
-      &:before {
-        height: 25px;
-        top: 28px;
-        content: '';
-        left: 0;
-      }
-
-      &:after {
-        height: 25px;
-        top: 60px;
-        content: '';
-        left: 0;
-      }
-    }
-
-    .sleep {
-      height: 35px;
-      top: 82px;
-      right: -1px;
-      border-radius: 1px;
-    }
-
-    .notch {
-      position: absolute;
-      width: 50%;
-      height: .7em;
-      top: 5px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 4;
-      background: black;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-
-      &:before, &:after {
-        content: '';
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        top: 0;
-      }
-
-      &:after {
-        background: radial-gradient(
-          circle at bottom left,
-            transparent 0,
-            transparent 70%,
-            black 70%,
-            black 100%
-          );
-        left: -8px;
-      }
-
-      &:before {
-        background: radial-gradient(
-          circle at bottom right,
-            transparent 0,
-            transparent 70%,
-            black 70%,
-            black 100%
-          );
-        right: -8px;
-      }
-    }
-
-    .scrollable .inner-container {
-      bottom: -$bezel-width-sm;
-    }
-
-    .shadow {
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: #333;
-      border-radius: 24px;
-      padding: 1px;
-      box-shadow: 0 3px 15px 1px rgba(0, 0, 0, .25);
-    }
-
-    .element {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
     }
   }
 }

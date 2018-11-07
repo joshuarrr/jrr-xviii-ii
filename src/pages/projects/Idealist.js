@@ -26,7 +26,7 @@ export class Idealist extends Component {
   getWidth = row => {
     if (row !== undefined && row.childNodes !== undefined && this.state.rowWidth !== undefined) {
       const rowWidth = this.state.rowWidth
-      console.log(`* rowWidth: ${rowWidth}`)
+      // console.log(`* rowWidth: ${rowWidth}`)
       const rowCount = row.childNodes.length
       const margin = 33
       const deviceWidth = Math.min((rowWidth / rowCount) - margin, 250)
@@ -201,14 +201,18 @@ export class Idealist extends Component {
           >
             <DeviceMock
               device="iPhoneX"
-              size="medium"
-              scrollable bands
+              scrollable
+              bands
               {...this.getWidth(this.imageRow1up)}
             >
               <Img name="portfolio/idealist/idealist-our-team-mobile" />
             </DeviceMock>
           </div>
           <p>3D-printed rain bridge augmented reality military-grade courier BASE jump footage claymore mine dolphin disposable tanto smart-neon. Courier plastic drone sunglasses dead tanto bridge post. Geodesic nano-narrative A.I.</p>
+        </section>
+
+        <section id="end">
+          <h3>To be continued...</h3>
         </section>
       </div>
     )

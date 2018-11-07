@@ -8,7 +8,6 @@ export class DeviceMock extends Component {
   static defaultProps = {
     // Device (iPhoneX, iPhone5)
     device: 'iPhoneX',
-    size: 'medium',
     width: null,
     scrollable: true,
     color: 'black',
@@ -22,7 +21,6 @@ export class DeviceMock extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     device: PropTypes.string,
-    size: PropTypes.string,
     width: PropTypes.number,
     scrollable: PropTypes.bool,
     color: PropTypes.string,
@@ -58,7 +56,6 @@ export class DeviceMock extends Component {
     const height = this.props.height
     const mockContent = this.props.children
     const device = !this.props.device ? 'defaultDevice' : this.props.device
-    const size = !this.props.size ? 'small' : this.props.size
     const color = !this.props.color ? 'black' : this.props.color
     const scrollable = this.props.scrollable && 'scrollable'
 
@@ -68,7 +65,6 @@ export class DeviceMock extends Component {
           className={
             `device md-iphone-5 md-black-device
              ${scrollable}
-             ${size}
              ${color}`
           }
           key={`device-${device}`}
@@ -88,7 +84,7 @@ export class DeviceMock extends Component {
     if (device === 'iPhoneX') {
       return (
         <div
-          className={`device iphone-x ${size} ${color}`}
+          className={`device iphone-x ${color}`}
           ref={this.setDeviceRef}
           style={{
             width: `${width}px`,

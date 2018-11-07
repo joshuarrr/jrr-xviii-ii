@@ -1,4 +1,5 @@
 /* 🎨 Projects */
+
 @import './lib.css';
 @import './mixins/helpers.css';
 
@@ -7,7 +8,8 @@
   text-align: center;
 }
 
-.project-content {
+
+.project-content { /*---------------------------------------------------------*/
   text-align: left;
 
   h2 {
@@ -54,10 +56,7 @@
   }
 
   .image-row {
-/*     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: nowrap; */
+    /* TODO: move to component file */
     display: grid;
     margin-bottom: calc($trailer / 2);
 
@@ -86,9 +85,6 @@
     &.five-up {
       grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
       grid-gap: calc($trailer / 2) $gutter;
-      > * {
-        /* width: 15%; */
-      }
     }
 
     &.two-up,
@@ -133,12 +129,14 @@
   }
 }
 
-.project-cover {
+
+.project-cover { /*-----------------------------------------------------------*/
   transform: scale(1);
   transition: transform 3s;
 }
 
-.project-title {
+
+.project-title {  /*----------------------------------------------------------*/
     background-color: $page-color;
     display: inline-block;
     padding: 0 1rem;
@@ -157,7 +155,8 @@
   }
 }
 
-.project-more-link {
+
+.project-more-link {  /*------------------------------------------------------*/
   padding: 1rem;
   border: 1px solid $light-gray;
   border-radius: 50%;
@@ -183,7 +182,8 @@
   }
 }
 
-.project-cover-group {
+
+.project-cover-group { /*-----------------------------------------------------*/
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
@@ -254,7 +254,8 @@
   }
 }
 
-.toc {
+
+.toc { /*---------------------------------------------------------------------*/
   padding-bottom: $trailer;
   margin-bottom: $trailer;
   line-height: 2.5;
