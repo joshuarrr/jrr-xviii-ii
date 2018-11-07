@@ -33,6 +33,7 @@ export default {
         getData: () => {
           return {
             projects,
+            pageNumber: 1,
           }
         },
       },
@@ -43,6 +44,12 @@ export default {
       {
         path: '/profile',
         component: 'src/pages/Profile',
+        getData: () => {
+          return {
+            projects,
+            pageNumber: 2,
+          }
+        },
       },
       {
         path: '/projects',
@@ -50,6 +57,7 @@ export default {
         getData: () => {
           return {
             projects,
+            pageNumber: 3,
           }
         },
         // Note: the parentheses after fat arrow allow it to return

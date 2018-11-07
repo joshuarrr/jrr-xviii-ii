@@ -3,6 +3,14 @@ import convertStyle from './convertStyle'
 import getWindowHeight from './getWindowHeight'
 
 export default class Div100vh extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.setWrapRef = element => {
+      this.wrapRef = element
+    }
+  }
+
   state = {
     style: {},
   }
@@ -17,6 +25,9 @@ export default class Div100vh extends React.Component {
   componentDidMount () {
     this.updateStyle()
     window.addEventListener('resize', this.updateStyle)
+    // adding the page-wrap className this way prevents a bug that removes the
+    // class during production build.
+    this.wrapRef.className = 'page-wrap'
   }
 
   componentWillUnmount () {
@@ -24,7 +35,13 @@ export default class Div100vh extends React.Component {
   }
 
   render () {
-    console.log(this.props.className)
-    return <div className={this.props.className} {...this.props} style={this.state.style} />
+    return (
+      <div
+        {...this.props}
+        className={this.props.className}
+        style={this.state.style}
+        ref={this.setWrapRef}
+      />
+    )
   }
 }

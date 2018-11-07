@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { RouteData } from 'react-static'
 import { Animate } from 'react-move'
 import Div100vh from './react-div-100vh/'
@@ -8,54 +7,52 @@ import { Footer } from './footer'
 
 
 export class PageWrapper extends Component {
+  debugger
 
   render = () => (
-    <RouteData render={({ pageNumber }) => (
-      <Div100vh
-        style={{ minHeight: '100rvh' }}
-        className="page-wrap"
+    <Div100vh
+      style={{ minHeight: '100rvh' }}
+      className="page-wrap"
+    >
+      <Animate
+        show
+        start={{ // the starting state (required)
+          opacity: [0],
+        }}
+        enter={{ // how to transform state on enter (optional)
+          opacity: [1],
+          timing: { duration: 1000, delay: 1000 },
+        }}
       >
-        <Animate
-          show
-          start={{ // the starting state (required)
-            opacity: [0],
-          }}
-          enter={{ // how to transform state on enter (optional)
-            opacity: [1],
-            timing: { duration: 1000, delay: 1000 },
-          }}
-        >
-          {({ opacity }) => (
-            <Header
-              pageNum={`${pageNumber}`}
-              page={`${location.pathname}`}
-              style={{ opacity }}
-              key="header"
-            />
-          )}
-        </Animate>
-        <main className="content">
-          { this.props.children }
-        </main>
-        <Animate
-          show
-          start={{ // the starting state (required)
-            opacity: [0],
-          }}
+        {({ opacity }) => (
+          <Header
+            // pageNum={`${pageNumber}`}
+            style={{ opacity }}
+            key="header"
+          />
+        )}
+      </Animate>
+      <main className="content">
+        { this.props.children }
+      </main>
+      <Animate
+        show
+        start={{ // the starting state (required)
+          opacity: [0],
+        }}
 
-          enter={{ // how to transform state on enter (optional)
-            opacity: [1],
-            timing: { duration: 1000, delay: 1000 },
-          }}
-        >
-          {({ opacity }) => (
-            <Footer
-              className="footer"
-              style={{ opacity }}
-            />
-          )}
-        </Animate>
-      </Div100vh>
-    )} />
+        enter={{ // how to transform state on enter (optional)
+          opacity: [1],
+          timing: { duration: 1000, delay: 1000 },
+        }}
+      >
+        {({ opacity }) => (
+          <Footer
+            className="footer"
+            style={{ opacity }}
+          />
+        )}
+      </Animate>
+    </Div100vh>
   )
 }
