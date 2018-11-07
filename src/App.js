@@ -45,23 +45,8 @@ const AnimatedRoutes = getContext({
         )
       }
 
-
-      // Also don't animate project pages
-      // const possiblyAnimatedRoute =
-      //  props.location.pathname.match(/^(\/projects\/project\/)(?:.*)?$/)
-      //   ? console.log('match')
-      //   : console.log('no match')
-      // if (props.location.pathname.match(/^(\/projects\/project\/)(?:.*)?$/)) {
-      //   return (
-      //     <PageWrapper>
-      //       <div style={{ position: 'relative' }}>
-      //         <Comp {...props} />
-      //       </div>
-      //     </PageWrapper>
-      //   )
-      // }
       // Use React-Move to animate the different components coming in and out
-      const lastSegment = props.location.pathname.split("/").pop()
+      const lastSegment = props.location.pathname.split('/').pop()
       const pathClass = lastSegment ? lastSegment : "home"
 
       return (
