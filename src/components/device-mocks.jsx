@@ -39,12 +39,17 @@ export class DeviceMock extends Component {
     }
 
     this.scrollContainer = React.createRef()
-    this.setInnerScrollContainerRef = element => {
-      this.innerScrollContainer = element
+
+    this.setInnerScrollContainerRef = e => {
+      this.innerScrollContainer = e
     }
   }
 
   componentDidMount () {
+    this.hideScrollbars()
+  }
+
+  hideScrollbars () {
     // Hide firefox srollbars
     const i = this.innerScrollContainer
     const scrollbarWidth = i.offsetWidth - i.clientWidth
@@ -91,6 +96,7 @@ export class DeviceMock extends Component {
             height: `${height}px`,
           }}
         >
+          {this.hideScrollbars()}
           { this.props.bands && <div className="top-band" /> }
           { this.props.buttons && <div className="sleep" /> }
           { this.props.bands && <div className="bottom-bar" /> }
