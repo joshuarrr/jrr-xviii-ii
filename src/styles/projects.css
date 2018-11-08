@@ -143,6 +143,7 @@
 
   section {
     padding-bottom: calc($trailer * 2);
+    clear: both;
   }
 }
 

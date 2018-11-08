@@ -48,14 +48,12 @@ export class DeviceMock extends Component {
   hideScrollbars () {
     // Hide firefox srollbars
     const i = this.innerScrollContainer
+    console.log(i)
     if (i !== undefined) {
       const scrollbarWidth = i.offsetWidth - i.clientWidth
+      console.log(scrollbarWidth)
       i.style.right = `-${scrollbarWidth + 1}px`
     }
-  }
-
-  componentDidMount () {
-    this.hideScrollbars()
   }
 
   render () {

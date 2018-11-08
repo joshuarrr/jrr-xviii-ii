@@ -196,13 +196,11 @@ export class Idealist extends Component {
         <section id="team">
           <h2>Idealist Team</h2>
           <div
-            className="image-row"
+            className="image-row fleft"
             ref={this.setImageRow1upRef}
           >
             <DeviceMock
               device="iPhoneX"
-              scrollable
-              bands
               {...this.getWidth(this.imageRow1up)}
             >
               <Img name="portfolio/idealist/idealist-our-team-mobile" />
