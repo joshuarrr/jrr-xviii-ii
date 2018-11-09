@@ -24,6 +24,12 @@ export default {
     title: 'JOSHUAR 🦁',
   }),
 
+  // Optional object for customizing the options for the
+  devServer: {
+    port: 2999,
+    host: '127.0.0.1',
+  },
+
   getRoutes: async () => {
     // console.log('projects: ', projects)
     return [

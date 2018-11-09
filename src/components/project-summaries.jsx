@@ -13,7 +13,7 @@ const ProjectSummaries = ({ projects, currentProject }) => (
           className="project"
           key={project.title}
         >
-          <Link to={`/projects/project/${project.title}`}>
+          <Link to={`/projects/project/${project.title.toLowerCase()}`}>
             <h2 className="project-title">
               {project.title}
             </h2>
@@ -51,7 +51,7 @@ const ProjectSummaries = ({ projects, currentProject }) => (
         >
           <Link
             className="project-summary-link"
-            to={`/projects/project/${project.title}`}>
+            to={`/projects/project/${project.title.toLowerCase()}`}>
             <Img
               className="project-cover"
               name={`portfolio/${project.title}`}

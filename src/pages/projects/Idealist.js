@@ -26,7 +26,6 @@ export class Idealist extends Component {
   getWidth = row => {
     if (row !== undefined && row.childNodes !== undefined && this.state.rowWidth !== undefined) {
       const rowWidth = this.state.rowWidth
-      // console.log(`* rowWidth: ${rowWidth}`)
       const rowCount = row.childNodes.length
       const margin = 33
       const deviceWidth = Math.min((rowWidth / rowCount) - margin, 250)
@@ -40,6 +39,7 @@ export class Idealist extends Component {
 
   getRowWidth = () => {
     this.setState({
+      // TODO - use ref
       rowWidth: ReactDOM.findDOMNode(this).clientWidth,
     })
   }
